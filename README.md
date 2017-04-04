@@ -11,7 +11,7 @@ Installation
 #### Install package
 Run command
 ```
-composer require yiimaker/yii2-social-share
+composer require yiimaker/yii2-email-templates
 ```
 or add
 ```json

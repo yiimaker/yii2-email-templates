@@ -6,7 +6,11 @@
  */
 
 namespace ymaker\email\templates;
+
 use Yii;
+use yii\base\InvalidConfigException;
+
+use ymaker\email\templates\providers\LanguageProviderInterface;
 use ymaker\email\templates\services\DbService;
 use ymaker\email\templates\services\ServiceInterface;
 
@@ -26,6 +30,10 @@ class Module extends \yii\base\Module
      * @var array
      */
     public $service = null;
+    /**
+     * @var array
+     */
+    public $languageProvider = null;
 
 
     /**
@@ -38,6 +46,9 @@ class Module extends \yii\base\Module
         if ($this->service === null) {
             $this->service = ['class' => DbService::class];
         }
+        if ($this->languageProvider === null) {
+            throw new InvalidConfigException('You should to configure the language provider');
+        }
 
         $this->registerDependencies();
     }
@@ -48,5 +59,6 @@ class Module extends \yii\base\Module
     protected function registerDependencies()
     {
         Yii::$container->set(ServiceInterface::class, $this->service);
+        Yii::$container->set(LanguageProviderInterface::class, $this->languageProvider);
     }
 }

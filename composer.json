@@ -1,0 +1,33 @@
+{
+  "name": "yiimaker/yii2-email-templates",
+  "description": "",
+  "keywords": ["yii2", "module", "email", "templates"],
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "support": {
+    "source": "https://github.com/yiimaker/yii2-email-templates",
+    "issues": "https://github.com/yiimaker/yii2-email-templates/issues"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "yiisoft/yii2": "^2.0.0"
+  },
+  "authors": [
+    {
+      "name": "Vladimir Kuprienko",
+      "email": "vldmr.kuprienko@gmail.com",
+      "role": "developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ymaker\\email\\templates\\": "src"
+    }
+  }
+}

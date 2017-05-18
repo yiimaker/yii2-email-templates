@@ -13,19 +13,20 @@ use yii\base\Object;
 /**
  * Config language provider
  *
- * @property array $languages
- * @property array $defaultLanguage
- *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class ConfigLanguageProvider extends Object implements LanguageProviderInterface
 {
     /**
+     * Contains all languages
+     *
      * @var array
      */
     public $languages = [];
     /**
+     * Contains one default language
+     *
      * @var array
      */
     public $defaultLanguage = [];

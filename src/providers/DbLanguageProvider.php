@@ -19,22 +19,32 @@ use yii\di\Instance;
 class DbLanguageProvider implements LanguageProviderInterface
 {
     /**
+     * Database connection instance
+     *
      * @var \yii\db\Connection
      */
     public $db = 'db';
     /**
+     * Name of table with languages in database
+     *
      * @var string
      */
     public $tableName = 'language';
     /**
+     * Language locale field name in table
+     *
      * @var string
      */
     public $localeField = 'locale';
     /**
+     * Language name field name in table
+     *
      * @var string
      */
     public $nameField = 'name';
     /**
+     * Is default language flag field name in table
+     *
      * @var string
      */
     public $defaultField = 'is_default';

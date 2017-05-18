@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\providers;
 
 /**
- * Base interface for language providers
+ * Interface for language providers
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

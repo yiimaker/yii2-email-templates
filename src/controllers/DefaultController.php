@@ -23,6 +23,9 @@ use ymaker\email\templates\services\ServiceInterface;
 class DefaultController extends Controller
 {
     /**
+     * Email templates service instance.
+     * Instance will be gotten from DI container
+     *
      * @var ServiceInterface
      */
     protected $_service;
@@ -40,7 +43,7 @@ class DefaultController extends Controller
     /**
      * Find email template model by ID
      *
-     * @param integer $id Email template ID
+     * @param integer $id Model ID
      * @return EmailTemplate
      * @throws NotFoundHttpException
      */
@@ -54,7 +57,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Renders data provider with all templates
+     * Renders data provider with all template models
      *
      * @return string
      */
@@ -71,7 +74,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Create email template
+     * Create email template model
      *
      * @return string|\yii\web\Response
      */
@@ -96,7 +99,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * View email template detail
+     * View email template models detail
      *
      * @param integer $id
      * @param null|string $lang
@@ -115,10 +118,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * Update email template
+     * Update email template model
      *
-     * @param integer $id
-     * @param null|string $lang
+     * @param integer $id Model ID
+     * @param null|string $lang Model language
      * @return string|\yii\web\Response
      */
     public function actionUpdate($id, $lang = null)
@@ -144,9 +147,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * Delete email template
+     * Delete email template model
      *
-     * @param integer $id
+     * @param integer $id Model ID
      * @return \yii\web\Response
      */
     public function actionDelete($id)

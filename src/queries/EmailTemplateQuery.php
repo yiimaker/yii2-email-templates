@@ -10,7 +10,7 @@ namespace ymaker\email\templates\queries;
 use yii\db\ActiveQuery;
 
 /**
- * Active query for [[\ymaker\email\templates\models\entities\EmailTemplate]] entity
+ * Query class for [[\ymaker\email\templates\models\entities\EmailTemplate]] model
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

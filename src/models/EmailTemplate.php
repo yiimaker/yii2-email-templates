@@ -10,7 +10,8 @@ namespace ymaker\email\templates\models;
 use yii\base\Object;
 
 /**
- * Email template model for processing data
+ * Model class for template manager
+ * @see \ymaker\email\templates\components\TemplateManager
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -18,10 +19,14 @@ use yii\base\Object;
 class EmailTemplate extends Object
 {
     /**
+     * Email letter subject
+     *
      * @var string
      */
     public $subject;
     /**
+     * Email letter body
+     *
      * @var string
      */
     public $body;
@@ -73,7 +78,7 @@ class EmailTemplate extends Object
     /**
      * Replace keys to real data in subject and body
      *
-     * @param array $data
+     * @param array $data Array with key-value pairs
      */
     public function parse($data)
     {
@@ -88,7 +93,7 @@ class EmailTemplate extends Object
     /**
      * Replace keys to real data in subject
      *
-     * @param array $data
+     * @param array $data Array with key-value pairs
      */
     public function parseSubject($data)
     {
@@ -98,7 +103,7 @@ class EmailTemplate extends Object
     /**
      * Replace keys to real data in body
      *
-     * @param array $data
+     * @param array $data Array with key-value pairs
      */
     public function parseBody($data)
     {

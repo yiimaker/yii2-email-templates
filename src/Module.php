@@ -15,7 +15,7 @@ use ymaker\email\templates\services\DbService;
 use ymaker\email\templates\services\ServiceInterface;
 
 /**
- * Module for CRUD operations under email templates
+ * Module for CRUD operations under email templates in backend
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -27,10 +27,16 @@ class Module extends \yii\base\Module
      */
     public $controllerNamespace = 'ymaker\email\templates\controllers';
     /**
+     * Service for controller
+     *
+     * @see \ymaker\email\templates\services\ServiceInterface
      * @var array
      */
     public $service = null;
     /**
+     * Language provider for internationalization
+     *
+     * @see \ymaker\email\templates\providers\LanguageProviderInterface
      * @var array
      */
     public $languageProvider = null;
@@ -54,7 +60,7 @@ class Module extends \yii\base\Module
     }
 
     /**
-     * Register dependencies to Yii DI container
+     * Register dependencies to DI container
      */
     protected function registerDependencies()
     {

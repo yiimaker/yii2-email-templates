@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\services;
 
 /**
- * Base interface for service
+ * Interface for email templates services
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -25,8 +25,8 @@ interface ServiceInterface
     /**
      * Returns translation model object
      *
-     * @param integer|null $modelId
-     * @param string|null $language
+     * @param integer|null $modelId Model ID
+     * @param string|null $language Model language
      * @return mixed
      */
     public function getTranslationModel($modelId = null, $language = null);
@@ -40,11 +40,11 @@ interface ServiceInterface
     public function create($data);
 
     /**
-     * Update models data
+     * Updates models data
      *
-     * @param mixed $model
-     * @param mixed $translation
-     * @param array $data
+     * @param mixed $model Model object
+     * @param mixed $translation Translation model object
+     * @param array $data Array with data for models
      * @return mixed
      */
     public function update($model, $translation, $data);

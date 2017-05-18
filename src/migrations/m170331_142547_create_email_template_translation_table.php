@@ -40,8 +40,9 @@ class m170331_142547_create_email_template_translation_table extends Migration
             'id'            => $this->primaryKey(),
             'templateId'    => $this->integer()->notNull(),
             'language'      => $this->string(16)->notNull(),
-            'subject'       => $this->string(),
-            'body'          => $this->text()
+            'subject'       => $this->string()->notNull(),
+            'body'          => $this->text()->notNull(),
+            'hint'          => $this->string(500),
         ], $tableOptions);
 
         // Foreign keys

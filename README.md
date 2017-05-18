@@ -19,6 +19,11 @@ or add
 ```
 to the require section of your composer.json.
 
+#### Apply migrations
+```
+./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrations
+```
+
 Usage
 -----
 TODO: usage guide

@@ -61,8 +61,8 @@ class EmailTemplate extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'    => Yii::t('email-templates.entity', 'ID'),
-            'key'   => Yii::t('email-templates.entity', 'Key'),
+            'id'    => Yii::t('email-templates/entity', 'ID'),
+            'key'   => Yii::t('email-templates/entity', 'Key'),
         ];
     }
 

@@ -60,6 +60,12 @@ use yii\helpers\Url;
                 <dd>
                     <?= $translation->body ?>
                 </dd>
+                <dt>
+                    <?= Yii::t('app', 'Hint') ?>
+                </dt>
+                <dd>
+                    <?= $translation->hint ?>
+                </dd>
             </dl>
         </div>
     </div>

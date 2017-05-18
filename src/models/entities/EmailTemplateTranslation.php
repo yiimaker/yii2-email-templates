@@ -18,6 +18,7 @@ use yii\db\ActiveRecord;
  * @property string $language
  * @property string $subject
  * @property string $body
+ * @property string $hint
  *
  * @property EmailTemplate $template
  *
@@ -39,6 +40,7 @@ class EmailTemplateTranslation extends ActiveRecord
      */
     public function rules()
     {
+
         return [
             [['templateId'], 'required'],
             [['templateId'], 'integer'],
@@ -46,9 +48,14 @@ class EmailTemplateTranslation extends ActiveRecord
             [['language'], 'required'],
             [['language'], 'string', 'max' => 16],
 
+            [['subject'], 'required'],
             [['subject'], 'string', 'max' => 255],
 
+            [['body'], 'required'],
             [['body'], 'string'],
+
+            [['hint'], 'required'],
+            [['hint'], 'string'],
         ];
     }
 
@@ -58,7 +65,7 @@ class EmailTemplateTranslation extends ActiveRecord
     public function transactions()
     {
         return [
-            'default' => self::OP_ALL
+            'default' => self::OP_ALL,
         ];
     }
 
@@ -68,11 +75,11 @@ class EmailTemplateTranslation extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'            => Yii::t('email-templates.entity', 'ID'),
-            'templateId'    => Yii::t('email-templates.entity', 'Template ID'),
-            'language'      => Yii::t('email-templates.entity', 'Language'),
-            'subject'       => Yii::t('email-templates.entity', 'Subject'),
-            'body'          => Yii::t('email-templates.entity', 'Body'),
+            'id'            => Yii::t('email-templates/entity', 'ID'),
+            'templateId'    => Yii::t('email-templates/entity', 'Template ID'),
+            'language'      => Yii::t('email-templates/entity', 'Language'),
+            'subject'       => Yii::t('email-templates/entity', 'Subject'),
+            'body'          => Yii::t('email-templates/entity', 'Body'),
         ];
     }
 

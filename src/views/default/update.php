@@ -40,9 +40,12 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="col-md-12">
             <?php $form = ActiveForm::begin() ?>
-            <?= $form->field($template, 'key') ?>
+            <?= $form->field($template, 'key')
+                ->textInput(['disabled' => true]) ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body') ?>
+            <?= $form->field($translation, 'hint')
+                ->textInput(['disabled' => true]) ?>
             <?= $form->field($translation, 'templateId')
                 ->hiddenInput()
                 ->label(false) ?>

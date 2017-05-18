@@ -9,6 +9,7 @@ namespace ymaker\email\templates\services;
 
 use Yii;
 use yii\base\Object;
+use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 
@@ -43,7 +44,7 @@ class DbService extends Object implements ServiceInterface
      */
     public function init()
     {
-        $this->db = Instance::ensure($this->db);
+        $this->db = Instance::ensure($this->db, Connection::class);
     }
 
     /**

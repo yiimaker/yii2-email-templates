@@ -43,6 +43,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body') ?>
+            <?= $form->field($translation, 'hint') ?>
             <?= Html::submitButton(
                 Yii::t('app', 'Create'),
                 ['class' => 'btn btn-success']

@@ -5,10 +5,9 @@
  * @license BSD 3-Clause License
  */
 
-use yii\grid\ActionColumn;
-use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use ymaker\email\templates\Module as TemplatesModule;
 
 /**
  * View file for CRUD backend controller
@@ -28,12 +27,12 @@ use yii\helpers\Url;
             <div class="panel panel-default">
                 <div class="panel-body">
                     <?= Html::a(
-                        Yii::t('app', 'Update'),
+                        TemplatesModule::t('Update'),
                         Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
                         ['class' => 'btn btn-warning']
                     ) ?>
                     <?= Html::a(
-                        Yii::t('app', 'Delete'),
+                        TemplatesModule::t('Delete'),
                         Url::toRoute(['delete', 'id' => $template->id]),
                         ['class' => 'btn btn-danger']
                     ) ?>

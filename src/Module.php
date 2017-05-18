@@ -61,4 +61,17 @@ class Module extends \yii\base\Module
         Yii::$container->set(ServiceInterface::class, $this->service);
         Yii::$container->set(LanguageProviderInterface::class, $this->languageProvider);
     }
+
+    /**
+     * Module wrapper for `Yii::t()` method
+     *
+     * @param string $message
+     * @param array $params
+     * @param null|string $language
+     * @return string
+     */
+    public static function t($message, $params = [], $language = null)
+    {
+        return Yii::t('back/email-templates', $message, $params, $language);
+    }
 }

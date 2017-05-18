@@ -21,7 +21,7 @@ use yii\helpers\Url;
 <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button"
             id="languages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <?= Yii::t('email.template.common', 'Language') ?>
+        <?= Yii::t('email-templates', 'Language') ?>
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="languages">

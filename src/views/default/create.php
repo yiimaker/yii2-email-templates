@@ -8,6 +8,7 @@
 use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use ymaker\email\templates\Module as TemplatesModule;
 
 /**
  * View file for CRUD backend controller
@@ -45,7 +46,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($translation, 'body') ?>
             <?= $form->field($translation, 'hint') ?>
             <?= Html::submitButton(
-                Yii::t('app', 'Create'),
+                TemplatesModule::t('Create'),
                 ['class' => 'btn btn-success']
             ) ?>
             <?php $form->end() ?>

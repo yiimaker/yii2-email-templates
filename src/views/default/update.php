@@ -8,6 +8,7 @@
 use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use ymaker\email\templates\Module as TemplatesModule;
 
 /**
  * View file for CRUD backend controller
@@ -53,7 +54,7 @@ use yii\widgets\ActiveForm;
                 ->hiddenInput()
                 ->label(false) ?>
             <?= Html::submitButton(
-                Yii::t('app', 'Save'),
+                TemplatesModule::t('Save'),
                 ['class' => 'btn btn-success']
             ) ?>
             <?php $form->end() ?>

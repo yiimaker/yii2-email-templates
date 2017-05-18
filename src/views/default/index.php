@@ -9,6 +9,7 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use ymaker\email\templates\Module as TemplatesModule;
 
 /**
  * View file for CRUD backend controller
@@ -28,7 +29,7 @@ use yii\helpers\Url;
             <div class="panel panel-default">
                 <div class="panel-body">
                     <?= Html::a(
-                        Yii::t('app', 'Create template'),
+                        TemplatesModule::t('Create template'),
                         Url::toRoute(['create']),
                         ['class' => 'btn btn-success']
                     ) ?>

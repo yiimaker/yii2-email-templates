@@ -11,7 +11,6 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\services\ServiceInterface;
 
@@ -61,6 +60,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        // TODO: move to service
         $dataProvider = new ActiveDataProvider([
             'query' => EmailTemplate::find()->with('translations')
         ]);
@@ -84,8 +84,7 @@ class DefaultController extends Controller
             $res = $this->_service->create($request->post());
             if (is_array($res)) {
                 $viewParams['errors'] = $res;
-            }
-            else {
+            } else {
                 return $this->redirect(['index']);
             }
         }
@@ -133,8 +132,7 @@ class DefaultController extends Controller
             $res = $this->_service->update($template, $translation, $request->post());
             if (is_array($res)) {
                 $viewParams['errors'] = $res;
-            }
-            else {
+            } else {
                 return $this->redirect(['view', 'id' => $id]);
             }
         }
@@ -145,6 +143,12 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * Delete email template
+     *
+     * @param integer $id
+     * @return \yii\web\Response
+     */
     public function actionDelete($id)
     {
         $this->findTemplate($id)->delete();

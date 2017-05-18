@@ -58,8 +58,10 @@ class Module extends \yii\base\Module
      */
     protected function registerDependencies()
     {
-        Yii::$container->set(ServiceInterface::class, $this->service);
-        Yii::$container->set(LanguageProviderInterface::class, $this->languageProvider);
+        Yii::$container->setDefinitions([
+            ServiceInterface::class => $this->service,
+            LanguageProviderInterface::class => $this->languageProvider
+        ]);
     }
 
     /**

@@ -9,7 +9,6 @@ namespace ymaker\email\templates\components;
 
 use Yii;
 use yii\base\Object;
-
 use ymaker\email\templates\models\EmailTemplate as EmailTemplateModel;
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;

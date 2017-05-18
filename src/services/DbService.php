@@ -115,8 +115,7 @@ class DbService extends Object implements ServiceInterface
         $processRes = $this->processData($data);
         if (is_array($processRes)) {
             return $processRes;
-        }
-        elseif ($processRes === true) {
+        } elseif ($processRes === true) {
             $transaction = $this->db->beginTransaction();
             try {
                 $isSaved = $this->_template->insert(false);
@@ -127,8 +126,7 @@ class DbService extends Object implements ServiceInterface
                     return true;
                 }
                 $transaction->rollBack();
-            }
-            catch (\Exception $ex) {
+            } catch (\Exception $ex) {
                 $transaction->rollBack();
                 throw $ex;
             }
@@ -154,8 +152,7 @@ class DbService extends Object implements ServiceInterface
         $processRes = $this->processData($data);
         if (is_array($processRes)) {
             return $processRes;
-        }
-        elseif ($processRes === true) {
+        } elseif ($processRes === true) {
             $transaction = $this->db->beginTransaction();
             try {
                 $isSaved = $this->_template->save(false);

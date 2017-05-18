@@ -9,7 +9,6 @@ namespace ymaker\email\templates\models\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
-
 use ymaker\email\templates\queries\EmailTemplateQuery;
 
 /**
@@ -51,7 +50,7 @@ class EmailTemplate extends ActiveRecord
     public function transactions()
     {
         return [
-            'default' => self::OP_ALL
+            'default' => self::OP_ALL,
         ];
     }
 

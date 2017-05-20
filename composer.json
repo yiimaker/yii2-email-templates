@@ -1,6 +1,6 @@
 {
   "name": "yiimaker/yii2-email-templates",
-  "description": "",
+  "description": "Extension for create and use email templates across your site dashboard",
   "keywords": ["yii2", "module", "email", "templates"],
   "type": "yii2-extension",
   "license": "BSD-3-Clause",

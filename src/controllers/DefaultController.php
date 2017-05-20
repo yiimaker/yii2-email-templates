@@ -47,7 +47,7 @@ class DefaultController extends Controller
      * @return EmailTemplate
      * @throws NotFoundHttpException
      */
-    protected function findTemplate($id)
+    protected function findModel($id)
     {
         if ($model = EmailTemplate::findOne($id)) {
             return $model;
@@ -63,14 +63,10 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        // TODO: move to service
-        $dataProvider = new ActiveDataProvider([
-            'query' => EmailTemplate::find()->with('translations')
-        ]);
+        $query = EmailTemplate::find()->with('translations');
+        $dataProvider = $this->_service->getDataProvider($query);
 
-        return $this->render('index', [
-            'dataProvider' => $dataProvider
-        ]);
+        return $this->render('index', compact('dataProvider'));
     }
 
     /**
@@ -80,22 +76,23 @@ class DefaultController extends Controller
      */
     public function actionCreate()
     {
-        $viewParams = [];
         $request = Yii::$app->getRequest();
-
         if ($request->getIsPost()) {
             $res = $this->_service->create($request->post());
             if (is_array($res)) {
-                $viewParams['errors'] = $res;
+                $errors = $res;
             } else {
                 return $this->redirect(['index']);
             }
         }
+        $template = $this->_service->getModel();
+        $translation = $this->_service->getTranslationModel();
 
-        $viewParams['template'] = $this->_service->getModel();
-        $viewParams['translation'] = $this->_service->getTranslationModel();
-
-        return $this->render('create', $viewParams);
+        return $this->render('create', compact([
+            'errros',
+            'template',
+            'translation',
+        ]));
     }
 
     /**
@@ -108,13 +105,13 @@ class DefaultController extends Controller
     public function actionView($id, $lang = null)
     {
         $lang = $lang ?: Yii::$app->language;
-        $template = $this->findTemplate($id);
+        $template = $this->findModel($id);
         $translation = $this->_service->getTranslationModel($id, $lang);
 
-        return $this->render('view', [
-            'template' => $template,
-            'translation' => $translation
-        ]);
+        return $this->render('view', compact([
+            'template',
+            'translation',
+        ]));
     }
 
     /**
@@ -127,23 +124,24 @@ class DefaultController extends Controller
     public function actionUpdate($id, $lang = null)
     {
         $lang = $lang ?: Yii::$app->language;
-        $template = $this->findTemplate($id);
+        $template = $this->findModel($id);
         $translation = $this->_service->getTranslationModel($id, $lang);
-        $request = Yii::$app->getRequest();
 
+        $request = Yii::$app->getRequest();
         if ($request->getIsPost()) {
             $res = $this->_service->update($template, $translation, $request->post());
             if (is_array($res)) {
-                $viewParams['errors'] = $res;
+                $errors = $res;
             } else {
                 return $this->redirect(['view', 'id' => $id]);
             }
         }
 
-        return $this->render('update', [
-            'template' => $template,
-            'translation' => $translation
-        ]);
+        return $this->render('update', compact([
+            'errors',
+            'template',
+            'translation',
+        ]));
     }
 
     /**
@@ -154,7 +152,7 @@ class DefaultController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findTemplate($id)->delete();
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 }

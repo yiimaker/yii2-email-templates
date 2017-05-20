@@ -32,6 +32,14 @@ interface ServiceInterface
     public function getTranslationModel($modelId = null, $language = null);
 
     /**
+     * Returns data provider
+     *
+     * @param \yii\db\ActiveQuery $query Query for data provider
+     * @return \yii\data\DataProviderInterface
+     */
+    public function getDataProvider($query);
+
+    /**
      * Create model with translation
      *
      * @param array $data Array with data for models

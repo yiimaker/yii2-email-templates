@@ -9,6 +9,7 @@ namespace ymaker\email\templates\services;
 
 use Yii;
 use yii\base\Object;
+use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
@@ -73,6 +74,16 @@ class DbService extends Object implements ServiceInterface
         }
 
         return new EmailTemplateTranslation();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getDataProvider($query)
+    {
+        return new ActiveDataProvider([
+            'query' => $query,
+        ]);
     }
 
     /**

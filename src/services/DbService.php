@@ -13,7 +13,6 @@ use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
-
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 

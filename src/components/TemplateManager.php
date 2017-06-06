@@ -32,7 +32,7 @@ class TemplateManager extends Object
      */
     public function getTemplate($key, $language = null)
     {
-        $language ?: Yii::$app->language;
+        $language = ($language === null) ? Yii::$app->language : $language;
 
         /* @var EmailTemplate $model */
         $model = EmailTemplate::find()

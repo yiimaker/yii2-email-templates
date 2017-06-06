@@ -2,5 +2,6 @@ class_name: UnitTester
 bootstrap: false
 modules:
     enabled:
+        - Db
         - Asserts
         - Yii2

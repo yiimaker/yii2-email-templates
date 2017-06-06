@@ -2,6 +2,7 @@
 return [
     'id' => 'test-app',
     'class' => 'yii\console\Application',
+    'language' => 'en',
 
     'basePath' => Yii::getAlias('@tests'),
     'vendorPath' => Yii::getAlias('@vendor'),

@@ -4,7 +4,6 @@ paths:
     log: tests/_output
     data: tests/_data
     support: tests/_support
-    envs: tests/_envs
 settings:
     bootstrap: _bootstrap.php
     colors: true
@@ -15,4 +14,11 @@ extensions:
 modules:
     config:
         Yii2:
+            cleanup: false
             configFile: 'tests/_config/app.php'
+        Db:
+            dsn: 'sqlite:tests/_output/test.db'
+            user: ''
+            password: ''
+            dump: 'tests/_data/dump.sql'
+            cleanup: false

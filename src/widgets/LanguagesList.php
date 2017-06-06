@@ -9,8 +9,7 @@ namespace yii2deman\shop\common\widgets;
 
 use Yii;
 use yii\base\Widget;
-
-use ymaker\email\templates\providers\LanguageProviderInterface;
+use yii2deman\tools\i18n\LanguageProviderInterface;
 
 /**
  * Renders list of languages from language provider

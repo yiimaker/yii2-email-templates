@@ -9,10 +9,9 @@ namespace ymaker\email\templates;
 
 use Yii;
 use yii\base\InvalidConfigException;
-
-use ymaker\email\templates\providers\LanguageProviderInterface;
 use ymaker\email\templates\services\DbService;
 use ymaker\email\templates\services\ServiceInterface;
+use yii2deman\tools\i18n\LanguageProviderInterface;
 
 /**
  * Module for CRUD operations under email templates in backend

@@ -8,16 +8,17 @@ Basic usage
     'email-templates' => [
         'class' => \ymaker\email\templates\Module::class,
         'languageProvider' => [
-            'class' => \ymaker\email\templates\providers\ConfigLanguageProvider::class,
+            'class' => \yii2deman\tools\i18n\ConfigLanguageProvider::class,
             'languages' => [
                 [
                     'locale' => 'en',
-                    'title' => 'English',
+                    'label' => 'English',
                 ],
+                // ...
             ],
             'defaultLanguage' => [
                 'locale' => 'en',
-                'title' => 'English',
+                'label' => 'English',
             ],
         ],
     ],

@@ -27,7 +27,7 @@ use yii\helpers\Url;
     <ul class="dropdown-menu" aria-labelledby="languages">
         <?php foreach ($languages as $language): ?>
             <li>
-                <?= Html::a($language['title'], Url::current(['lang' => $language['locale']])) ?>
+                <?= Html::a($language['label'], Url::current(['lang' => $language['locale']])) ?>
             </li>
         <?php endforeach; ?>
     </ul>

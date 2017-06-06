@@ -53,8 +53,11 @@ class DbService extends Object implements ServiceInterface
     /**
      * @inheritdoc
      */
-    public function getModel()
+    public function getModel($id = null)
     {
+        if ($id !== null && ($model = EmailTemplate::findOne($id))) {
+            return $model;
+        }
         return new EmailTemplate();
     }
 

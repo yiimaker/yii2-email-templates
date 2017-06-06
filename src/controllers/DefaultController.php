@@ -49,7 +49,7 @@ class DefaultController extends Controller
      */
     protected function findModel($id)
     {
-        if ($model = EmailTemplate::findOne($id)) {
+        if ($model = $this->_service->getModel($id)) {
             return $model;
         }
 

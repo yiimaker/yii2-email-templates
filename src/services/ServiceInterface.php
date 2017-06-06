@@ -18,9 +18,10 @@ interface ServiceInterface
     /**
      * Returns model object
      *
+     * @param null|int $id Model ID
      * @return mixed
      */
-    public function getModel();
+    public function getModel($id = null);
 
     /**
      * Returns translation model object

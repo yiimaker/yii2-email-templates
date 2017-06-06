@@ -20,6 +20,11 @@
     "yiisoft/yii2-bootstrap": "~2.0.0",
     "yii2deman/yii2deman-language-provider": "dev-master"
   },
+  "require-dev": {
+    "codeception/codeception": "~2.3",
+    "codeception/verify": "*",
+    "codeception/specify": "*"
+  },
   "authors": [
     {
       "name": "Vladimir Kuprienko",

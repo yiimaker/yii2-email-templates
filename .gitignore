@@ -1,0 +1,6 @@
+# codeception
+codecept.phar
+
+# composer
+composer.phar
+vendor/

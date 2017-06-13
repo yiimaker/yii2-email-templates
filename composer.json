@@ -21,7 +21,7 @@
     "yii2deman/yii2deman-language-provider": "dev-master"
   },
   "require-dev": {
-    "codeception/codeception": "~2.3",
+    "codeception/codeception": "~2.2",
     "codeception/verify": "*",
     "codeception/specify": "*"
   },

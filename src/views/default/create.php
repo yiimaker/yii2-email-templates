@@ -9,6 +9,7 @@ use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
+use vova07\imperavi\Widget as ImperaviRedactor;
 
 /**
  * View file for CRUD backend controller
@@ -43,7 +44,7 @@ use ymaker\email\templates\Module as TemplatesModule;
             <?php $form = ActiveForm::begin() ?>
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
-            <?= $form->field($translation, 'body') ?>
+            <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>
             <?= $form->field($translation, 'hint') ?>
             <?= Html::submitButton(
                 TemplatesModule::t('Create'),

@@ -1,4 +1,9 @@
-yiimaker/yii2-email-template change log
----------------------------------------
+Email Templates Module Change Log
+---------------------------------
 
-## [Development started] - 2017-03-31
+1.0.0 June 14, 2017
+-------------------
+* Initial release
+
+Development started March 31, 2017
+--------------------------------- 

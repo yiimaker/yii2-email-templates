@@ -35,10 +35,9 @@ interface ServiceInterface
     /**
      * Returns data provider
      *
-     * @param \yii\db\ActiveQuery $query Query for data provider
      * @return \yii\data\DataProviderInterface
      */
-    public function getDataProvider($query);
+    public function getDataProvider();
 
     /**
      * Create model with translation

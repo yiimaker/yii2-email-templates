@@ -63,9 +63,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $query = EmailTemplate::find()->with('translations');
-        $dataProvider = $this->_service->getDataProvider($query);
-
+        $dataProvider = $this->_service->getDataProvider();
         return $this->render('index', compact('dataProvider'));
     }
 

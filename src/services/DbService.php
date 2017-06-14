@@ -81,10 +81,10 @@ class DbService extends Object implements ServiceInterface
     /**
      * @inheritdoc
      */
-    public function getDataProvider($query)
+    public function getDataProvider()
     {
         return new ActiveDataProvider([
-            'query' => $query,
+            'query' => EmailTemplate::find()->with('translations'),
         ]);
     }
 

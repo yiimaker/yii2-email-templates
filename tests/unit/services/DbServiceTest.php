@@ -11,6 +11,7 @@ use yii\data\ActiveDataProvider;
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 use ymaker\email\templates\services\DbService;
+use ymaker\email\templates\services\ServiceInterface;
 use ymaker\email\templates\tests\unit\DbTestCase;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 
@@ -45,6 +46,11 @@ class DbServiceTest extends DbTestCase
     {
         parent::_before();
         $this->_service = new DbService();
+    }
+
+    public function testInstanceOf()
+    {
+        $this->assertInstanceOf(ServiceInterface::class, $this->_service);
     }
 
     public function testGetModel()

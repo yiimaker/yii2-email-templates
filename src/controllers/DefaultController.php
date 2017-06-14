@@ -11,7 +11,6 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\services\ServiceInterface;
 
 /**
@@ -44,7 +43,7 @@ class DefaultController extends Controller
      * Find email template model by ID
      *
      * @param integer $id Model ID
-     * @return EmailTemplate
+     * @return \ymaker\email\templates\models\entities\EmailTemplate
      * @throws NotFoundHttpException
      */
     protected function findModel($id)
@@ -52,7 +51,6 @@ class DefaultController extends Controller
         if ($model = $this->_service->getModel($id)) {
             return $model;
         }
-
         throw new NotFoundHttpException('Email template not found!');
     }
 

@@ -18,7 +18,7 @@
     "php": ">=5.6.0",
     "yiisoft/yii2": "^2.0.0",
     "yiisoft/yii2-bootstrap": "~2.0.0",
-    "yii2deman/yii2deman-language-provider": "dev-master",
+    "yii2deman/yii2deman-language-provider": "~0.1",
     "vova07/yii2-imperavi-widget": "~1.2"
   },
   "require-dev": {

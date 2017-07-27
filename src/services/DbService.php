@@ -94,7 +94,7 @@ class DbService extends Object implements ServiceInterface
      * @param array $data Array with data for models
      * @return array|bool
      */
-    protected function processData($data)
+    protected function processData(array $data)
     {
         if ($this->_template->load($data) && $this->_translation->load($data)) {
             if ($this->_template->getIsNewRecord()) {
@@ -153,34 +153,20 @@ class DbService extends Object implements ServiceInterface
     /**
      * Save updates models data in database
      *
-     * @param EmailTemplate $model
      * @param EmailTemplateTranslation $translation
      * @param array $data
      * @return array|bool
      * @throws \Exception
      */
-    public function update($model, $translation, $data)
+    public function update($translation, $data)
     {
-        $this->_template = $model;
         $this->_translation = $translation;
 
-        $processRes = $this->processData($data);
-        if (is_array($processRes)) {
-            return $processRes;
-        } elseif ($processRes === true) {
-            $transaction = $this->db->beginTransaction();
-            try {
-                $isSaved = $this->_template->save(false);
-                $isSaved = $this->_translation->save(false) && $isSaved;
-                if ($isSaved) {
-                    $transaction->commit();
-                    return true;
-                }
-                $transaction->rollBack();
-            } catch (\Exception $ex) {
-                $transaction->rollBack();
-                throw $ex;
+        if ($this->_translation->load($data)) {
+            if (!$this->_translation->validate()) {
+                return $this->_translation->getErrors();
             }
+            return $this->_translation->save(false);
         }
 
         return false;

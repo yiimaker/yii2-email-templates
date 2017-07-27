@@ -120,18 +120,19 @@ class DefaultController extends Controller
     public function actionUpdate($id, $lang = null)
     {
         $lang = $lang ?: Yii::$app->language;
-        $template = $this->findModel($id);
         $translation = $this->_service->getTranslationModel($id, $lang);
 
         $request = Yii::$app->getRequest();
         if ($request->getIsPost()) {
-            $res = $this->_service->update($template, $translation, $request->post());
+            $res = $this->_service->update($translation, $request->post());
             if (is_array($res)) {
                 $errors = $res;
             } else {
                 return $this->redirect(['view', 'id' => $id]);
             }
         }
+
+        $template = $this->findModel($id);
 
         return $this->render('update', compact([
             'errors',

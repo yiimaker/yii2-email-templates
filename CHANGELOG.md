@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+1.0.2 July, 2017
+----------------
+* Fix: bug with updating
+
 1.0.1 June 22, 2017
 -------------------
 * Fix: composer package version

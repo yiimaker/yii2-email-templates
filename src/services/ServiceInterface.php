@@ -50,10 +50,9 @@ interface ServiceInterface
     /**
      * Updates models data
      *
-     * @param mixed $model Model object
      * @param mixed $translation Translation model object
      * @param array $data Array with data for models
      * @return mixed
      */
-    public function update($model, $translation, $data);
+    public function update($translation, $data);
 }

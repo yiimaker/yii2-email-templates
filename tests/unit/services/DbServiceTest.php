@@ -119,23 +119,16 @@ class DbServiceTest extends DbTestCase
     public function testUpdate()
     {
         $data = [
-            'EmailTemplate' => [
-                'key' => 'update template test'
-            ],
             'EmailTemplateTranslation' => [
                 'subject' => 'update template translation test 1',
                 'body' => 'update template translation test 2',
             ],
         ];
 
-        $model = EmailTEmplate::findOne(1);
         $translation = EmailTemplateTranslation::findOne(['language' => 'en']);
-        $res = $this->_service->update($model, $translation, $data);
+        $res = $this->_service->update($translation, $data);
 
         $this->assertTrue($res);
-        $this->tester->seeRecord(EmailTemplate::class, [
-            'key' => $data['EmailTemplate']['key']
-        ]);
         $this->tester->seeRecord(EmailTemplateTranslation::class, [
             'subject' => $data['EmailTemplateTranslation']['subject'],
             'body' => $data['EmailTemplateTranslation']['body'],

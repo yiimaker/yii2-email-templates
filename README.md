@@ -1,6 +1,6 @@
 Email templates module
 ======================
-Extension for create and use email templates across your site dashboard
+Extension for creating of email templates and manage accross your site dashboard.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-email-templates.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-email-templates)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-email-templates/downloads)](https://packagist.org/packages/yiimaker/yii2-email-templates)

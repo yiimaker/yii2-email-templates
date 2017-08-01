@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+1.1.0 August, 2017
+------------------
+* Enh: adds Gii generator for email templates
+
 1.0.2 July, 2017
 ----------------
 * Fix: bug with updating

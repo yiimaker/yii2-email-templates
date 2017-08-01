@@ -16,7 +16,7 @@ composer require yiimaker/yii2-email-templates
 ```
 or add
 ```json
-"yiimaker/yii2-email-templates": "~1.0"
+"yiimaker/yii2-email-templates": "~1.1"
 ```
 to the require section of your composer.json.
 

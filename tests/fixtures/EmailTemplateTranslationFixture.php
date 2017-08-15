@@ -11,7 +11,7 @@ use yii\test\ActiveFixture;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 
 /**
- * Fixure for [[EmailTemplateTranslation]] model
+ * Fixure for [[EmailTemplateTranslation]] model.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

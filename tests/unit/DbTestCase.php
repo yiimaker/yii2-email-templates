@@ -10,7 +10,7 @@ namespace ymaker\email\templates\tests\unit;
 use yii\test\FixtureTrait;
 
 /**
- * Base test case class with fixures support
+ * Base test case class with fixtures support.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

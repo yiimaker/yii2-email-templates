@@ -10,7 +10,7 @@ namespace ymaker\email\templates\queries;
 use yii\db\ActiveQuery;
 
 /**
- * Query class for [[\ymaker\email\templates\models\entities\EmailTemplate]] model
+ * Query class for [[\ymaker\email\templates\models\entities\EmailTemplate]] model.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -18,9 +18,9 @@ use yii\db\ActiveQuery;
 class EmailTemplateQuery extends ActiveQuery
 {
     /**
-     * Add by key condition
+     * Add by key condition.
      *
-     * @param string $key
+     * @param string $key Email template key.
      * @return EmailTemplateQuery
      */
     public function byKey($key)
@@ -29,7 +29,7 @@ class EmailTemplateQuery extends ActiveQuery
     }
 
     /**
-     * Get with translation by language
+     * Get with translation by language.
      *
      * @param string $language
      * @return EmailTemplateQuery

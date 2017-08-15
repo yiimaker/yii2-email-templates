@@ -15,7 +15,7 @@ use ymaker\email\templates\services\ServiceInterface;
 use yii2deman\tools\i18n\LanguageProviderInterface;
 
 /**
- * Test case for module
+ * Test case for module.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

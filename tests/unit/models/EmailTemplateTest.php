@@ -13,7 +13,7 @@ use ymaker\email\templates\models\EmailTemplate;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 
 /**
- * Test case for email template model
+ * Test case for email template model.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

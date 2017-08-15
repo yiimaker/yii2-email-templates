@@ -16,7 +16,7 @@ use yii\db\Migration;
 class m170331_142542_create_email_template_table extends Migration
 {
     /**
-     * @var string Table name
+     * @var string Table name.
      */
     public $tableName = '{{%email_template}}';
 

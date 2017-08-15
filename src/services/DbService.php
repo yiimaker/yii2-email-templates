@@ -17,7 +17,7 @@ use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 
 /**
- * Database service
+ * Database service.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -25,7 +25,7 @@ use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 class DbService extends Object implements ServiceInterface
 {
     /**
-     * Database connection instance
+     * Database connection instance.
      *
      * @var \yii\db\Connection
      */
@@ -99,9 +99,9 @@ class DbService extends Object implements ServiceInterface
     }
 
     /**
-     * Load and validate data in models
+     * Load and validate data in models.
      *
-     * @param array $data Array with data for models
+     * @param array $data Array with data for models.
      * @return array|bool
      */
     protected function processData(array $data)
@@ -125,7 +125,7 @@ class DbService extends Object implements ServiceInterface
     }
 
     /**
-     * Save model in database
+     * Save model in database.
      *
      * @param array $data
      * @return array|bool
@@ -160,7 +160,7 @@ class DbService extends Object implements ServiceInterface
     }
 
     /**
-     * Save updates models data in database
+     * Save updates models data in database.
      *
      * @param EmailTemplateTranslation $translation
      * @param array $data

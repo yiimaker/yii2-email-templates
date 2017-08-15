@@ -16,7 +16,7 @@ use ymaker\email\templates\tests\unit\DbTestCase;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 
 /**
- * Test case for database service
+ * Test case for database service.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

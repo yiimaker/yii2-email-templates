@@ -12,7 +12,7 @@ use yii\base\Widget;
 use yii2deman\tools\i18n\LanguageProviderInterface;
 
 /**
- * Renders list of languages from language provider
+ * Renders list of languages from language provider.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

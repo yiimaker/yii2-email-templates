@@ -5,14 +5,8 @@
  * @license BSD 3-Clause License
  */
 
-use yii\grid\ActionColumn;
-use yii\grid\GridView;
-use yii\helpers\Html;
-use yii\helpers\Url;
-use ymaker\email\templates\Module as TemplatesModule;
-
 /**
- * View file for CRUD backend controller
+ * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
  * @var \yii\data\ActiveDataProvider $dataProvider
@@ -20,6 +14,12 @@ use ymaker\email\templates\Module as TemplatesModule;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
+
+use yii\grid\ActionColumn;
+use yii\grid\GridView;
+use yii\helpers\Html;
+use yii\helpers\Url;
+use ymaker\email\templates\Module as TemplatesModule;
 
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>

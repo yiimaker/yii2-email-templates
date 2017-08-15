@@ -14,7 +14,7 @@ use yii\web\NotFoundHttpException;
 use ymaker\email\templates\services\ServiceInterface;
 
 /**
- * CRUD controller for backend
+ * CRUD controller for backend.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -23,7 +23,7 @@ class DefaultController extends Controller
 {
     /**
      * Email templates service instance.
-     * Instance will be gotten from DI container
+     * Instance will be gotten from DI container.
      *
      * @var ServiceInterface
      */
@@ -40,9 +40,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * Find email template model by ID
+     * Find email template model by ID.
      *
-     * @param integer $id Model ID
+     * @param integer $id Model ID.
      * @return \ymaker\email\templates\models\entities\EmailTemplate
      * @throws NotFoundHttpException
      */
@@ -55,7 +55,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Renders data provider with all template models
+     * Renders data provider with all template models.
      *
      * @return string
      */
@@ -66,9 +66,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * Create email template model
+     * Create email template model.
      *
-     * @param null|string $lang
+     * @param null|string $lang Model language.
      * @return string|\yii\web\Response
      */
     public function actionCreate($lang = null)
@@ -93,10 +93,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * View email template models detail
+     * View email template models details.
      *
-     * @param integer $id
-     * @param null|string $lang
+     * @param integer $id Model ID.
+     * @param null|string $lang Model language.
      * @return string
      */
     public function actionView($id, $lang = null)
@@ -112,10 +112,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * Update email template model
+     * Update email template model.
      *
-     * @param integer $id Model ID
-     * @param null|string $lang Model language
+     * @param integer $id Model ID.
+     * @param null|string $lang Model language.
      * @return string|\yii\web\Response
      */
     public function actionUpdate($id, $lang = null)
@@ -145,9 +145,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * Delete email template model
+     * Delete email template model.
      *
-     * @param integer $id Model ID
+     * @param integer $id Model ID.
      * @return \yii\web\Response
      */
     public function actionDelete($id)

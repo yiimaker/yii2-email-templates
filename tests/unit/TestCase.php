@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\tests\unit;
 
 /**
- * Base test case class
+ * Base test case class.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

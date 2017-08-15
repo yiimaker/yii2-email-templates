@@ -67,7 +67,7 @@ class EmailTemplate extends ActiveRecord
 
     /**
      * @inheritdoc
-     * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance
+     * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
      */
     public static function find()
     {
@@ -75,9 +75,9 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * Find model ID by key
+     * Find model ID by key.
      *
-     * @param string $key Model key
+     * @param string $key Model key.
      * @return false|null|string
      */
     public static function findId($key)

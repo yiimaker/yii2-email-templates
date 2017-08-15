@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\services;
 
 /**
- * Interface for email templates services
+ * Interface for email templates services.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -16,51 +16,51 @@ namespace ymaker\email\templates\services;
 interface ServiceInterface
 {
     /**
-     * Returns model object
+     * Returns model object.
      *
-     * @param null|int $id Model ID
+     * @param null|int $id Model ID.
      * @return mixed
      */
     public function getModel($id = null);
 
     /**
-     * Returns translation model object
+     * Returns translation model object.
      *
-     * @param integer|null $modelId Model ID
-     * @param string|null $language Model language
+     * @param integer|null $modelId Model ID.
+     * @param string|null $language Model language.
      * @return mixed
      */
     public function getTranslationModel($modelId = null, $language = null);
 
     /**
-     * Returns default translation model
+     * Returns default translation model.
      *
-     * @param integer $modelId Model ID
+     * @param integer $modelId Model ID.
      * @return mixed
      * @since 1.2
      */
     public function getDefaultTranslationModel($modelId);
 
     /**
-     * Returns data provider
+     * Returns data provider.
      *
      * @return \yii\data\DataProviderInterface
      */
     public function getDataProvider();
 
     /**
-     * Create model with translation
+     * Create model with translation.
      *
-     * @param array $data Array with data for models
+     * @param array $data Array with data for models.
      * @return mixed
      */
     public function create($data);
 
     /**
-     * Updates models data
+     * Updates models data.
      *
-     * @param mixed $translation Translation model object
-     * @param array $data Array with data for models
+     * @param mixed $translation Translation model object.
+     * @param array $data Array with data for models.
      * @return mixed
      */
     public function update($translation, $data);

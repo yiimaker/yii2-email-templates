@@ -11,7 +11,7 @@ use yii\test\ActiveFixture;
 use ymaker\email\templates\models\entities\EmailTemplate;
 
 /**
- * Fixure for [[EmailTemplate]] model
+ * Fixure for [[EmailTemplate]] model.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

@@ -5,16 +5,18 @@
  * @license BSD 3-Clause License
  */
 
-use yii\helpers\Html;
-use yii\helpers\Url;
-
 /**
+ * View file for language list widget.
+ *
  * @var \yii\web\View $this
  * @var array $languages
- * 
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
+
+use yii\helpers\Html;
+use yii\helpers\Url;
 
 \yii\bootstrap\BootstrapPluginAsset::register($this);
 ?>

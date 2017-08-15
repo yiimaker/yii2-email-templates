@@ -16,11 +16,11 @@ use yii\db\Migration;
 class m170331_142547_create_email_template_translation_table extends Migration
 {
     /**
-     * @var string Table name
+     * @var string Table name.
      */
     public $tableName = '{{%email_template_translation}}';
     /**
-     * @var string Reference table name
+     * @var string Reference table name.
      */
     public $refTableName = '{{%email_template}}';
 

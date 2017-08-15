@@ -10,7 +10,7 @@ namespace ymaker\email\templates\models;
 use yii\base\Object;
 
 /**
- * Model class for template manager
+ * Model class for template manager.
  * @see \ymaker\email\templates\components\TemplateManager
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -19,13 +19,13 @@ use yii\base\Object;
 class EmailTemplate extends Object
 {
     /**
-     * Email letter subject
+     * Email letter subject.
      *
      * @var string
      */
     public $subject;
     /**
-     * Email letter body
+     * Email letter body.
      *
      * @var string
      */
@@ -33,7 +33,7 @@ class EmailTemplate extends Object
 
 
     /**
-     * Build email template from entity
+     * Build email template from entity.
      *
      * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation $entity
      * @return EmailTemplate
@@ -47,7 +47,7 @@ class EmailTemplate extends Object
     }
 
     /**
-     * Build email templates array from entities
+     * Build email templates array from entities.
      *
      * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation[] $entities
      * @return EmailTemplate[]
@@ -76,9 +76,9 @@ class EmailTemplate extends Object
     }
 
     /**
-     * Replace keys to real data in subject and body
+     * Replace keys to real data in subject and body.
      *
-     * @param array $data Array with key-value pairs
+     * @param array $data Array with key-value pairs.
      */
     public function parse($data)
     {
@@ -91,9 +91,9 @@ class EmailTemplate extends Object
     }
 
     /**
-     * Replace keys to real data in subject
+     * Replace keys to real data in subject.
      *
-     * @param array $data Array with key-value pairs
+     * @param array $data Array with key-value pairs.
      */
     public function parseSubject($data)
     {
@@ -101,9 +101,9 @@ class EmailTemplate extends Object
     }
 
     /**
-     * Replace keys to real data in body
+     * Replace keys to real data in body.
      *
-     * @param array $data Array with key-value pairs
+     * @param array $data Array with key-value pairs.
      */
     public function parseBody($data)
     {

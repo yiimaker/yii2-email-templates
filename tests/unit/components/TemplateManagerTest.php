@@ -16,7 +16,7 @@ use ymaker\email\templates\tests\unit\DbTestCase;
 use ymaker\email\templates\tests\unit\TestCase;
 
 /**
- * Test case for template manager
+ * Test case for template manager.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

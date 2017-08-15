@@ -33,6 +33,15 @@ interface ServiceInterface
     public function getTranslationModel($modelId = null, $language = null);
 
     /**
+     * Returns default translation model
+     *
+     * @param integer $modelId Model ID
+     * @return mixed
+     * @since 1.2
+     */
+    public function getDefaultTranslationModel($modelId);
+
+    /**
      * Returns data provider
      *
      * @return \yii\data\DataProviderInterface

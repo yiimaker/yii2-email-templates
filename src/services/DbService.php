@@ -83,6 +83,14 @@ class DbService extends Object implements ServiceInterface
     /**
      * @inheritdoc
      */
+    public function getDefaultTranslationModel($modelId)
+    {
+        return EmailTemplateTranslation::findOne(['templateId' => $modelId]);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getDataProvider()
     {
         return new ActiveDataProvider([

@@ -134,11 +134,13 @@ class DefaultController extends Controller
         }
 
         $template = $this->findModel($id);
+        $defaultTranslation = $this->_service->getDefaultTranslationModel($id);
 
         return $this->render('update', compact([
             'errors',
             'template',
             'translation',
+            'defaultTranslation',
         ]));
     }
 

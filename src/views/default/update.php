@@ -17,6 +17,7 @@ use vova07\imperavi\Widget as ImperaviRedactor;
  *
  * @var \ymaker\email\templates\models\entities\EmailTemplate $template
  * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $translation
+ * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $defaultTranslation
  * @var array $errors
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -50,10 +51,13 @@ use vova07\imperavi\Widget as ImperaviRedactor;
             <?php $form = ActiveForm::begin() ?>
             <?= $form->field($template, 'key')
                 ->textInput(['disabled' => true]) ?>
-            <?= $form->field($translation, 'subject') ?>
-            <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>
+            <?= $form->field($translation, 'subject')
+                ->hint($defaultTranslation->getAttributeHint('subject')) ?>
+            <?= $form->field($translation, 'body')
+                ->widget(ImperaviRedactor::class)
+                ->hint($defaultTranslation->getAttributeHint('body')) ?>
             <?= $form->field($translation, 'hint')
-                ->textInput(['disabled' => true]) ?>
+                ->textInput(['disabled' => !$translation->getIsNewRecord()]) ?>
             <?= $form->field($translation, 'templateId')
                 ->hiddenInput()
                 ->label(false) ?>

@@ -1,6 +1,11 @@
 Email Templates Module Change Log
 ---------------------------------
 
+Under development
+-----------------
+* Enh: adds hint with default translation on template translation view
+* Fix: bug with hint in new template translations
+
 1.1.1 August 15, 2017
 ---------------------
 * Fix: multi-language support

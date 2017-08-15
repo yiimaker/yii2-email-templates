@@ -9,6 +9,7 @@ namespace ymaker\email\templates\models\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii2deman\tools\i18n\LanguageProviderInterface;
 
 /**
  * This is the model class for table "{{%email_template_translation}}".
@@ -80,6 +81,20 @@ class EmailTemplateTranslation extends ActiveRecord
             'language'      => Yii::t('email-templates/entity', 'Language'),
             'subject'       => Yii::t('email-templates/entity', 'Subject'),
             'body'          => Yii::t('email-templates/entity', 'Body'),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeHints()
+    {
+        /* @var LanguageProviderInterface $languageProvider */
+        $languageProvider = Yii::$container->get(LanguageProviderInterface::class);
+
+        return [
+            'subject' => '[' . $languageProvider->getLanguageLabel($this->language) . '] ' . $this->subject,
+            'body' => '[' . $languageProvider->getLanguageLabel($this->language) . '] ' . strip_tags($this->body),
         ];
     }
 

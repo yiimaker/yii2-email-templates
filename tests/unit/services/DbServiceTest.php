@@ -90,6 +90,17 @@ class DbServiceTest extends DbTestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testGetDefaultTranslationModel()
+    {
+        $firstTranslationModelID = 1;
+        $expected = EmailTemplateTranslation::findOne($firstTranslationModelID);
+
+        $templateId = 1;
+        $actual = $this->_service->getDefaultTranslationModel($templateId);
+
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testCreate()
     {
         $data = [

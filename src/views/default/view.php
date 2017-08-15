@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use ymaker\email\templates\Module as TemplatesModule;
+use ymaker\email\templates\widgets\LanguagesList;
 
 /**
  * View file for CRUD backend controller
@@ -36,6 +37,9 @@ use ymaker\email\templates\Module as TemplatesModule;
                         Url::toRoute(['delete', 'id' => $template->id]),
                         ['class' => 'btn btn-danger']
                     ) ?>
+                    <div class="pull-right">
+                        <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
+                    </div>
                 </div>
             </div>
         </div>

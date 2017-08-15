@@ -68,9 +68,10 @@ class DefaultController extends Controller
     /**
      * Create email template model
      *
+     * @param null|string $lang
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($lang = null)
     {
         $request = Yii::$app->getRequest();
         if ($request->getIsPost()) {
@@ -82,7 +83,7 @@ class DefaultController extends Controller
             }
         }
         $template = $this->_service->getModel();
-        $translation = $this->_service->getTranslationModel();
+        $translation = $this->_service->getTranslationModel(null, $lang);
 
         return $this->render('create', compact([
             'errros',

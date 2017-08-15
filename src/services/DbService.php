@@ -75,7 +75,9 @@ class DbService extends Object implements ServiceInterface
             return $model ?: new EmailTemplateTranslation($params);
         }
 
-        return new EmailTemplateTranslation();
+        return new EmailTemplateTranslation([
+            'language' => $language ?: Yii::$app->language,
+        ]);
     }
 
     /**
@@ -99,7 +101,6 @@ class DbService extends Object implements ServiceInterface
         if ($this->_template->load($data) && $this->_translation->load($data)) {
             if ($this->_template->getIsNewRecord()) {
                 $this->_translation->templateId = 0;
-                $this->_translation->language = Yii::$app->language;
             }
             $validationErrors = [];
             if (!$this->_template->validate()) {

@@ -5,7 +5,7 @@
  * @license BSD 3-Clause License
  */
 
-namespace yii2deman\shop\common\widgets;
+namespace ymaker\email\templates\widgets;
 
 use Yii;
 use yii\base\Widget;
@@ -20,6 +20,11 @@ use yii2deman\tools\i18n\LanguageProviderInterface;
 class LanguagesList extends Widget
 {
     /**
+     * @var string
+     */
+    public $currentLanguage;
+
+    /**
      * @var array
      */
     protected $_languages = [];
@@ -33,6 +38,16 @@ class LanguagesList extends Widget
         /** @var LanguageProviderInterface $provider */
         $provider = Yii::$container->get(LanguageProviderInterface::class);
         $this->_languages = $provider->getLanguages();
+
+        if (!empty($this->currentLanguage)) {
+            foreach ($this->_languages as $key => $language) {
+                if ($language['locale'] == $this->currentLanguage) {
+                    $this->currentLanguage = $language;
+                    unset($this->_languages[$key]);
+                    break;
+                }
+            }
+        }
     }
     
     /**
@@ -41,7 +56,7 @@ class LanguagesList extends Widget
     public function run()
     {
         return $this->render('languages', [
-            'languages' => $this->_languages
+            'languages' => $this->_languages,
         ]);
     }
 }

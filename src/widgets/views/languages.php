@@ -19,12 +19,18 @@ use yii\helpers\Url;
 \yii\bootstrap\BootstrapPluginAsset::register($this);
 ?>
 <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button"
-            id="languages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <?= Yii::t('email-templates', 'Language') ?>
+    <button class="btn btn-default dropdown-toggle" type="button" id="email-template-languages"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true">
+        <?php if (!empty($this->context->currentLanguage)): ?>
+            <?= $this->context->currentLanguage['label'] ?>
+        <?php else: ?>
+            <?= Yii::t('email-templates', 'Language') ?>
+        <?php endif; ?>
         <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="languages">
+    <ul class="dropdown-menu" aria-labelledby="email-template-languages">
         <?php foreach ($languages as $language): ?>
             <li>
                 <?= Html::a($language['label'], Url::current(['lang' => $language['locale']])) ?>

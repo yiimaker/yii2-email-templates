@@ -10,6 +10,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
 use vova07\imperavi\Widget as ImperaviRedactor;
+use ymaker\email\templates\widgets\LanguagesList;
 
 /**
  * View file for CRUD backend controller
@@ -41,11 +42,17 @@ use vova07\imperavi\Widget as ImperaviRedactor;
             <?php endif; ?>
         </div>
         <div class="col-md-12">
+            <div class="pull-right">
+                <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
+            </div>
+        </div>
+        <div class="col-md-12">
             <?php $form = ActiveForm::begin() ?>
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>
             <?= $form->field($translation, 'hint') ?>
+            <?= $form->field($translation, 'language')->hiddenInput()->label(false) ?>
             <?= Html::submitButton(
                 TemplatesModule::t('Create'),
                 ['class' => 'btn btn-success']

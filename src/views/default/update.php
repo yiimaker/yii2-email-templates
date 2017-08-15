@@ -9,6 +9,7 @@ use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
+use ymaker\email\templates\widgets\LanguagesList;
 use vova07\imperavi\Widget as ImperaviRedactor;
 
 /**
@@ -39,6 +40,11 @@ use vova07\imperavi\Widget as ImperaviRedactor;
                     <?php endforeach; ?>
                 <?php endforeach; ?>
             <?php endif; ?>
+        </div>
+        <div class="col-md-12">
+            <div class="pull-right">
+                <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
+            </div>
         </div>
         <div class="col-md-12">
             <?php $form = ActiveForm::begin() ?>

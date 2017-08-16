@@ -28,6 +28,10 @@ class LanguagesList extends Widget
      * @var array
      */
     protected $_languages = [];
+    /**
+     * @var string
+     */
+    protected $_currentLangLabel;
 
 
     /**
@@ -42,7 +46,7 @@ class LanguagesList extends Widget
         if (!empty($this->currentLanguage)) {
             foreach ($this->_languages as $key => $language) {
                 if ($language['locale'] == $this->currentLanguage) {
-                    $this->currentLanguage = $language;
+                    $this->_currentLangLabel = $language['label'];
                     unset($this->_languages[$key]);
                     break;
                 }
@@ -57,6 +61,7 @@ class LanguagesList extends Widget
     {
         return $this->render('languages', [
             'languages' => $this->_languages,
+            'currentLangLabel' => $this->_currentLangLabel,
         ]);
     }
 }

@@ -10,6 +10,7 @@
  *
  * @var \yii\web\View $this
  * @var array $languages
+ * @var null|string $currentLangLabel
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -25,8 +26,8 @@ use yii\helpers\Url;
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="true">
-        <?php if (!empty($this->context->currentLanguage)): ?>
-            <?= $this->context->currentLanguage['label'] ?>
+        <?php if (!empty($currentLangLabel)): ?>
+            <?= $currentLangLabel ?>
         <?php else: ?>
             <?= Yii::t('email-templates', 'Language') ?>
         <?php endif; ?>

@@ -120,7 +120,7 @@ Usage example
 2. Now you can get this template in your
 
     ```php
-    $template = Yii::$app->get('templateManager')->getTemplate('register-notification')
+    $template = Yii::$app->get('templateManager')->getTemplate('register-notification');
     ```
     
     This method returns template model object.
@@ -129,12 +129,12 @@ Usage example
 
     ```php
     $template->parseSubject([
-       '{site-name}' => Yii::$app->name,
+       'site-name' => Yii::$app->name,
     ]);
  
     $template->parseBody([
-       '{username}' => Yii::$app->getIdentity()->username,
-       '{site-name}' => Yii::$app->name,
+       'username' => Yii::$app->getIdentity()->username,
+       'site-name' => Yii::$app->name,
     ]);
     ```
     
@@ -158,7 +158,6 @@ Usage example
 
     ```php
     Yii::$app->get('mailer')->compose()
-        // ...
         ->setSubject($template->subject)
         ->setHtmlBody($template->body)
         // ...
@@ -179,7 +178,7 @@ For it you should to configure generator in your application config like the fol
             'email-templates' => [
                 'class' => \ymaker\email\templates\gii\Generator::class,
                 'templates' => [
-                    'default' => '@vendor/yiimaker/yii2-email-templates/src/gii/default'
+                    'default' => '@vendor/yiimaker/yii2-email-templates/src/gii/default',
                 ],
             ],
         ],

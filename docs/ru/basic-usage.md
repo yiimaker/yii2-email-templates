@@ -119,7 +119,7 @@ It's required configuration property uses for intergrate a internationalization.
 2. Теперь вы можете получить этот шаблон в своём коде
 
     ```php
-    $template = Yii::$app->get('templateManager')->getTemplate('register-notification')
+    $template = Yii::$app->get('templateManager')->getTemplate('register-notification');
     ```
     
     Этот метод возвращает объект модели шаблона.
@@ -128,12 +128,12 @@ It's required configuration property uses for intergrate a internationalization.
 
     ```php
     $template->parseSubject([
-       '{site-name}' => Yii::$app->name,
+       'site-name' => Yii::$app->name,
     ]);
  
     $template->parseBody([
-       '{username}' => Yii::$app->getIdentity()->username,
-       '{site-name}' => Yii::$app->name,
+       'username' => Yii::$app->getIdentity()->username,
+       'site-name' => Yii::$app->name,
     ]);
     ```
     
@@ -157,7 +157,6 @@ It's required configuration property uses for intergrate a internationalization.
 
     ```php
     Yii::$app->get('mailer')->compose()
-        // ...
         ->setSubject($template->subject)
         ->setHtmlBody($template->body)
         // ...
@@ -179,7 +178,7 @@ Gii генератор
             'email-templates' => [
                 'class' => \ymaker\email\templates\gii\Generator::class,
                 'templates' => [
-                    'default' => '@vendor/yiimaker/yii2-email-templates/src/gii/default'
+                    'default' => '@vendor/yiimaker/yii2-email-templates/src/gii/default',
                 ],
             ],
         ],

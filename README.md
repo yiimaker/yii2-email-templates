@@ -34,6 +34,6 @@ License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](https://packagist.org/packages/yiimaker/yii2-email-templates)
 
-This project is released under the terms of the BSD-3-Clause [license](LICENSE)
+This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 
 Copyright (c) 2017, Yii Maker

@@ -1,7 +1,9 @@
 Basic usage
 ===========
 
-### 1. Configure module in backend part of your application
+Configure module in backend part of your application
+----------------------------------------------------
+
 ```php
 'modules' => [
     // ...
@@ -25,17 +27,56 @@ Basic usage
 ]
 ```
 #### Configuration options
-`languageProvider` - it's required configuration property uses for
-intergrate a internationalization.
+
+##### Language provider
+It's required configuration property uses for intergrate a internationalization.
+
+Supports database and configuration language providers. You can implement your language
+provider.
+
+Configuration language provider example
+```php
+'languageProvider' => [
+    'class' => \yii2deman\tools\i18n\ConfigLanguageProvider::class,
+    'languages' => [
+        [
+            'locale' => 'en',
+            'label' => 'English',
+        ],
+        [
+            'locale' => 'ru',
+            'label' => 'Russian',
+        ],
+    ],
+    'defaultLanguage' => [
+        'locale' => 'en', // value should be exactly like in language property of your app config
+        'label' => 'English',
+    ],
+],
+```
+
+Database language provider example
+```php
+'languageProvider' => [
+    'class' => \yii2deman\tools\i18n\DbLanguageProvider::class,
+    'tableName' => 'app_language', // table name in database with languages
+    'localeField' => 'locale', // field name in language table with locale
+    'labelField' => 'title', // field name in language table with label
+    'defaultField' => 'default', // flag name in language table it's default language
+],
+```
 
 [Read more](https://github.com/yii2deman/yii2deman-language-provider) about language provider.
 
-`service` - it's not required configuration property uses for work with
+##### Service
+It's not required configuration property uses for work with
 data layer in controller. You can use default database service `\ymaker\email\templates\services\DbService`
 or implement another service, for this you should to implement a `\ymaker\email\templates\services\ServiceInterface`
 basic interface.
 
-### 2. Configure template manager
+Configure template manager
+--------------------------
+
 ```php
 'components' => [
     // ...
@@ -53,7 +94,9 @@ This component provide stack of methods for work with email templates in client 
 * `mixed getFirstOrDefault($key, $default = null)` - returns template on first founded language by key all default value
 * `bool hasTemplate($key)` - check is template with current key exists
 
-### Usage example
+Usage example
+-------------
+
 1. Create template with keys accross your site dashboard
 
     ##### Key
@@ -121,7 +164,9 @@ This component provide stack of methods for work with email templates in client 
         // ...
     ```
     
-### Gii generator
+Gii generator
+-------------
+
 You can generate email templates with Gii!
 
 For it you should to configure generator in your application config like the following

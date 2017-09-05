@@ -5,6 +5,7 @@ Under development
 -----------------
 * Enh: Adds hint with default translation on template translation view
 * Enh: Improves OOP code style
+* Enh: Splitting a docs into two parts
 * Fix: Bug with `hint` field in new template translations
 * Fix: Translation category in `LanguagesList` widget
 

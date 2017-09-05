@@ -7,6 +7,7 @@
 </p>
 
 Extension for creating of email templates and manage accross your site dashboard.
+You can create email templates with CRUD module in your backend or Gii generator.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-email-templates.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-email-templates)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-email-templates/downloads)](https://packagist.org/packages/yiimaker/yii2-email-templates)
@@ -33,8 +34,10 @@ to the require section of your composer.json.
 
 Usage
 -----
-* [Basic usage (EN)](docs/en/basic-usage.md)
-* [Использование (RU)](docs/ru/basic-usage.md)
+* [(EN) Basic usage](docs/en/basic-usage.md)
+* [(RU) Базовое использование](docs/ru/basic-usage.md)
+* [(EN) Advanced usage](docs/en/advanced-usage.md)
+* [(RU) Продвинутое использование](docs/ru/advanced-usage.md)
 
 License
 -------

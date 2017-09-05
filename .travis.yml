@@ -20,12 +20,13 @@ cache:
 # install dependencies
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.0"
   - travis_retry composer update --prefer-dist --no-interaction
 
+# build tests before run
 before_script:
   - vendor/bin/codecept build
 
+# run tests
 script:
   - composer validate --no-check-lock
   - vendor/bin/codecept run

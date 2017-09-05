@@ -25,9 +25,7 @@ class ModuleTest extends TestCase
     public function testInitService()
     {
         $module = new Module('test', null, ['languageProvider' => []]);
-        $expected = ['class' => DbService::class];
-
-        $this->assertEquals($expected, $module->service);
+        $this->assertInstanceOf(DbService::class, Yii::$container->get(ServiceInterface::class));
     }
 
     public function testInitLanguageProvider()

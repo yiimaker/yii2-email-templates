@@ -5,8 +5,13 @@
  * @license BSD 3-Clause License
  */
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+use ymaker\email\templates\Module as TemplatesModule;
+use ymaker\email\templates\widgets\LanguagesList;
+
 /**
- * View file for CRUD backend controller
+ * View file for CRUD backend controller.
  *
  * @@var \ymaker\email\templates\models\entities\EmailTemplate $template
  * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $translation
@@ -14,11 +19,6 @@
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-
-use yii\helpers\Html;
-use yii\helpers\Url;
-use ymaker\email\templates\Module as TemplatesModule;
-use ymaker\email\templates\widgets\LanguagesList;
 
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>

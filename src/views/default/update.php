@@ -5,6 +5,13 @@
  * @license BSD 3-Clause License
  */
 
+use yii\bootstrap\Alert;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use ymaker\email\templates\Module as TemplatesModule;
+use ymaker\email\templates\widgets\LanguagesList;
+use vova07\imperavi\Widget as ImperaviRedactor;
+
 /**
  * View file for CRUD backend controller.
  *
@@ -16,13 +23,6 @@
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-
-use yii\bootstrap\Alert;
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use ymaker\email\templates\Module as TemplatesModule;
-use ymaker\email\templates\widgets\LanguagesList;
-use vova07\imperavi\Widget as ImperaviRedactor;
 
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>

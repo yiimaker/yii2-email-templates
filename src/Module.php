@@ -16,6 +16,9 @@ use yii2deman\tools\i18n\LanguageProviderInterface;
 /**
  * Module for CRUD operations under email templates in backend.
  *
+ * @property array $service
+ * @property array $languageProvider
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
@@ -31,15 +34,35 @@ class Module extends \yii\base\Module
      * @see \ymaker\email\templates\services\ServiceInterface
      * @var array
      */
-    public $service = null;
+    protected $_service = null;
     /**
      * Language provider for internationalization.
      *
      * @see \yii2deman\tools\i18n\LanguageProviderInterface
      * @var array
      */
-    public $languageProvider = null;
+    protected $_languageProvider = null;
 
+
+    /**
+     * Setter for service.
+     *
+     * @param array $service
+     */
+    public function setService(array $service)
+    {
+        $this->_service = $service;
+    }
+
+    /**
+     * Setter for language provider.
+     *
+     * @param array $provider
+     */
+    public function setLanguageProvider(array $provider)
+    {
+        $this->_languageProvider = $provider;
+    }
 
     /**
      * @inheritdoc
@@ -48,10 +71,10 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->service === null) {
-            $this->service = ['class' => DbService::class];
+        if ($this->_service === null) {
+            $this->_service = ['class' => DbService::class];
         }
-        if ($this->languageProvider === null) {
+        if ($this->_languageProvider === null) {
             throw new InvalidConfigException('You should to configure the language provider');
         }
 
@@ -64,8 +87,8 @@ class Module extends \yii\base\Module
     protected function registerDependencies()
     {
         Yii::$container->setDefinitions([
-            ServiceInterface::class => $this->service,
-            LanguageProviderInterface::class => $this->languageProvider
+            ServiceInterface::class => $this->_service,
+            LanguageProviderInterface::class => $this->_languageProvider
         ]);
     }
 

@@ -14,6 +14,8 @@ use yii2deman\tools\i18n\LanguageProviderInterface;
 /**
  * Renders list of languages from language provider.
  *
+ * @property string $currentLanguage
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
@@ -22,8 +24,7 @@ class LanguagesList extends Widget
     /**
      * @var string
      */
-    public $currentLanguage;
-
+    protected $_currentLanguage;
     /**
      * @var array
      */
@@ -35,6 +36,16 @@ class LanguagesList extends Widget
 
 
     /**
+     * Setter for current language.
+     *
+     * @param string $value
+     */
+    public function setCurrentLanguage($value)
+    {
+        $this->_currentLanguage = $value;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -43,9 +54,9 @@ class LanguagesList extends Widget
         $provider = Yii::$container->get(LanguageProviderInterface::class);
         $this->_languages = $provider->getLanguages();
 
-        if (!empty($this->currentLanguage)) {
+        if (!empty($this->_currentLanguage)) {
             foreach ($this->_languages as $key => $language) {
-                if ($language['locale'] == $this->currentLanguage) {
+                if ($language['locale'] == $this->_currentLanguage) {
                     $this->_currentLangLabel = $language['label'];
                     unset($this->_languages[$key]);
                     break;

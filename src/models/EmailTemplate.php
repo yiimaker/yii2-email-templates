@@ -13,6 +13,9 @@ use yii\base\Object;
  * Model class for template manager.
  * @see \ymaker\email\templates\components\TemplateManager
  *
+ * @property string $subject
+ * @property string $body
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
@@ -23,14 +26,49 @@ class EmailTemplate extends Object
      *
      * @var string
      */
-    public $subject;
+    private $_subject;
     /**
      * Email letter body.
      *
      * @var string
      */
-    public $body;
+    private $_body;
 
+
+    /**
+     * Getter for subject.
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->_subject;
+    }
+
+    /**
+     * Getter for body.
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->_body;
+    }
+
+    /**
+     * EmailTemplate constructor.
+     *
+     * @param string $subject
+     * @param string $body
+     * @param array $config
+     */
+    public function __construct($subject, $body, $config = [])
+    {
+        $this->_subject = $subject;
+        $this->_body = $body;
+
+        parent::__construct($config);
+    }
 
     /**
      * Build email template from entity.
@@ -40,10 +78,7 @@ class EmailTemplate extends Object
      */
     public static function buildFromEntity($entity)
     {
-        return new self([
-            'subject' => $entity->subject,
-            'body' => $entity->body
-        ]);
+        return new self($entity->subject, $entity->body);
     }
 
     /**
@@ -70,7 +105,7 @@ class EmailTemplate extends Object
     {
         foreach ($data as $key => $value) {
             $this->$attribute = strtr($this->$attribute, [
-                '{' . $key . '}' => $value
+                '{' . $key . '}' => $value,
             ]);
         }
     }
@@ -83,10 +118,10 @@ class EmailTemplate extends Object
     public function parse($data)
     {
         if (isset($data['subject'])) {
-            $this->replaceKeys($data['subject'], 'subject');
+            $this->replaceKeys($data['subject'], '_subject');
         }
         if (isset($data['body'])) {
-            $this->replaceKeys($data['body'], 'body');
+            $this->replaceKeys($data['body'], '_body');
         }
     }
 
@@ -97,7 +132,7 @@ class EmailTemplate extends Object
      */
     public function parseSubject($data)
     {
-        $this->replaceKeys($data, 'subject');
+        $this->replaceKeys($data, '_subject');
     }
 
     /**
@@ -107,6 +142,6 @@ class EmailTemplate extends Object
      */
     public function parseBody($data)
     {
-        $this->replaceKeys($data, 'body');
+        $this->replaceKeys($data, '_body');
     }
 }

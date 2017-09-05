@@ -35,10 +35,7 @@ class EmailTemplateTest extends DbTestCase
         /* @var Entity $entity */
         $entity = Entity::findOne(['templateId' => 1]);
 
-        $expected = new EmailTemplate([
-            'subject' => $entity->subject,
-            'body' => $entity->body,
-        ]);
+        $expected = new EmailTemplate($entity->subject, $entity->body);
         $actual = EmailTemplate::buildFromEntity($entity);
 
         $this->assertEquals($expected, $actual);
@@ -51,10 +48,7 @@ class EmailTemplateTest extends DbTestCase
 
         $expected = [];
         foreach ($entities as $entity) {
-            $expected[$entity->language] = new EmailTemplate([
-                'subject' => $entity->subject,
-                'body' => $entity->body,
-            ]);
+            $expected[$entity->language] = new EmailTemplate($entity->subject, $entity->body);
         }
         $actual = EmailTemplate::buildMultiply($entities);
 

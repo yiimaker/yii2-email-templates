@@ -5,6 +5,10 @@
  * @license BSD 3-Clause License
  */
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+use ymaker\email\templates\Module as EmailTemplatesModule;
+
 /**
  * View file for language list widget.
  *
@@ -16,9 +20,6 @@
  * @since 1.0
  */
 
-use yii\helpers\Html;
-use yii\helpers\Url;
-
 \yii\bootstrap\BootstrapPluginAsset::register($this);
 ?>
 <div class="dropdown">
@@ -29,7 +30,7 @@ use yii\helpers\Url;
         <?php if (!empty($currentLangLabel)): ?>
             <?= $currentLangLabel ?>
         <?php else: ?>
-            <?= Yii::t('email-templates', 'Language') ?>
+            <?= EmailTemplatesModule::t('Language') ?>
         <?php endif; ?>
         <span class="caret"></span>
     </button>

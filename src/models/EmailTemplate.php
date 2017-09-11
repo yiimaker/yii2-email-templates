@@ -39,6 +39,7 @@ class EmailTemplate extends Object
      * Getter for subject.
      *
      * @return string
+     * @since 2.0
      */
     public function getSubject()
     {
@@ -49,6 +50,7 @@ class EmailTemplate extends Object
      * Getter for body.
      *
      * @return string
+     * @since 2.0
      */
     public function getBody()
     {
@@ -61,6 +63,7 @@ class EmailTemplate extends Object
      * @param string $subject
      * @param string $body
      * @param array $config
+     * @since 2.0
      */
     public function __construct($subject, $body, $config = [])
     {

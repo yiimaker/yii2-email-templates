@@ -39,6 +39,7 @@ class LanguagesList extends Widget
      * Setter for current language.
      *
      * @param string $value
+     * @since 2.0
      */
     public function setCurrentLanguage($value)
     {

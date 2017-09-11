@@ -48,6 +48,7 @@ class Module extends \yii\base\Module
      * Setter for service.
      *
      * @param array $service
+     * @since 2.0
      */
     public function setService(array $service)
     {
@@ -58,6 +59,7 @@ class Module extends \yii\base\Module
      * Setter for language provider.
      *
      * @param array $provider
+     * @since 2.0
      */
     public function setLanguageProvider(array $provider)
     {

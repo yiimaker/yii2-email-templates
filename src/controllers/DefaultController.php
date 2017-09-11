@@ -98,6 +98,7 @@ class DefaultController extends Controller
      * @param integer $id Model ID.
      * @param null|string $lang Model language.
      * @return string
+     * @throws NotFoundHttpException
      */
     public function actionView($id, $lang = null)
     {
@@ -117,6 +118,7 @@ class DefaultController extends Controller
      * @param integer $id Model ID.
      * @param null|string $lang Model language.
      * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
      */
     public function actionUpdate($id, $lang = null)
     {
@@ -149,6 +151,8 @@ class DefaultController extends Controller
      *
      * @param integer $id Model ID.
      * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     * @throws \Exception
      */
     public function actionDelete($id)
     {

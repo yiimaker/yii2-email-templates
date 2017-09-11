@@ -1,8 +1,9 @@
 Email Templates Module Change Log
 ---------------------------------
 
-Under development
------------------
+2.0.0 September 11, 2017
+------------------------
+
 * Enh: Adds hint with default translation on template translation view
 * Enh: Improves OOP code style
 * Enh: Splitting a docs into two parts

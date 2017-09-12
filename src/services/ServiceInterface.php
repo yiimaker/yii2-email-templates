@@ -49,6 +49,14 @@ interface ServiceInterface
     public function getDataProvider();
 
     /**
+     * Returns array with errors.
+     *
+     * @return array
+     * @since 2.1
+     */
+    public function getErrors();
+
+    /**
      * Create model with translation.
      *
      * @param array $data Array with data for models.

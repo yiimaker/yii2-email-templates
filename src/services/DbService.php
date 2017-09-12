@@ -39,6 +39,11 @@ class DbService extends Object implements ServiceInterface
      * @var EmailTemplateTranslation
      */
     protected $_translation;
+    /**
+     * @var array errors from model.
+     * @since 2.1
+     */
+    private $_errors = [];
 
 
     /**
@@ -99,6 +104,14 @@ class DbService extends Object implements ServiceInterface
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getErrors()
+    {
+        return $this->_errors;
+    }
+
+    /**
      * Load and validate data in models.
      *
      * @param array $data Array with data for models.
@@ -110,17 +123,17 @@ class DbService extends Object implements ServiceInterface
             if ($this->_template->getIsNewRecord()) {
                 $this->_translation->templateId = 0;
             }
-            $validationErrors = [];
             if (!$this->_template->validate()) {
-                $validationErrors = $this->_template->getErrors();
+                $this->_errors = $this->_template->getErrors();
             }
             if (!$this->_translation->validate()) {
-                return ArrayHelper::merge($validationErrors, $this->_translation->getErrors());
+                $this->_errors = ArrayHelper::merge(
+                    $this->_errors,
+                    $this->_translation->getErrors()
+                );
             }
-
-            return true;
+            return empty($this->_errors) ? true : false;
         }
-
         return false;
     }
 
@@ -128,7 +141,7 @@ class DbService extends Object implements ServiceInterface
      * Save model in database.
      *
      * @param array $data
-     * @return array|bool
+     * @return bool
      * @throws \Exception
      */
     public function create($data)
@@ -136,10 +149,7 @@ class DbService extends Object implements ServiceInterface
         $this->_template = $this->getModel();
         $this->_translation = $this->getTranslationModel();
 
-        $processRes = $this->processData($data);
-        if (is_array($processRes)) {
-            return $processRes;
-        } elseif ($processRes === true) {
+        if ($this->processData($data))  {
             $transaction = $this->db->beginTransaction();
             try {
                 $isSaved = $this->_template->insert(false);

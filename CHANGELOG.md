@@ -1,6 +1,11 @@
 Email Templates Module Change Log
 ---------------------------------
 
+Under development
+-----------------
+* Enh: Updates errors handler
+* Fix: Bug with errors variable in create action on default controller
+
 2.0.0 September 11, 2017
 ------------------------
 

@@ -75,18 +75,16 @@ class DefaultController extends Controller
     {
         $request = Yii::$app->getRequest();
         if ($request->getIsPost()) {
-            $res = $this->_service->create($request->post());
-            if (is_array($res)) {
-                $errors = $res;
-            } else {
+            if ($this->_service->create($request->post())) {
                 return $this->redirect(['index']);
             }
+            $errors = $this->_service->getErrors();
         }
         $template = $this->_service->getModel();
         $translation = $this->_service->getTranslationModel(null, $lang);
 
         return $this->render('create', compact([
-            'errros',
+            'errors',
             'template',
             'translation',
         ]));
@@ -127,12 +125,10 @@ class DefaultController extends Controller
 
         $request = Yii::$app->getRequest();
         if ($request->getIsPost()) {
-            $res = $this->_service->update($translation, $request->post());
-            if (is_array($res)) {
-                $errors = $res;
-            } else {
+            if ($this->_service->update($translation, $request->post())) {
                 return $this->redirect(['view', 'id' => $id]);
             }
+            $errors = $this->_service->getErrors();
         }
 
         $template = $this->findModel($id);

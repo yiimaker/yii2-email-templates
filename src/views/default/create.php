@@ -47,7 +47,7 @@ use ymaker\email\templates\widgets\LanguagesList;
             </div>
         </div>
         <div class="col-md-12">
-            <?php $form = ActiveForm::begin() ?>
+            <?php $form = ActiveForm::begin(['enableClientValidation' => false]) ?>
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>

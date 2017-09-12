@@ -70,19 +70,17 @@ class DbService extends Object implements ServiceInterface
      */
     public function getTranslationModel($modelId = null, $language = null)
     {
-        if ($modelId !== null && $language !== null) {
-            $params = [
-                'templateId' => $modelId,
-                'language' => $language
-            ];
-            $model = EmailTemplateTranslation::findOne($params);
+        $params = [
+            'templateId' => $modelId,
+            'language' => $language ?: Yii::$app->language,
+        ];
 
-            return $model ?: new EmailTemplateTranslation($params);
+        if (($modelId !== null && $language !== null) &&
+            $model = EmailTemplateTranslation::findOne($params)) {
+            return $model;
         }
 
-        return new EmailTemplateTranslation([
-            'language' => $language ?: Yii::$app->language,
-        ]);
+        return new EmailTemplateTranslation($params);
     }
 
     /**
@@ -120,19 +118,14 @@ class DbService extends Object implements ServiceInterface
     protected function processData(array $data)
     {
         if ($this->_template->load($data) && $this->_translation->load($data)) {
-            if ($this->_template->getIsNewRecord()) {
-                $this->_translation->templateId = 0;
-            }
-            if (!$this->_template->validate()) {
-                $this->_errors = $this->_template->getErrors();
-            }
-            if (!$this->_translation->validate()) {
+            if ($this->_template->validate() && $this->_translation->validate()) {
+                return true;
+            } else {
                 $this->_errors = ArrayHelper::merge(
-                    $this->_errors,
+                    $this->_template->getErrors(),
                     $this->_translation->getErrors()
                 );
             }
-            return empty($this->_errors) ? true : false;
         }
         return false;
     }
@@ -148,8 +141,9 @@ class DbService extends Object implements ServiceInterface
     {
         $this->_template = $this->getModel();
         $this->_translation = $this->getTranslationModel();
+        $this->_translation->templateId = 0;
 
-        if ($this->processData($data))  {
+        if ($this->processData($data)) {
             $transaction = $this->db->beginTransaction();
             try {
                 $isSaved = $this->_template->insert(false);

@@ -1,8 +1,8 @@
 Email Templates Module Change Log
 ---------------------------------
 
-Under development
------------------
+2.1.0 September 13, 2017
+------------------------
 * Enh: Updates errors handler
 * Enh: Refactored DbService
 * Fix: Bug with errors variable in create action on default controller

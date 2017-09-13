@@ -24,7 +24,7 @@ composer require yiimaker/yii2-email-templates
 ```
 or add
 ```json
-"yiimaker/yii2-email-templates": "~2.0"
+"yiimaker/yii2-email-templates": "~2.1"
 ```
 to the require section of your composer.json.
 
@@ -42,7 +42,7 @@ Usage
 
 License
 -------
-[![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](LICENSE)
+[![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](LICENSE``)
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 

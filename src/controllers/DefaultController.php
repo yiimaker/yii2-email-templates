@@ -48,10 +48,11 @@ class DefaultController extends Controller
      */
     protected function findModel($id)
     {
-        if ($model = $this->_service->getModel($id)) {
-            return $model;
+        $model = $this->_service->getModel($id);
+        if ($model->getIsNewRecord()) {
+            throw new NotFoundHttpException('Email template not found!');
         }
-        throw new NotFoundHttpException('Email template not found!');
+        return $model;
     }
 
     /**

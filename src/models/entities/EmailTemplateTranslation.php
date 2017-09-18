@@ -41,7 +41,6 @@ class EmailTemplateTranslation extends ActiveRecord
      */
     public function rules()
     {
-
         return [
             [['templateId'], 'required'],
             [['templateId'], 'integer'],

@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+Under development
+-----------------
+* Enh: Improved error handling
+
 2.1.0 September 13, 2017
 ------------------------
 * Enh: Updates errors handler

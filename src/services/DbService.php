@@ -60,9 +60,12 @@ class DbService extends Object implements ServiceInterface
     public function getModel($id = null)
     {
         if ($id !== null && ($model = EmailTemplate::findOne($id))) {
-            return $model;
+            $this->_template = $model;
+        } else {
+            $this->_template = new EmailTemplate();
         }
-        return new EmailTemplate();
+
+        return $this->_template;
     }
 
     /**
@@ -77,10 +80,12 @@ class DbService extends Object implements ServiceInterface
 
         if (($modelId !== null && $language !== null) &&
             $model = EmailTemplateTranslation::findOne($params)) {
-            return $model;
+            $this->_translation = $model;
+        } else {
+            $this->_translation = new EmailTemplateTranslation($params);
         }
 
-        return new EmailTemplateTranslation($params);
+        return $this->_translation;
     }
 
     /**
@@ -118,13 +123,13 @@ class DbService extends Object implements ServiceInterface
     protected function processData(array $data)
     {
         if ($this->_template->load($data) && $this->_translation->load($data)) {
-            if ($this->_template->validate() && $this->_translation->validate()) {
-                return true;
-            } else {
+            if (!$this->_template->validate() | !$this->_translation->validate()) {
                 $this->_errors = ArrayHelper::merge(
                     $this->_template->getErrors(),
                     $this->_translation->getErrors()
                 );
+            } else {
+                return true;
             }
         }
         return false;
@@ -139,8 +144,6 @@ class DbService extends Object implements ServiceInterface
      */
     public function create($data)
     {
-        $this->_template = $this->getModel();
-        $this->_translation = $this->getTranslationModel();
         $this->_translation->templateId = 0;
 
         if ($this->processData($data)) {
@@ -166,22 +169,17 @@ class DbService extends Object implements ServiceInterface
     /**
      * Save updates models data in database.
      *
-     * @param EmailTemplateTranslation $translation
      * @param array $data
      * @return array|bool
      * @throws \Exception
      */
-    public function update($translation, $data)
+    public function update($data)
     {
-        $this->_translation = $translation;
-
-        if ($this->_translation->load($data)) {
-            if (!$this->_translation->validate()) {
-                return $this->_translation->getErrors();
-            }
-            return $this->_translation->save(false);
+        if (!$this->_translation->load($data) || !$this->_translation->validate()) {
+            $this->_errors = $this->_translation->getErrors();
+            return false;
         }
 
-        return false;
+        return $this->_translation->save(false);
     }
 }

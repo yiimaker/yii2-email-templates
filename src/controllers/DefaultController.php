@@ -74,14 +74,15 @@ class DefaultController extends Controller
     public function actionCreate($lang = null)
     {
         $request = Yii::$app->getRequest();
+        $template = $this->_service->getModel();
+        $translation = $this->_service->getTranslationModel(null, $lang);
+
         if ($request->getIsPost()) {
             if ($this->_service->create($request->post())) {
                 return $this->redirect(['index']);
             }
             $errors = $this->_service->getErrors();
         }
-        $template = $this->_service->getModel();
-        $translation = $this->_service->getTranslationModel(null, $lang);
 
         return $this->render('create', compact([
             'errors',
@@ -120,18 +121,17 @@ class DefaultController extends Controller
      */
     public function actionUpdate($id, $lang = null)
     {
-        $lang = $lang ?: Yii::$app->language;
-        $translation = $this->_service->getTranslationModel($id, $lang);
-
         $request = Yii::$app->getRequest();
+        $template = $this->findModel($id);
+        $translation = $this->_service->getTranslationModel($id, $lang ?: Yii::$app->language);
+
         if ($request->getIsPost()) {
-            if ($this->_service->update($translation, $request->post())) {
+            if ($this->_service->update($request->post())) {
                 return $this->redirect(['view', 'id' => $id]);
             }
             $errors = $this->_service->getErrors();
         }
 
-        $template = $this->findModel($id);
         $defaultTranslation = $this->_service->getDefaultTranslationModel($id);
 
         return $this->render('update', compact([

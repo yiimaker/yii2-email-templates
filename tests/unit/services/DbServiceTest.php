@@ -114,6 +114,8 @@ class DbServiceTest extends DbTestCase
             ],
         ];
 
+        $this->_service->getModel();
+        $this->_service->getTranslationModel();
         $res = $this->_service->create($data);
 
         $this->assertTrue($res);
@@ -136,8 +138,8 @@ class DbServiceTest extends DbTestCase
             ],
         ];
 
-        $translation = EmailTemplateTranslation::findOne(['language' => 'en']);
-        $res = $this->_service->update($translation, $data);
+        $this->_service->getTranslationModel(1, 'en');
+        $res = $this->_service->update($data);
 
         $this->assertTrue($res);
         $this->tester->seeRecord(EmailTemplateTranslation::class, [

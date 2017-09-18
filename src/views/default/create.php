@@ -28,6 +28,17 @@ use ymaker\email\templates\widgets\LanguagesList;
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <h1>
+                <?= TemplatesModule::t('Email templates') ?>
+                <small><?= TemplatesModule::t('create new template') ?></small>
+                <div class="pull-right">
+                    <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
+                </div>
+            </h1>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="col-md-12">
             <?php if (isset($errors)): ?>
                 <?php foreach ($errors as $fieldErrors): ?>
                     <?php foreach ($fieldErrors as $error): ?>
@@ -42,11 +53,6 @@ use ymaker\email\templates\widgets\LanguagesList;
             <?php endif; ?>
         </div>
         <div class="col-md-12">
-            <div class="pull-right">
-                <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
-            </div>
-        </div>
-        <div class="col-md-12">
             <?php $form = ActiveForm::begin() ?>
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
@@ -59,5 +65,6 @@ use ymaker\email\templates\widgets\LanguagesList;
             ) ?>
             <?php $form->end() ?>
         </div>
+        <?= $this->render('_issue-message') ?>
     </div>
 </div>

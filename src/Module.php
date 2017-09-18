@@ -106,4 +106,15 @@ class Module extends \yii\base\Module
     {
         return Yii::t('back/email-templates', $message, $params, $language);
     }
+
+    /**
+     * Returns url to repository for creation of new issue.
+     *
+     * @return string
+     * @since 2.2.0
+     */
+    public static function getIssueUrl()
+    {
+        return 'https://github.com/yiimaker/yii2-email-templates/issues/new';
+    }
 }

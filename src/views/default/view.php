@@ -25,51 +25,60 @@ use ymaker\email\templates\widgets\LanguagesList;
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <?= Html::a(
-                        TemplatesModule::t('Update'),
-                        Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
-                        ['class' => 'btn btn-warning']
-                    ) ?>
-                    <?= Html::a(
-                        TemplatesModule::t('Delete'),
-                        Url::toRoute(['delete', 'id' => $template->id]),
-                        ['class' => 'btn btn-danger']
-                    ) ?>
-                    <div class="pull-right">
-                        <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
-                    </div>
-                </div>
+            <h1>
+                <?= TemplatesModule::t('Email templates') ?>
+                <small><?= TemplatesModule::t('view template') ?></small>
+            </h1>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="col-md-12">
+            <div class="pull-left">
+                <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
+            </div>
+            <div class="pull-right">
+                <?= Html::a(
+                TemplatesModule::t('Update'),
+                Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
+                ['class' => 'btn btn-warning']
+                ) ?>
+                <?= Html::a(
+                TemplatesModule::t('Delete'),
+                Url::toRoute(['delete', 'id' => $template->id]),
+                ['class' => 'btn btn-danger']
+                ) ?>
             </div>
         </div>
+        <div class="clearfix"></div>
+        <hr>
         <div class="col-md-12">
             <dl class="dl-horizontal">
                 <dt>
-                    <?= Yii::t('app', 'Key') ?>
+                    <?= TemplatesModule::t('Key') ?>
                 </dt>
                 <dd>
                     <?= $template->key ?>
                 </dd>
                 <dt>
-                    <?= Yii::t('app', 'Subject') ?>
+                    <?= TemplatesModule::t('Subject') ?>
                 </dt>
                 <dd>
                     <?= $translation->subject ?>
                 </dd>
                 <dt>
-                    <?= Yii::t('app', 'Body') ?>
+                    <?= TemplatesModule::t('Body') ?>
                 </dt>
                 <dd>
                     <?= $translation->body ?>
                 </dd>
                 <dt>
-                    <?= Yii::t('app', 'Hint') ?>
+                    <?= TemplatesModule::t('Hint') ?>
                 </dt>
                 <dd>
                     <?= $translation->hint ?>
                 </dd>
             </dl>
         </div>
+        <?= $this->render('_issue-message') ?>
     </div>
 </div>

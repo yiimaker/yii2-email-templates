@@ -7,6 +7,7 @@
 
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\grid\SerialColumn;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use ymaker\email\templates\Module as TemplatesModule;
@@ -26,25 +27,28 @@ use ymaker\email\templates\Module as TemplatesModule;
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <?= Html::a(
-                        TemplatesModule::t('Create template'),
-                        Url::toRoute(['create']),
-                        ['class' => 'btn btn-success']
-                    ) ?>
-                </div>
-            </div>
+            <h1>
+                <?= TemplatesModule::t('Email templates') ?>
+                <small><?= TemplatesModule::t('list of templates') ?></small>
+                <?= Html::a(
+                    TemplatesModule::t('Create template'),
+                    Url::toRoute(['create']),
+                    ['class' => 'btn btn-success pull-right']
+                ) ?>
+            </h1>
         </div>
+        <div class="clearfix"></div>
+        <hr>
         <div class="col-md-12">
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'columns' => [
-                    'id',
+                    ['class' => SerialColumn::class],
                     'key',
                     ['class' => ActionColumn::class]
                 ],
             ]) ?>
         </div>
+        <?= $this->render('_issue-message') ?>
     </div>
 </div>

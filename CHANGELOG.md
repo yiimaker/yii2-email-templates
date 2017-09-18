@@ -4,6 +4,7 @@ Email Templates Module Change Log
 Under development
 -----------------
 * Enh: Improved error handling
+* Enh: Improved UI in backend views
 
 2.1.0 September 13, 2017
 ------------------------

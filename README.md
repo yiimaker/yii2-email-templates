@@ -16,6 +16,10 @@ You can create email templates with CRUD module in your backend or Gii generator
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-email-templates/v/stable)](CHANGELOG.md)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-email-templates/v/unstable)](CHANGELOG.md)
 
+Backend preview
+---------------
+![yii2 email templates](docs/images/backend-preview.gif "yii2 email templates")
+
 Installation
 ------------
 #### Install package

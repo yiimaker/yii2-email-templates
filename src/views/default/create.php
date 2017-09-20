@@ -9,12 +9,13 @@ use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
-use vova07\imperavi\Widget as ImperaviRedactor;
 use ymaker\email\templates\widgets\LanguagesList;
+use vova07\imperavi\Widget as ImperaviRedactor;
 
 /**
  * View file for CRUD backend controller.
  *
+ * @var \yii\web\View $this
  * @var \ymaker\email\templates\models\entities\EmailTemplate $template
  * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $translation
  * @var array $errors
@@ -22,6 +23,12 @@ use ymaker\email\templates\widgets\LanguagesList;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
+
+$this->params['breadcrumbs'][] = [
+    'label' => TemplatesModule::t('Email templates list'),
+    'url' => ['/email-templates/default/index'],
+];
+$this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
 
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>

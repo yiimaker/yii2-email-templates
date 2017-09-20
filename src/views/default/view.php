@@ -13,12 +13,21 @@ use ymaker\email\templates\widgets\LanguagesList;
 /**
  * View file for CRUD backend controller.
  *
+ * @var \yii\web\View $this
  * @@var \ymaker\email\templates\models\entities\EmailTemplate $template
  * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $translation
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
+
+$this->params['breadcrumbs'][] = [
+    'label' => TemplatesModule::t('Email templates list'),
+    'url' => ['/email-templates/default/index'],
+];
+$this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
+    'key' => $template->key,
+]);
 
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>

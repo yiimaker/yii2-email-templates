@@ -103,6 +103,7 @@ class EmailTemplateTranslation extends ActiveRecord
             . ' ['
             . $languageProvider->getLanguageLabel($this->language)
             . ']: ';
+        $label = "<i>$label</i>";
 
         return [
             'subject' => $label . $this->subject,

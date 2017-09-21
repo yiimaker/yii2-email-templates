@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
                     'template' => "{label}\n{input}\n{error}",
                 ],
             ]) ?>
-            <?= $form->field($template, 'key') ?>
+            <?= $form->field($template, 'key')->textInput(['autofocus' => true]) ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>
             <?= $form->field($translation, 'hint') ?>

@@ -67,6 +67,7 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {ke
             <?= $form->field($template, 'key')
                 ->textInput(['disabled' => true]) ?>
             <?= $form->field($translation, 'subject')
+                ->textInput(['autofocus' => true])
                 ->hint($defaultTranslation->getAttributeHint('subject')) ?>
             <?= $form->field($translation, 'body')
                 ->widget(ImperaviRedactor::class)

@@ -60,7 +60,11 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
             <?php endif; ?>
         </div>
         <div class="col-md-12">
-            <?php $form = ActiveForm::begin() ?>
+            <?php $form = ActiveForm::begin([
+                'fieldConfig' => [
+                    'template' => "{label}\n{input}\n{error}",
+                ],
+            ]) ?>
             <?= $form->field($template, 'key') ?>
             <?= $form->field($translation, 'subject') ?>
             <?= $form->field($translation, 'body')->widget(ImperaviRedactor::class) ?>

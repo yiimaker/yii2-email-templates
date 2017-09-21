@@ -90,10 +90,14 @@ class EmailTemplateTranslation extends ActiveRecord
     {
         /* @var LanguageProviderInterface $languageProvider */
         $languageProvider = Yii::$container->get(LanguageProviderInterface::class);
+        $label = Yii::t('email-templates/entity', 'Original')
+            . ' ['
+            . $languageProvider->getLanguageLabel($this->language)
+            . ']: ';
 
         return [
-            'subject' => '[' . $languageProvider->getLanguageLabel($this->language) . '] ' . $this->subject,
-            'body' => '[' . $languageProvider->getLanguageLabel($this->language) . '] ' . strip_tags($this->body),
+            'subject' => $label . $this->subject,
+            'body' => $label . $this->body,
         ];
     }
 

@@ -39,6 +39,15 @@ class EmailTemplateTranslation extends ActiveRecord
     /**
      * @inheritdoc
      */
+    public function init()
+    {
+        $this->hint = 'All tokens wrapped in {} will be replaced by real data';
+        parent::init();
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [

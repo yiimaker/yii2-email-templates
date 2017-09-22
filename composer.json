@@ -36,8 +36,17 @@
   },
   "autoload": {
     "psr-4": {
-      "ymaker\\email\\templates\\": "src",
+      "ymaker\\email\\templates\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
       "ymaker\\email\\templates\\tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.2.x-dev"
     }
   }
 }

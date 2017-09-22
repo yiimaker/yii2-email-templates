@@ -71,16 +71,6 @@ class EmailTemplateTranslation extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function transactions()
-    {
-        return [
-            'default' => self::OP_ALL,
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -108,6 +98,16 @@ class EmailTemplateTranslation extends ActiveRecord
         return [
             'subject' => $label . $this->subject,
             'body' => $label . $this->body,
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function transactions()
+    {
+        return [
+            'default' => self::OP_ALL,
         ];
     }
 

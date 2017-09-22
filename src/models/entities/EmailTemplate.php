@@ -34,39 +34,6 @@ class EmailTemplate extends ActiveRecord
 
     /**
      * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['key'], 'required'],
-            [['key'], 'string', 'max' => 255],
-            [['key'], 'unique'],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function transactions()
-    {
-        return [
-            'default' => self::OP_ALL,
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id'    => Yii::t('email-templates/entity', 'ID'),
-            'key'   => Yii::t('email-templates/entity', 'Key'),
-        ];
-    }
-
-    /**
-     * @inheritdoc
      * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
      */
     public static function find()
@@ -86,6 +53,39 @@ class EmailTemplate extends ActiveRecord
             ->select('id')
             ->byKey($key)
             ->scalar();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['key'], 'required'],
+            [['key'], 'string', 'max' => 255],
+            [['key'], 'unique'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id'    => Yii::t('email-templates/entity', 'ID'),
+            'key'   => Yii::t('email-templates/entity', 'Key'),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function transactions()
+    {
+        return [
+            'default' => self::OP_ALL,
+        ];
     }
 
     /**

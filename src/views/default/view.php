@@ -47,14 +47,14 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
             </div>
             <div class="pull-right">
                 <?= Html::a(
-                TemplatesModule::t('Update'),
-                Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
-                ['class' => 'btn btn-warning']
+                    TemplatesModule::t('Update'),
+                    Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
+                    ['class' => 'btn btn-warning']
                 ) ?>
                 <?= Html::a(
-                TemplatesModule::t('Delete'),
-                Url::toRoute(['delete', 'id' => $template->id]),
-                ['class' => 'btn btn-danger']
+                    TemplatesModule::t('Delete'),
+                    Url::toRoute(['delete', 'id' => $template->id]),
+                    ['class' => 'btn btn-danger']
                 ) ?>
             </div>
         </div>

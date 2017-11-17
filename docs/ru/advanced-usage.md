@@ -86,3 +86,54 @@ Gii генератор
 
 Генератор создаёт миграцию для добавления шаблона в таблицу базы данных.
 После генерации вам нужно запустить комманду `./yii migrate` в консоли.
+
+Template manager
+----------------
+
+Вы можете брать данные для замены ключей в шаблоне из методов классов, компонентов приложения, баз данных, виджетов и т.п.
+
+##### Пример письма
+    
+    ```
+            {project-name}
+    Дорогой {username}, спасибо за покупку в нашем магазине!
+    
+    Список товаров которые вы преобрели
+    {products-table}
+    
+    Для информации о доставке вы можете {support-callcenter-link} или {support-email-link}.
+    
+    {goodbye-message}
+    ```
+    
+##### Template parsing
+
+    ```php
+    // getting template by key
+    
+    /* @var string $productsTable HTML таблица купленных товаров */
+    $productsTable = \app\modules\shop\widgets\BoughtProductsTable::widget([
+        'buyerId' => Yii::$app->getUser()->id,
+    ]);
+    
+    /* @var \app\components\Configuration $config Компонент с настройками из админки */
+    $config = Yii::$app->get('config');
+    
+    $supportCallcenterLink = \yii\helpers\Html::a(
+        \Yii::t('shop', 'call to us'), // позвонить нам
+        $config->supportCallcenterNumber
+    );
+    $supportEmailLink = \yii\helpers\Html::a(
+        \Yii::t('shop', 'write to e-mail'), // написать на e-mail
+        $config->supportEmailAddress
+    );
+    
+    $template->parseBody([
+        'project-name'              => \Yii::$app->name,
+        'username'                  => \Yii::$app->getIdentity()->firstname,
+        'products-table'            => $productsTable,
+        'support-callcenter-link'   => $supportCallcenterLink,
+        'support-email-link'        => $supportEmailLink,
+        'goodbye-message'           => \app\bots\EmailBot::generateGoodbyeMessage(),
+    ]);
+    ```

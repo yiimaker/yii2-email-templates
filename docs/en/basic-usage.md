@@ -42,7 +42,7 @@ This component provide [stack of methods](advanced-usage.md#template-manager-met
 Usage example
 -------------
 
-1. Create template with keys accross your site dashboard or Gii generator
+1. Create template with keys using your site dashboard or Gii generator
 
     ##### Key
     

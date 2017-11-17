@@ -6,7 +6,7 @@
     <br>
 </p>
 
-Extension for creating of email templates and manage accross your site dashboard.
+Extension for creating of email templates and manage using your site dashboard.
 You can create email templates with CRUD module in your backend or Gii generator.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-email-templates.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-email-templates)
@@ -21,20 +21,23 @@ Backend preview
 
 Installation
 ------------
+
 #### Install package
+
 Run command
+```bash
+$ composer require yiimaker/yii2-email-templates
 ```
-composer require yiimaker/yii2-email-templates
-```
+
 or add
 ```json
 "yiimaker/yii2-email-templates": "~2.1"
 ```
-to the require section of your composer.json.
+to the require section of your `composer.json` file.
 
 #### Apply migrations
 ```
-./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrations
+$ ./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrations
 ```
 
 Usage
@@ -44,9 +47,23 @@ Usage
 * [(EN) Advanced usage](docs/en/advanced-usage.md)
 * [(RU) Продвинутое использование](docs/ru/advanced-usage.md)
 
+Tests
+-----
+You can run tests with composer command
+
+```bash
+$ composer test
+```
+
+or using following command
+
+```bash
+$ codecept build && codecept run
+```
+
 License
 -------
-[![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](LICENSE``)
+[![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](LICENSE)
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 

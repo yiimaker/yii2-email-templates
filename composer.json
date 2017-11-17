@@ -1,6 +1,6 @@
 {
   "name": "yiimaker/yii2-email-templates",
-  "description": "Extension for creating of email templates and manage accross your site dashboard",
+  "description": "Extension for creating of email templates and manage using your site dashboard",
   "keywords": ["yii2", "module", "gii", "email", "templates"],
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
@@ -29,10 +29,10 @@
     "vova07/yii2-imperavi-widget": "~1.3.1"
   },
   "require-dev": {
+    "yiisoft/yii2-gii": "~2.0.0",
     "codeception/codeception": "~2.0",
     "codeception/verify": "*",
-    "codeception/specify": "*",
-    "yiisoft/yii2-gii": "~2.0.0"
+    "codeception/specify": "*"
   },
   "autoload": {
     "psr-4": {
@@ -48,5 +48,11 @@
     "branch-alias": {
       "dev-master": "2.2.x-dev"
     }
+  },
+  "scripts": {
+    "test": [
+      "codecept build",
+      "codecept run"
+    ]
   }
 }

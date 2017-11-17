@@ -11,7 +11,7 @@ use Yii;
 use yii\base\InvalidConfigException;
 use ymaker\email\templates\services\DbService;
 use ymaker\email\templates\services\ServiceInterface;
-use yii2deman\tools\i18n\LanguageProviderInterface;
+use motion\i18n\LanguageProviderInterface;
 
 /**
  * Module for CRUD operations under email templates in backend.
@@ -38,7 +38,7 @@ class Module extends \yii\base\Module
     /**
      * Language provider for internationalization.
      *
-     * @see \yii2deman\tools\i18n\LanguageProviderInterface
+     * @see \motion\i18n\LanguageProviderInterface
      * @var array
      */
     protected $_languageProvider = null;

@@ -8,12 +8,10 @@
 namespace ymaker\email\templates\tests\unit\components;
 
 use Yii;
-use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 use ymaker\email\templates\models\EmailTemplate as EmailTemplateModel;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 use ymaker\email\templates\tests\unit\DbTestCase;
-use ymaker\email\templates\tests\unit\TestCase;
 
 /**
  * Test case for template manager.

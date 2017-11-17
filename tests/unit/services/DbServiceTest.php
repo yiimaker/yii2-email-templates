@@ -7,7 +7,6 @@
 
 namespace ymaker\email\templates\tests\unit\services;
 
-use yii\data\ActiveDataProvider;
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 use ymaker\email\templates\services\DbService;

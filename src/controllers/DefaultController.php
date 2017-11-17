@@ -8,7 +8,6 @@
 namespace ymaker\email\templates\controllers;
 
 use Yii;
-use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use ymaker\email\templates\services\ServiceInterface;

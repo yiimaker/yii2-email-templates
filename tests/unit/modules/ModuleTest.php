@@ -12,7 +12,7 @@ use ymaker\email\templates\tests\unit\TestCase;
 use ymaker\email\templates\Module;
 use ymaker\email\templates\services\DbService;
 use ymaker\email\templates\services\ServiceInterface;
-use yii2deman\tools\i18n\LanguageProviderInterface;
+use motion\i18n\LanguageProviderInterface;
 
 /**
  * Test case for module.

@@ -14,7 +14,7 @@ It's required configuration property uses for intergrate a internationalization.
 Пример использования провайдера для настройки в конфиругации прилодения
 ```php
 'languageProvider' => [
-    'class' => \yii2deman\tools\i18n\ConfigLanguageProvider::class,
+    'class' => \motion\i18n\ConfigLanguageProvider::class,
     'languages' => [
         [
             'locale' => 'en',
@@ -35,7 +35,7 @@ It's required configuration property uses for intergrate a internationalization.
 Пример использования провайдера для базы данных
 ```php
 'languageProvider' => [
-    'class' => \yii2deman\tools\i18n\DbLanguageProvider::class,
+    'class' => \motion\i18n\DbLanguageProvider::class,
     'tableName' => 'app_language', // название таблицы в БД с языками
     'localeField' => 'locale', // название поля в таблице с локалью языка
     'labelField' => 'title', // название поля в таблице с зоголовком языка
@@ -43,7 +43,7 @@ It's required configuration property uses for intergrate a internationalization.
 ],
 ```
 
-[Читайте больше](https://github.com/yii2deman/yii2deman-language-provider) о языковом провайдере.
+[Читайте больше](https://github.com/motion/yii2-language-provider) о языковом провайдере.
 
 #### Service
 Это не обязательная опция, которыя используется в контроллере для работы с данными.

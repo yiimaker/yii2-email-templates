@@ -10,7 +10,7 @@ Basic usage
     'email-templates' => [
         'class' => \ymaker\email\templates\Module::class,
         'languageProvider' => [
-            'class' => \yii2deman\tools\i18n\ConfigLanguageProvider::class,
+            'class' => \motion\i18n\ConfigLanguageProvider::class,
             'languages' => [
                 [
                     'locale' => 'en',

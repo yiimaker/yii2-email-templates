@@ -1,10 +1,11 @@
 Email Templates Module Change Log
 ---------------------------------
 
-Under development
------------------
+3.0.0 Under development
+-----------------------
 * Enh: Improved error handling
 * Enh: Improved UX/UI in backend views
+* Chg: Changed language provider package to `motion/yii2-language-provider`
 
 2.1.0 September 13, 2017
 ------------------------

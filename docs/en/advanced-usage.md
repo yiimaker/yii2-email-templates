@@ -13,7 +13,7 @@ provider.
 Configuration language provider example
 ```php
 'languageProvider' => [
-    'class' => \yii2deman\tools\i18n\ConfigLanguageProvider::class,
+    'class' => \motion\i18n\ConfigLanguageProvider::class,
     'languages' => [
         [
             'locale' => 'en',
@@ -34,7 +34,7 @@ Configuration language provider example
 Database language provider example
 ```php
 'languageProvider' => [
-    'class' => \yii2deman\tools\i18n\DbLanguageProvider::class,
+    'class' => \motion\i18n\DbLanguageProvider::class,
     'tableName' => 'app_language', // table name in database with languages
     'localeField' => 'locale', // field name in language table with locale
     'labelField' => 'title', // field name in language table with label
@@ -42,7 +42,7 @@ Database language provider example
 ],
 ```
 
-[Read more](https://github.com/yii2deman/yii2deman-language-provider) about language provider.
+[Read more](https://github.com/motion/yii2-language-provider) about language provider.
 
 #### Service
 It's not required configuration property uses for work with

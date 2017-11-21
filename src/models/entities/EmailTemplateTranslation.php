@@ -9,7 +9,7 @@ namespace ymaker\email\templates\models\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii2deman\tools\i18n\LanguageProviderInterface;
+use motion\i18n\LanguageProviderInterface;
 
 /**
  * This is the model class for table "{{%email_template_translation}}".

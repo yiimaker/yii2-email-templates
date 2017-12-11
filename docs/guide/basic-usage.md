@@ -1,46 +1,5 @@
 Basic usage
 ===========
-> If you want use all features - read a [advanced usage](advanced-usage.md) guide.
-
-#### Configure module in backend part of your application
-
-```php
-'modules' => [
-    // ...
-    'email-templates' => [
-        'class' => \ymaker\email\templates\Module::class,
-        'languageProvider' => [
-            'class' => \motion\i18n\ConfigLanguageProvider::class,
-            'languages' => [
-                [
-                    'locale' => 'en',
-                    'label' => 'English',
-                ],
-                // ...
-            ],
-            'defaultLanguage' => [
-                'locale' => 'en',
-                'label' => 'English',
-            ],
-        ],
-    ],
-]
-```
-
-#### Configure template manager
-
-```php
-'components' => [
-    // ...
-    'templateManager' => [
-        'class' => \ymaker\email\templates\components\TemplateManager::class,
-    ],
-]
-```
-This component provide [stack of methods](advanced-usage.md#template-manager-methods) for work with email templates in client code.
-
-Usage example
--------------
 
 1. Create template with keys using your site dashboard or Gii generator
 

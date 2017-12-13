@@ -1,48 +1,7 @@
-Использование
-=============
-> Если вы хотите использовать все возможности - прочтите [продвинутуе использование](advanced-usage.md).
+Базовое использование
+=====================
 
-#### Настройте модуль в backend части вашего приложения
-
-```php
-'modules' => [
-    // ...
-    'email-templates' => [
-        'class' => \ymaker\email\templates\Module::class,
-        'languageProvider' => [
-            'class' => \motion\i18n\ConfigLanguageProvider::class,
-            'languages' => [
-                [
-                    'locale' => 'en',
-                    'label' => 'English',
-                ],
-                // ...
-            ],
-            'defaultLanguage' => [
-                'locale' => 'en',
-                'label' => 'English',
-            ],
-        ],
-    ],
-]
-```
-
-#### Настройте менеджер шаблонов
-
-```php
-'components' => [
-    // ...
-    'templateManager' => [
-        'class' => \ymaker\email\templates\components\TemplateManager::class,
-    ],
-]
-```
-Этот компонент предоставляет [набор методов](advanced-usage.md#Методы-менеджера-шаблонов) для комфортной работы с шаблонами в вашем коде.
-
-Пример использования
---------------------
-
-1. Создайте шаблон сообщения с помощью вашей админ-панели или генератора Gii
+1. Создайте шаблон сообщения с помощью админки или Gii генератора
 
     ##### Key
     
@@ -68,7 +27,7 @@
     $template = Yii::$app->get('templateManager')->getTemplate('register-notification');
     ```
     
-    Этот метод возвращает объект модели шаблона.
+        Этот метод возвращает модель шаблона.
     
 3. Далее вам нужно заменить ключи реальными данными
 

@@ -9,7 +9,7 @@ namespace ymaker\email\templates\tests\unit\services;
 
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
-use ymaker\email\templates\services\DbService;
+use ymaker\email\templates\services\EmailTemplateService;
 use ymaker\email\templates\services\ServiceInterface;
 use ymaker\email\templates\tests\unit\DbTestCase;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
@@ -23,7 +23,7 @@ use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 class DbServiceTest extends DbTestCase
 {
     /**
-     * @var DbService
+     * @var EmailTemplateService
      */
     private $_service;
 
@@ -44,7 +44,7 @@ class DbServiceTest extends DbTestCase
     protected function _before()
     {
         parent::_before();
-        $this->_service = new DbService();
+        $this->_service = new EmailTemplateService();
     }
 
     public function testInstanceOf()

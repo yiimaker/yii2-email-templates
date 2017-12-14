@@ -7,15 +7,14 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\DetailView;
 use ymaker\email\templates\Module as TemplatesModule;
-use ymaker\email\templates\widgets\LanguagesList;
 
 /**
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
- * @@var \ymaker\email\templates\models\entities\EmailTemplate $template
- * @var \ymaker\email\templates\models\entities\EmailTemplateTranslation $translation
+ * @var \ymaker\email\templates\models\entities\EmailTemplate $model
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -26,7 +25,7 @@ $this->params['breadcrumbs'][] = [
     'url' => ['/email-templates/default/index'],
 ];
 $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
-    'key' => $template->key,
+    'key' => $model->key,
 ]);
 
 \yii\bootstrap\BootstrapAsset::register($this);
@@ -42,18 +41,15 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
         <div class="clearfix"></div>
         <hr>
         <div class="col-md-12">
-            <div class="pull-left">
-                <?= LanguagesList::widget(['currentLanguage' => $translation->language]) ?>
-            </div>
             <div class="pull-right">
                 <?= Html::a(
                     TemplatesModule::t('Update'),
-                    Url::toRoute(['update', 'id' => $template->id, 'lang' => $translation->language]),
+                    Url::toRoute(['update', 'id' => $model->id]),
                     ['class' => 'btn btn-warning']
                 ) ?>
                 <?= Html::a(
                     TemplatesModule::t('Delete'),
-                    Url::toRoute(['delete', 'id' => $template->id]),
+                    Url::toRoute(['delete', 'id' => $model->id]),
                     ['class' => 'btn btn-danger']
                 ) ?>
             </div>
@@ -61,32 +57,15 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
         <div class="clearfix"></div>
         <hr>
         <div class="col-md-12">
-            <dl class="dl-horizontal">
-                <dt>
-                    <?= TemplatesModule::t('Key') ?>
-                </dt>
-                <dd>
-                    <?= $template->key ?>
-                </dd>
-                <dt>
-                    <?= TemplatesModule::t('Subject') ?>
-                </dt>
-                <dd>
-                    <?= $translation->subject ?>
-                </dd>
-                <dt>
-                    <?= TemplatesModule::t('Body') ?>
-                </dt>
-                <dd>
-                    <?= $translation->body ?>
-                </dd>
-                <dt>
-                    <?= TemplatesModule::t('Hint') ?>
-                </dt>
-                <dd>
-                    <?= $translation->hint ?>
-                </dd>
-            </dl>
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'key',
+                    'subject',
+                    'body:html',
+                    'hint',
+                ],
+            ]) ?>
         </div>
         <?= $this->render('_issue-message') ?>
     </div>

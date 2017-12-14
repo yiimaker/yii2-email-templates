@@ -37,6 +37,25 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
+     * Returns internal form name.
+     *
+     * @return string
+     */
+    public static function internalFormName()
+    {
+        $reflector = new \ReflectionClass(self::class);
+        return $reflector->getShortName();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function formName()
+    {
+        return parent::formName() . '[' . $this->language . ']';
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -51,20 +70,16 @@ class EmailTemplateTranslation extends ActiveRecord
     public function rules()
     {
         return [
-            [['templateId'], 'required'],
-            [['templateId'], 'integer'],
+            [['templateId', 'language'], 'safe'],
 
-            [['language'], 'required'],
-            [['language'], 'string', 'max' => 16],
+            ['subject', 'required'],
+            ['subject', 'string', 'max' => 255],
 
-            [['subject'], 'required'],
-            [['subject'], 'string', 'max' => 255],
+            ['body', 'required'],
+            ['body', 'string'],
 
-            [['body'], 'required'],
-            [['body'], 'string'],
-
-            [['hint'], 'required'],
-            [['hint'], 'string'],
+            ['hint', 'required'],
+            ['hint', 'string'],
         ];
     }
 
@@ -73,32 +88,28 @@ class EmailTemplateTranslation extends ActiveRecord
      */
     public function attributeLabels()
     {
-        return [
-            'id'            => Yii::t('email-templates/entity', 'ID'),
-            'templateId'    => Yii::t('email-templates/entity', 'Template ID'),
-            'language'      => Yii::t('email-templates/entity', 'Language'),
+        $labels = [
             'subject'       => Yii::t('email-templates/entity', 'Subject'),
             'body'          => Yii::t('email-templates/entity', 'Body'),
+            'hint'          => Yii::t('email-templates/entity', 'Hint'),
         ];
+
+        foreach ($labels as $key => $label) {
+            $labels[$key] = $this->addLabelPostfix($label);
+        }
+        
+        return $labels;
     }
 
     /**
-     * @inheritdoc
+     * Adds prefix to label.
+     *
+     * @param string $label
+     * @return string
      */
-    public function attributeHints()
+    protected function addLabelPostfix($label)
     {
-        /* @var LanguageProviderInterface $languageProvider */
-        $languageProvider = Yii::$container->get(LanguageProviderInterface::class);
-        $label = Yii::t('email-templates/entity', 'Original')
-            . ' ['
-            . $languageProvider->getLanguageLabel($this->language)
-            . ']: ';
-        $label = "<i>$label</i>";
-
-        return [
-            'subject' => $label . $this->subject,
-            'body' => $label . $this->body,
-        ];
+        return $label . ' [' . $this->language . ']';
     }
 
     /**

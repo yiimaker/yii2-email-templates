@@ -39,120 +39,86 @@ class DefaultController extends Controller
     }
 
     /**
-     * Find email template model by ID.
-     *
-     * @param integer $id Model ID.
-     * @return \ymaker\email\templates\models\entities\EmailTemplate
-     * @throws NotFoundHttpException
-     */
-    protected function findModel($id)
-    {
-        $model = $this->_service->getModel($id);
-        if ($model->getIsNewRecord()) {
-            throw new NotFoundHttpException('Email template not found!');
-        }
-        return $model;
-    }
-
-    /**
-     * Renders data provider with all template models.
+     * Renders models list.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $dataProvider = $this->_service->getDataProvider();
-        return $this->render('index', compact('dataProvider'));
+        return $this->render('index', [
+            'dataProvider' => $this->_service->getDataProvider(),
+        ]);
     }
 
     /**
-     * Create email template model.
+     * Creates new model.
      *
-     * @param null|string $lang Model language.
      * @return string|\yii\web\Response
      */
-    public function actionCreate($lang = null)
+    public function actionCreate()
     {
-        $request = Yii::$app->getRequest();
-        $template = $this->_service->getModel();
-        $translation = $this->_service->getTranslationModel(null, $lang);
-
-        if ($request->getIsPost()) {
-            if ($this->_service->create($request->post())) {
-                return $this->redirect(['index']);
-            }
-            $errors = $this->_service->getErrors();
-        }
-
-        return $this->render('create', compact([
-            'errors',
-            'template',
-            'translation',
-        ]));
+        return $this->commonAction($this->_service->getModel(), ['index'], 'create');
     }
 
     /**
-     * View email template models details.
+     * Updates model.
      *
-     * @param integer $id Model ID.
-     * @param null|string $lang Model language.
+     * @param int $id
+     * @return string|\yii\web\Response
+     */
+    public function actionUpdate($id)
+    {
+        return $this->commonAction(
+            $this->_service->getModel($id),
+            ['view', 'id' => $id],
+            'update'
+        );
+    }
+
+    /**
+     * Common code for create and update actions.
+     *
+     * @param \yii\db\ActiveRecord $model
+     * @param array $redirectUrl
+     * @param string $view
+     * @return string|\yii\web\Response
+     */
+    protected function commonAction($model, $redirectUrl, $view)
+    {
+        $request = Yii::$app->getRequest();
+        if ($request->getIsPost() && $this->_service->save($request->post())) {
+            return $this->redirect($redirectUrl);
+        }
+
+        return $this->render($view, compact('model'));
+    }
+
+    /**
+     * Renders details about model.
+     *
+     * @param int $id Model ID.
      * @return string
-     * @throws NotFoundHttpException
      */
-    public function actionView($id, $lang = null)
+    public function actionView($id)
     {
-        $lang = $lang ?: Yii::$app->language;
-        $template = $this->findModel($id);
-        $translation = $this->_service->getTranslationModel($id, $lang);
-
-        return $this->render('view', compact([
-            'template',
-            'translation',
-        ]));
+        $model = $this->_service->getModel($id);
+        return $this->render('view', compact('model'));
     }
 
     /**
-     * Update email template model.
+     * Delete model.
      *
-     * @param integer $id Model ID.
-     * @param null|string $lang Model language.
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException
-     */
-    public function actionUpdate($id, $lang = null)
-    {
-        $request = Yii::$app->getRequest();
-        $template = $this->findModel($id);
-        $translation = $this->_service->getTranslationModel($id, $lang ?: Yii::$app->language);
-
-        if ($request->getIsPost()) {
-            if ($this->_service->update($request->post())) {
-                return $this->redirect(['view', 'id' => $id]);
-            }
-            $errors = $this->_service->getErrors();
-        }
-
-        $defaultTranslation = $this->_service->getDefaultTranslationModel($id);
-
-        return $this->render('update', compact([
-            'errors',
-            'template',
-            'translation',
-            'defaultTranslation',
-        ]));
-    }
-
-    /**
-     * Delete email template model.
-     *
-     * @param integer $id Model ID.
+     * @param int $id
      * @return \yii\web\Response
-     * @throws NotFoundHttpException
-     * @throws \Exception
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $message = 'Error: banner not removed';
+        if ($this->_service->delete($id)) {
+            $message = 'Removed successfully';
+        }
+        Yii::$app->getSession()->setFlash('yii2-email-templates', $message);
+
         return $this->redirect(['index']);
     }
 }

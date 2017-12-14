@@ -16,59 +16,33 @@ namespace ymaker\email\templates\services;
 interface ServiceInterface
 {
     /**
-     * Returns model object.
-     *
-     * @param null|int $id Model ID.
-     * @return mixed
-     */
-    public function getModel($id = null);
-
-    /**
-     * Returns translation model object.
-     *
-     * @param integer|null $modelId Model ID.
-     * @param string|null $language Model language.
-     * @return mixed
-     */
-    public function getTranslationModel($modelId = null, $language = null);
-
-    /**
-     * Returns default translation model.
-     *
-     * @param integer $modelId Model ID.
-     * @return mixed
-     * @since 1.2
-     */
-    public function getDefaultTranslationModel($modelId);
-
-    /**
      * Returns data provider.
      *
-     * @return \yii\data\DataProviderInterface
+     * @return \yii\data\ActiveDataProvider
      */
     public function getDataProvider();
 
     /**
-     * Returns array with errors.
+     * Returns model instance.
      *
-     * @return array
-     * @since 2.1
+     * @param null|int $id
+     * @return \yii\db\ActiveRecord
      */
-    public function getErrors();
+    public function getModel($id = null);
 
     /**
-     * Create model with translation.
+     * Save record.
      *
-     * @param array $data Array with data for models.
-     * @return mixed
+     * @param array $data
+     * @return bool
      */
-    public function create($data);
+    public function save(array $data);
 
     /**
-     * Updates models data.
+     * Removes record.
      *
-     * @param array $data Array with data for models.
-     * @return mixed
+     * @param int $id
+     * @return bool
      */
-    public function update($data);
+    public function delete($id);
 }

@@ -10,7 +10,7 @@ namespace ymaker\email\templates\tests\unit\modules;
 use Yii;
 use ymaker\email\templates\tests\unit\TestCase;
 use ymaker\email\templates\Module;
-use ymaker\email\templates\services\DbService;
+use ymaker\email\templates\services\EmailTemplateService;
 use ymaker\email\templates\services\ServiceInterface;
 use motion\i18n\LanguageProviderInterface;
 
@@ -25,7 +25,7 @@ class ModuleTest extends TestCase
     public function testInitService()
     {
         $module = new Module('test', null, ['languageProvider' => []]);
-        $this->assertInstanceOf(DbService::class, Yii::$container->get(ServiceInterface::class));
+        $this->assertInstanceOf(EmailTemplateService::class, Yii::$container->get(ServiceInterface::class));
     }
 
     public function testInitLanguageProvider()

@@ -9,7 +9,7 @@ namespace ymaker\email\templates;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use ymaker\email\templates\services\DbService;
+use ymaker\email\templates\services\EmailTemplateService;
 use ymaker\email\templates\services\ServiceInterface;
 use motion\i18n\LanguageProviderInterface;
 
@@ -74,7 +74,7 @@ class Module extends \yii\base\Module
         parent::init();
 
         if ($this->_service === null) {
-            $this->_service = ['class' => DbService::class];
+            $this->_service = ['class' => EmailTemplateService::class];
         }
         if ($this->_languageProvider === null) {
             throw new InvalidConfigException('You should to configure the language provider');

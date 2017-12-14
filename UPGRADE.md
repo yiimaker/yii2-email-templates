@@ -9,3 +9,12 @@ Upgrade from 2.1.0 to 3.0.0
 
 * Language provider package changed from `yii2deman/yii2deman-language-provider` to `motion/yii2-language-provider`.
 You must updates language provider configuration in backend module config.
+
+* Changed API of `ymaker\email\templates\services\ServiceInterface` interface.
+
+* Changed API of `ymaker\email\templates\controllers\DefaultController` controller.
+
+* Created `ymaker\email\templates\services\EmailTemplatesService`
+instead of `ymaker\email\templates\services\DbService`.
+
+* Removed `ymaker\email\templates\widgets\LanguagesList` widget.

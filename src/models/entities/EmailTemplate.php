@@ -10,6 +10,7 @@ namespace ymaker\email\templates\models\entities;
 use Yii;
 use yii\db\ActiveRecord;
 use ymaker\email\templates\queries\EmailTemplateQuery;
+use creocoder\translateable\TranslateableBehavior;
 
 /**
  * This is the model class for table "{{%email_template}}".
@@ -53,6 +54,34 @@ class EmailTemplate extends ActiveRecord
             ->select('id')
             ->byKey($key)
             ->scalar();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'translateable' => [
+                'class' => TranslateableBehavior::class,
+                'translationAttributes' => $this->getTranslationAttributes(),
+            ],
+        ];
+    }
+
+    /**
+     * Returns list of translation attributes.
+     *
+     * @return string[]
+     */
+    public function getTranslationAttributes()
+    {
+        return [
+            'language',
+            'subject',
+            'body',
+            'hint',
+        ];
     }
 
     /**

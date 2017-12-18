@@ -20,6 +20,8 @@ use creocoder\translateable\TranslateableBehavior;
  *
  * @property EmailTemplateTranslation[] $translations
  *
+ * @method EmailTemplateTranslation getTranslation($language = null)
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */

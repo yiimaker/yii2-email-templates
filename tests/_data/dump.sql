@@ -1,4 +1,4 @@
-PRAGMA foreign_keys = off;
+PRAGMA foreign_keys = on;
 BEGIN TRANSACTION;
 
 -- Table: email_template
@@ -19,6 +19,13 @@ CREATE TABLE email_template_translation(
   subject STRING NOT NULL,
   body TEXT NOT NULL,
   hint STRING(500)
+);
+
+-- Table: demo
+DROP TABLE IF EXISTS demo;
+
+CREATE TABLE demo(
+  id INTEGER PRIMARY KEY AUTOINCREMENT
 );
 
 COMMIT TRANSACTION;

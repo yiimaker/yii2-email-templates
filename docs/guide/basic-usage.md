@@ -29,7 +29,7 @@ Basic usage
     
     This method returns template model object.
     
-3. Then you should to parse this template
+3. Then you should parse this template
 
     ```php
     $template->parseSubject([

@@ -14,6 +14,7 @@ Usage
 -----
 * [Backend module](backend-module.md)
 * [Template manager](template-manager.md)
+* [Email template behavior](email-template-behavior.md)
 
 Additional topics
 -----------------

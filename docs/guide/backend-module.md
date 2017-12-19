@@ -51,6 +51,6 @@ Database language provider example:
 It's not required configuration property uses for work with
 data layer in controller.
 
-You can use default database service `\ymaker\email\templates\services\DbService`
+You can use default email template service `\ymaker\email\templates\services\EmailTemplateService`
 or implement another service, for this you should to implement a `\ymaker\email\templates\services\ServiceInterface`
 basic interface.

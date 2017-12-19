@@ -13,6 +13,7 @@
 -------------
 * [Backend модуль](backend-module.md)
 * [Менеджер шаблонов](template-manager.md)
+* [Поведение email template](email-template-behavior.md)
 
 Дополнительно
 -------------

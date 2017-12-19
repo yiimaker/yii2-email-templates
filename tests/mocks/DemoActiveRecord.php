@@ -9,9 +9,9 @@ use yii\db\ActiveRecord;
  *
  * @property int $id
  *
- * @property string $subject
- * @property string $body
- * @property string $hint
+ * @property string $letterSubject
+ * @property string $letterBody
+ * @property string $emailTemplateHint
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 3.0

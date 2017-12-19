@@ -28,9 +28,9 @@ class EmailTemplateBehaviorTest extends TestCase
     {
         DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
         $model = new DemoActiveRecord([
-            'subject' => 'this is subject',
-            'body' => 'this is body',
-            'hint' => 'this is hint',
+            'letterSubject' => 'this is subject',
+            'letterBody' => 'this is body',
+            'emailTemplateHint' => 'this is hint',
         ]);
         $model->save(false);
 
@@ -52,32 +52,32 @@ class EmailTemplateBehaviorTest extends TestCase
     {
         DemoActiveRecord::$behaviors = ['templates' => EmailTemplateBehavior::class];
         $model = new DemoActiveRecord([
-            'subject' => 'this is subject',
-            'body' => 'this is body',
-            'hint' => 'this is hint',
+            'letterSubject' => 'this is subject',
+            'letterBody' => 'this is body',
+            'emailTemplateHint' => 'this is hint',
         ]);
         $model->save(false);
 
         $foundedModel = DemoActiveRecord::findOne($model->id);
 
-        $this->assertEquals('this is subject', $foundedModel->subject);
-        $this->assertEquals('this is body', $foundedModel->body);
-        $this->assertEquals('this is hint', $foundedModel->hint);
+        $this->assertEquals('this is subject', $foundedModel->letterSubject);
+        $this->assertEquals('this is body', $foundedModel->letterBody);
+        $this->assertEquals('this is hint', $foundedModel->emailTemplateHint);
     }
 
     public function testUpdateModel()
     {
         DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
         $model = new DemoActiveRecord([
-            'subject' => 'this is subject',
-            'body' => 'this is body',
-            'hint' => 'this is hint',
+            'letterSubject' => 'this is subject',
+            'letterBody' => 'this is body',
+            'emailTemplateHint' => 'this is hint',
         ]);
         $model->save(false);
 
-        $model->subject = 'this is updated subject';
-        $model->body = 'this is updated body';
-        $model->hint = 'this is updated hint';
+        $model->letterSubject = 'this is updated subject';
+        $model->letterBody = 'this is updated body';
+        $model->emailTemplateHint = 'this is updated hint';
         $model->save(false);
 
         $this->tester->seeRecord(EmailTemplateTranslation::class, [
@@ -91,9 +91,9 @@ class EmailTemplateBehaviorTest extends TestCase
     {
         DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
         $model = new DemoActiveRecord([
-            'subject' => 'temp subject',
-            'body' => 'temp body',
-            'hint' => 'temp hint',
+            'letterSubject' => 'temp subject',
+            'letterBody' => 'temp body',
+            'emailTemplateHint' => 'temp hint',
         ]);
         $model->save(false);
 
@@ -126,13 +126,13 @@ class EmailTemplateBehaviorTest extends TestCase
         $first = $model->getBehavior('first');
         $second = $model->getBehavior('second');
 
-        $first->subject = 'first subject';
-        $first->body = 'first body';
-        $first->hint = 'first hint';
+        $first->letterSubject = 'first subject';
+        $first->letterBody = 'first body';
+        $first->emailTemplateHint = 'first hint';
 
-        $second->subject = 'second subject';
-        $second->body = 'second body';
-        $second->hint = 'second hint';
+        $second->letterSubject = 'second subject';
+        $second->letterBody = 'second body';
+        $second->emailTemplateHint = 'second hint';
 
         $model->save();
 

@@ -17,6 +17,10 @@ use ymaker\email\templates\models\entities\EmailTemplateTranslation;
 /**
  * Behavior for appending of email templates to ActiveRecord models.
  *
+ * @property string $letterSubject
+ * @property string $letterBody
+ * @property string $emailTemplateHint
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
@@ -60,7 +64,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @return string
      */
-    public function getSubject()
+    public function getLetterSubject()
     {
         return $this->getTranslation()->subject;
     }
@@ -68,7 +72,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @param string $subject
      */
-    public function setSubject($subject)
+    public function setLetterSubject($subject)
     {
         $this->getTranslation()->subject = $subject;
     }
@@ -76,7 +80,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @return string
      */
-    public function getBody()
+    public function getLetterBody()
     {
         return $this->getTranslation()->body;
     }
@@ -84,7 +88,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @param string $body
      */
-    public function setBody($body)
+    public function setLetterBody($body)
     {
         $this->getTranslation()->body = $body;
     }
@@ -92,7 +96,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @return string
      */
-    public function getHint()
+    public function getEmailTemplateHint()
     {
         return $this->getTranslation()->hint;
     }
@@ -100,7 +104,7 @@ class EmailTemplateBehavior extends Behavior
     /**
      * @param string $hint
      */
-    public function setHint($hint)
+    public function setEmailTemplateHint($hint)
     {
         $this->getTranslation()->hint = $hint;
     }

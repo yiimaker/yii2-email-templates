@@ -28,42 +28,39 @@ class Module extends \yii\base\Module
      * @inheritdoc
      */
     public $controllerNamespace = 'ymaker\email\templates\controllers';
+
     /**
      * Service for controller.
      *
      * @see \ymaker\email\templates\services\ServiceInterface
      * @var array
      */
-    protected $_service = null;
+    protected $service;
     /**
      * Language provider for internationalization.
      *
      * @see \motion\i18n\LanguageProviderInterface
      * @var array
      */
-    protected $_languageProvider = null;
+    protected $languageProvider;
 
 
     /**
-     * Setter for service.
-     *
      * @param array $service
      * @since 2.0
      */
     public function setService(array $service)
     {
-        $this->_service = $service;
+        $this->service = $service;
     }
 
     /**
-     * Setter for language provider.
-     *
      * @param array $provider
      * @since 2.0
      */
     public function setLanguageProvider(array $provider)
     {
-        $this->_languageProvider = $provider;
+        $this->languageProvider = $provider;
     }
 
     /**
@@ -73,10 +70,10 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->_service === null) {
-            $this->_service = ['class' => EmailTemplateService::class];
+        if ($this->service === null) {
+            $this->service = ['class' => EmailTemplateService::class];
         }
-        if ($this->_languageProvider === null) {
+        if ($this->languageProvider === null) {
             throw new InvalidConfigException('You should to configure the language provider');
         }
 
@@ -89,8 +86,8 @@ class Module extends \yii\base\Module
     protected function registerDependencies()
     {
         Yii::$container->setDefinitions([
-            ServiceInterface::class => $this->_service,
-            LanguageProviderInterface::class => $this->_languageProvider
+            ServiceInterface::class => $this->service,
+            LanguageProviderInterface::class => $this->languageProvider
         ]);
     }
 
@@ -111,10 +108,21 @@ class Module extends \yii\base\Module
      * Returns url to repository for creation of new issue.
      *
      * @return string
-     * @since 2.2.0
+     * @since 3.0
      */
-    public static function getIssueUrl()
+    final public static function getIssueUrl()
     {
-        return 'https://github.com/yiimaker/yii2-email-templates/issues/new';
+        return self::getRepoUrl() . '/issues/new';
+    }
+
+    /**
+     * Returns url of official repository.
+     *
+     * @return string
+     * @since 3.0
+     */
+    final public static function getRepoUrl()
+    {
+        return 'https://github.com/yiimaker/yii2-email-templates';
     }
 }

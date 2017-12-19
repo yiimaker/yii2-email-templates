@@ -43,7 +43,6 @@ class TemplateManager extends Object
         if (isset($model->translations[0])) {
             return EmailTemplateModel::buildFromEntity($model->translations[0]);
         }
-
         return null;
     }
 
@@ -60,7 +59,6 @@ class TemplateManager extends Object
             $templates = EmailTemplateTranslation::findAll(['templateId' => $id]);
             return EmailTemplateModel::buildMultiply($templates);
         }
-
         return null;
     }
 

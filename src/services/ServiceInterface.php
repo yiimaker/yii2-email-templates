@@ -8,10 +8,10 @@
 namespace ymaker\email\templates\services;
 
 /**
- * Interface for email templates services.
+ * Interface for email template service.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
+ * @since 3.0
  */
 interface ServiceInterface
 {

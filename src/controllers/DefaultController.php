@@ -9,7 +9,6 @@ namespace ymaker\email\templates\controllers;
 
 use Yii;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use ymaker\email\templates\services\ServiceInterface;
 
 /**
@@ -26,7 +25,7 @@ class DefaultController extends Controller
      *
      * @var ServiceInterface
      */
-    protected $_service;
+    protected $service;
 
 
     /**
@@ -34,7 +33,7 @@ class DefaultController extends Controller
      */
     public function __construct($id, $module, ServiceInterface $service, $config = [])
     {
-        $this->_service = $service;
+        $this->service = $service;
         parent::__construct($id, $module, $config);
     }
 
@@ -46,7 +45,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         return $this->render('index', [
-            'dataProvider' => $this->_service->getDataProvider(),
+            'dataProvider' => $this->service->getDataProvider(),
         ]);
     }
 
@@ -57,7 +56,7 @@ class DefaultController extends Controller
      */
     public function actionCreate()
     {
-        return $this->commonAction($this->_service->getModel(), ['index'], 'create');
+        return $this->commonAction($this->service->getModel(), ['index'], 'create');
     }
 
     /**
@@ -69,7 +68,7 @@ class DefaultController extends Controller
     public function actionUpdate($id)
     {
         return $this->commonAction(
-            $this->_service->getModel($id),
+            $this->service->getModel($id),
             ['view', 'id' => $id],
             'update'
         );
@@ -86,10 +85,9 @@ class DefaultController extends Controller
     protected function commonAction($model, $redirectUrl, $view)
     {
         $request = Yii::$app->getRequest();
-        if ($request->getIsPost() && $this->_service->save($request->post())) {
+        if ($request->getIsPost() && $this->service->save($request->post())) {
             return $this->redirect($redirectUrl);
         }
-
         return $this->render($view, compact('model'));
     }
 
@@ -101,7 +99,7 @@ class DefaultController extends Controller
      */
     public function actionView($id)
     {
-        $model = $this->_service->getModel($id);
+        $model = $this->service->getModel($id);
         return $this->render('view', compact('model'));
     }
 
@@ -114,7 +112,7 @@ class DefaultController extends Controller
     public function actionDelete($id)
     {
         $message = 'Error: banner not removed';
-        if ($this->_service->delete($id)) {
+        if ($this->service->delete($id)) {
             $message = 'Removed successfully';
         }
         Yii::$app->getSession()->setFlash('yii2-email-templates', $message);

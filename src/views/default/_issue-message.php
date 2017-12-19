@@ -13,7 +13,7 @@ use ymaker\email\templates\Module as TemplatesModule;
  * @var \yii\web\View $this
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 2.2.0
+ * @since 3.0
  */
 ?>
 <?php if (YII_ENV_DEV): ?>

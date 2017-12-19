@@ -18,3 +18,5 @@ You must updates language provider configuration in backend module config.
 instead of `ymaker\email\templates\services\DbService`.
 
 * Removed `ymaker\email\templates\widgets\LanguagesList` widget.
+
+* Migrations for creation of email template entities has been united.

@@ -19,12 +19,24 @@ or add
 
 to the `require` section of your `composer.json`.
 
-## Apply migrations
-```
-$ ./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrations
+## Configuring application
+
+### Migrations
+
+```php
+// console/config/main.php
+
+'controllerMap' => [
+    'migrate' => [
+         'migrationNamespaces' => [
+            // ...
+             'ymaker\email\templates\migrations',
+         ],
+    ],
+],
 ```
 
-## Configuring application
+### Backend module
 
 To use this extension, simply add the following code in your application configuration:
 
@@ -48,7 +60,12 @@ To use this extension, simply add the following code in your application configu
             ],
         ],
     ],
-],
+]
+```
+
+### Template manager
+
+```php
 'components' => [
     // ...
     'templateManager' => [

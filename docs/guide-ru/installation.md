@@ -19,12 +19,24 @@ $ composer require yiimaker/yii2-email-templates
 
 в секцию `require` вашего `composer.json`.
 
-## Приминение миграций
-```
-$ ./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrations
+## Настройка приложения
+
+### Миграции
+
+```php
+// console/config/main.php
+
+'controllerMap' => [
+    'migrate' => [
+         'migrationNamespaces' => [
+            // ...
+             'ymaker\email\templates\migrations',
+         ],
+    ],
+],
 ```
 
-## Настройка приложения
+### Backend модуль
 
 Для использования расширения, просто добавьте этот код в конфигурацию вашего приложения:
 
@@ -48,7 +60,12 @@ $ ./yii migrate --migrationPath=@vendor/yiimaker/yii2-email-templates/src/migrat
             ],
         ],
     ],
-],
+]
+```
+
+### Менеджер шаблонов
+
+```php
 'components' => [
     // ...
     'templateManager' => [

@@ -7,6 +7,7 @@ Email Templates Module Change Log
 * Enh: Improved UX/UI in backend views (greeflas)
 * Enh: Ability to work with all translation models in one request (greeflas)
 * Enh: Created behavior for appending of email templates to ActiveRecord models (greeflas)
+* Enh: Add namespace for migration (greeflas)
 * Chg: Changed language provider package to `motion/yii2-language-provider` (greeflas, klipilin)
 
 2.1.0 September 13, 2017

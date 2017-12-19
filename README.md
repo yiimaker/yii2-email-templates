@@ -17,10 +17,6 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-email-templates/v/stable)](CHANGELOG.md)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-email-templates/v/unstable)](CHANGELOG.md)
 
-Backend preview
----------------
-![yii2 email templates](docs/images/backend-preview.gif "yii2 email templates")
-
 Installation
 ------------
 

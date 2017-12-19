@@ -24,3 +24,7 @@ For it you should to configure generator in your application config like the fol
 
 Generator creates migration for inserting a email template to database table.
 After generation you should to run `./yii migrate` command in console.
+
+## Generator preview
+
+![yii2 email templates](../img/gii.jpg "yii2 email templates")

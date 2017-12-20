@@ -1,7 +1,7 @@
 Email template behavior
 =======================
 
-You can use email template behaviour for appending the email template to the
+You can use email template behaviour for appending the email template to
 your ActiveRecord model.
 
 ## One template
@@ -23,7 +23,7 @@ public function behaviours()
 ### Using
 
 > Your model must contain the language attribute. You can specify this attribute name
-> in `languageAttribute` configuration property. By default this property set to `language`.
+> in `languageAttribute` configuration property. This property is set to `language` by default.
 
 ```php
 $model = new ActiveRecordModel();

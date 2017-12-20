@@ -1,7 +1,7 @@
 Basic usage
 ===========
 
-1. Create template with keys using your site dashboard or Gii generator
+1. Create template with placeholders using your site dashboard or Gii generator
 
     ##### Key
     
@@ -11,13 +11,13 @@ Basic usage
     
     `Notification from {site-name}`
     
-    In this example email subject has one keyword `{site-name}`
+    In this example email subject has one placeholder `{site-name}`
     
     ##### Body
     
     `Hello, {username}! Welcome to {site-name} :)`
     
-    Email body has two keywords `{username}` and `{site-name}`.
+    Email body has two placeholders: `{username}` and `{site-name}`.
     
     > All keys should be wrapped by `{}`.
     
@@ -27,7 +27,7 @@ Basic usage
     $template = Yii::$app->get('templateManager')->getTemplate('register-notification');
     ```
     
-    This method returns template model object.
+    This method returns a template model object.
     
 3. Then you should parse this template
 
@@ -56,7 +56,7 @@ Basic usage
     ]);
     ```
     
-    this methods replace keys in template to real data.
+    this methods replace placeholders in template with real data.
     
 4. Now you can use data of this template in your logic
 

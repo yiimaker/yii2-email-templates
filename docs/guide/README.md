@@ -1,7 +1,7 @@
 Email templates module
 ======================
 
-Extension for creating of email templates and manage using your site dashboard.
+Extension for creating email templates and managing by using your site dashboard.
 You can create email templates with CRUD module in your backend or Gii generator.
 
 Getting Started

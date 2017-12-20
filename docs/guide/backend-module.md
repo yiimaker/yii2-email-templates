@@ -5,10 +5,10 @@ Backend module
 
 ### Language provider
 
-It's required configuration property uses for integrate a internationalization.
+This is a required configuration property that is used for i18n.
 
-Supports database and configuration language providers. You can implement your language
-provider.
+It supports database and configuration language providers. You can implement your language
+provider if you need.
 
 Configuration language provider example:
 
@@ -48,9 +48,7 @@ Database language provider example:
 
 ### Service
 
-It's not required configuration property uses for work with
-data layer in controller.
+It is not obligatory property that is used in controller to work with data.
 
 You can use default email template service `\ymaker\email\templates\services\EmailTemplateService`
-or implement another service, for this you should to implement a `\ymaker\email\templates\services\ServiceInterface`
-basic interface.
+or implement another service, for this you should implement a basic interface `\ymaker\email\templates\services\ServiceInterface`.

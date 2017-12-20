@@ -3,7 +3,7 @@ Gii generator
 
 You can generate email templates with Gii!
 
-For it you should to configure generator in your application config like the following:
+For this you should configure generator in your application config like the following:
 
 ```php
 'modules' => [
@@ -22,8 +22,8 @@ For it you should to configure generator in your application config like the fol
 ],
 ```
 
-Generator creates migration for inserting a email template to database table.
-After generation you should to run `./yii migrate` command in console.
+Generator creates migration for inserting an email template to database table.
+After generation you should run `./yii migrate` command in console.
 
 ## Generator preview
 

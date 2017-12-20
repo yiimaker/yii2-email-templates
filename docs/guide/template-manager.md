@@ -3,7 +3,7 @@ Template manager
 
 ## Using
 
-You can get data to replace of keywords from some classes methods, application components, databases, widgets, etc.
+You can get data to replace placeholders from some classes methods, application components, databases, widgets, etc.
 
 ### Example of letter body
     
@@ -57,5 +57,5 @@ $template->parseBody([
 |-------------------------------------------|-----------------------------------------------------------------------|-----------------------------------|
 |`getTemplate($key, $language = null)`      |Returns template by key and language                                   |`null` or `EmailTemplateModel`     |
 |`getAllTemplates($key)`                    |Returns templates on all languages                                     |`null` or `EmailTemplateModel[]`   |
-|`getFirstOrDefault($key, $default = null)` |Returns template on first founded language by key all default value    |`mixed`                            |
+|`getFirstOrDefault($key, $default = null)` |Returns template on first founded language by key or default value     |`mixed`                            |
 |`hasTemplate($key)`                        |Check whether template with current key exists                         |`bool`                             |

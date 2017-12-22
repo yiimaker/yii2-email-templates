@@ -1,7 +1,7 @@
 Email Templates Module Change Log
 ---------------------------------
 
-3.0.0 Under development
+3.0.0 December 22, 2017
 -----------------------
 * Enh: Improved error handling (greeflas)
 * Enh: Improved UX/UI in backend views (greeflas)

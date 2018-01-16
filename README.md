@@ -119,6 +119,10 @@ or using following command
 $ codecept build && codecept run
 ```
 
+Contributing
+------------
+For information about contributing please read [CONTRIBUTING.md](CONTRIBUTING.md).
+
 License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-email-templates/license)](LICENSE)

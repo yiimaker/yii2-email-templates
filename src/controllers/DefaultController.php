@@ -63,6 +63,7 @@ class DefaultController extends Controller
      * Updates model.
      *
      * @param int $id
+     *
      * @return string|\yii\web\Response
      */
     public function actionUpdate($id)
@@ -80,6 +81,7 @@ class DefaultController extends Controller
      * @param \yii\db\ActiveRecord $model
      * @param array $redirectUrl
      * @param string $view
+     *
      * @return string|\yii\web\Response
      */
     protected function commonAction($model, $redirectUrl, $view)
@@ -95,6 +97,7 @@ class DefaultController extends Controller
      * Renders details about model.
      *
      * @param int $id Model ID.
+     *
      * @return string
      */
     public function actionView($id)
@@ -107,6 +110,7 @@ class DefaultController extends Controller
      * Delete model.
      *
      * @param int $id
+     *
      * @return \yii\web\Response
      */
     public function actionDelete($id)

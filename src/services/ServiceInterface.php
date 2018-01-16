@@ -26,6 +26,7 @@ interface ServiceInterface
      * Returns model instance.
      *
      * @param null|int $id
+     *
      * @return \yii\db\ActiveRecord
      */
     public function getModel($id = null);
@@ -34,6 +35,7 @@ interface ServiceInterface
      * Save record.
      *
      * @param array $data
+     *
      * @return bool
      */
     public function save(array $data);
@@ -42,6 +44,7 @@ interface ServiceInterface
      * Removes record.
      *
      * @param int $id
+     *
      * @return bool
      */
     public function delete($id);

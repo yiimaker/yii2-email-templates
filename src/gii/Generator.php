@@ -19,19 +19,27 @@ use yii\gii\CodeFile;
 class Generator extends \yii\gii\Generator
 {
     /**
-     * @var string Email template key.
+     * Email template key.
+     *
+     * @var string
      */
     public $key;
     /**
-     * @var string Subject of email letter.
+     * Subject of email letter.
+     *
+     * @var string
      */
     public $subject;
     /**
-     * @var string Body of email letter.
+     * Body of email letter.
+     *
+     * @var string
      */
     public $body;
     /**
-     * @var string Hints for user.
+     * Hints for user.
+     *
+     * @var string
      */
     public $hint;
     /**

@@ -33,6 +33,7 @@ class Module extends \yii\base\Module
      * Service for controller.
      *
      * @see \ymaker\email\templates\services\ServiceInterface
+     *
      * @var array
      */
     protected $service;
@@ -40,6 +41,7 @@ class Module extends \yii\base\Module
      * Language provider for internationalization.
      *
      * @see \motion\i18n\LanguageProviderInterface
+     *
      * @var array
      */
     protected $languageProvider;
@@ -47,6 +49,7 @@ class Module extends \yii\base\Module
 
     /**
      * @param array $service
+     *
      * @since 2.0
      */
     public function setService(array $service)
@@ -56,6 +59,7 @@ class Module extends \yii\base\Module
 
     /**
      * @param array $provider
+     *
      * @since 2.0
      */
     public function setLanguageProvider(array $provider)
@@ -94,9 +98,10 @@ class Module extends \yii\base\Module
     /**
      * Module wrapper for `Yii::t()` method.
      *
-     * @param string $message
-     * @param array $params
-     * @param null|string $language
+     * @param string        $message
+     * @param array         $params
+     * @param null|string   $language
+     *
      * @return string
      */
     public static function t($message, $params = [], $language = null)
@@ -108,6 +113,7 @@ class Module extends \yii\base\Module
      * Returns url to repository for creation of new issue.
      *
      * @return string
+     *
      * @since 3.0
      */
     final public static function getIssueUrl()
@@ -119,6 +125,7 @@ class Module extends \yii\base\Module
      * Returns url of official repository.
      *
      * @return string
+     *
      * @since 3.0
      */
     final public static function getRepoUrl()

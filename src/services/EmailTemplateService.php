@@ -63,7 +63,9 @@ class EmailTemplateService extends Object implements ServiceInterface
 
     /**
      * @param int $id
+     *
      * @return EmailTemplate
+     *
      * @throws NotFoundHttpException
      */
     private function findModel($id)
@@ -78,7 +80,9 @@ class EmailTemplateService extends Object implements ServiceInterface
      * Returns primary model object.
      *
      * @param null|int $id
+     *
      * @return EmailTemplate
+     *
      * @throws NotFoundHttpException
      */
     public function getModel($id = null)
@@ -98,6 +102,7 @@ class EmailTemplateService extends Object implements ServiceInterface
      * Save banner to database.
      *
      * @param array $data
+     *
      * @throws \DomainException
      * @throws \RuntimeException
      */
@@ -122,6 +127,7 @@ class EmailTemplateService extends Object implements ServiceInterface
      * Save banner and log exceptions.
      *
      * @param array $data
+     *
      * @return bool
      */
     public function save(array $data)
@@ -140,6 +146,7 @@ class EmailTemplateService extends Object implements ServiceInterface
      *
      * @param int $id
      * @return bool
+     *
      * @throws NotFoundHttpException
      */
     public function delete($id)

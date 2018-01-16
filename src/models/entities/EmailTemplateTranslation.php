@@ -14,14 +14,13 @@ use motion\i18n\LanguageProviderInterface;
 /**
  * This is the model class for table "{{%email_template_translation}}".
  *
- * @property int $id
- * @property int $templateId
- * @property string $language
- * @property string $subject
- * @property string $body
- * @property string $hint
- *
- * @property EmailTemplate $template
+ * @property int            $id
+ * @property int            $templateId
+ * @property string         $language
+ * @property string         $subject
+ * @property string         $body
+ * @property string         $hint
+ * @property EmailTemplate  $template
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -105,6 +104,7 @@ class EmailTemplateTranslation extends ActiveRecord
      * Adds prefix to label.
      *
      * @param string $label
+     *
      * @return string
      */
     protected function addLabelPostfix($label)

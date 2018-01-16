@@ -23,11 +23,15 @@ use ymaker\email\templates\models\entities\EmailTemplate;
 class <?= $className ?> extends Migration
 {
     /**
-     * @var string Migration table name.
+     * Migration table name.
+     *
+     * @var string
      */
     public $tableName = '{{%email_template}}';
     /**
-     * @var string Migration table name.
+     * Migration table name.
+     *
+     * @var string
      */
     public $translationTableName = '{{%email_template_translation}}';
 

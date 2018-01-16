@@ -15,9 +15,8 @@ use creocoder\translateable\TranslateableBehavior;
 /**
  * This is the model class for table "{{%email_template}}".
  *
- * @property int $id
- * @property string $key
- *
+ * @property int                        $id
+ * @property string                     $key
  * @property EmailTemplateTranslation[] $translations
  *
  * @method EmailTemplateTranslation getTranslation($language = null)
@@ -37,6 +36,7 @@ class EmailTemplate extends ActiveRecord
 
     /**
      * @inheritdoc
+     *
      * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
      */
     public static function find()
@@ -48,6 +48,7 @@ class EmailTemplate extends ActiveRecord
      * Find model ID by key.
      *
      * @param string $key Model key.
+     *
      * @return false|null|string
      */
     public static function findId($key)

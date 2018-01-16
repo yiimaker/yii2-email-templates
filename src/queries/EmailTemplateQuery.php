@@ -21,6 +21,7 @@ class EmailTemplateQuery extends ActiveQuery
      * Add by key condition.
      *
      * @param string $key Email template key.
+     *
      * @return EmailTemplateQuery
      */
     public function byKey($key)
@@ -32,6 +33,7 @@ class EmailTemplateQuery extends ActiveQuery
      * Get with translation by language.
      *
      * @param string $language
+     *
      * @return EmailTemplateQuery
      */
     public function withTranslation($language)

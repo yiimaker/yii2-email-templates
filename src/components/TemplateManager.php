@@ -26,8 +26,10 @@ class TemplateManager extends Object
      * Returns template model by key and language.
      *
      * @see EmailTemplateModel
-     * @param string $key Template key.
-     * @param null|string $language Template language.
+     *
+     * @param string        $key        Template key.
+     * @param null|string   $language   Template language.
+     *
      * @return null|EmailTemplateModel
      */
     public function getTemplate($key, $language = null)
@@ -50,6 +52,7 @@ class TemplateManager extends Object
      * Returns email template on all languages.
      *
      * @param string $key Template key.
+     *
      * @return null|EmailTemplateModel[]
      */
     public function getAllTemplates($key)
@@ -65,8 +68,9 @@ class TemplateManager extends Object
     /**
      * Returns first template translation or default value.
      *
-     * @param string $key Template key.
-     * @param mixed $default Default value.
+     * @param string $key       Template key.
+     * @param mixed $default    Default value.
+     *
      * @return mixed
      */
     public function getFirstOrDefault($key, $default = null)
@@ -86,6 +90,7 @@ class TemplateManager extends Object
      * Check is template with current key exists.
      *
      * @param string $key Template key to check.
+     *
      * @return bool
      */
     public function hasTemplate($key)

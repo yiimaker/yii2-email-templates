@@ -23,9 +23,9 @@
   ],
   "require": {
     "php": ">=5.6.0",
-    "yiisoft/yii2": "^2.0.0",
+    "yiisoft/yii2": "^2.0.13",
     "yiisoft/yii2-bootstrap": "~2.0.0",
-    "motion/yii2-language-provider": "~1.0",
+    "motion/yii2-language-provider": "~2.0",
     "creocoder/yii2-translateable": "~1.0",
     "vova07/yii2-imperavi-widget": "~2.0"
   },
@@ -45,7 +45,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "3.0.x-dev"
+      "dev-master": "4.0.x-dev"
     }
   },
   "scripts": {

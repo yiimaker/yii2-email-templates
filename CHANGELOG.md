@@ -3,6 +3,8 @@ Email Templates Module Change Log
 
 4.0.0 Under development
 -----------------------
+* Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13`
+* Chg: Changed minimum `motion/yii2-language-provider` version from `~1.0.0` to `~2.0.0`
 * Chg: Removed unused dev packages `codeception/verify` and `codeception/specify`
 * Fix: Some fixes in files for unit tests
 

@@ -5,7 +5,6 @@
  * @license BSD 3-Clause License
  */
 
-use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;

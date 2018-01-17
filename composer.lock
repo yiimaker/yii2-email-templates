@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbf9c31f5d3b3cf12bdc0fcf000bce62",
-    "content-hash": "d7f0d2d7f8f5f01053cf6489486d03e3",
+    "hash": "c9861f74d3a5d06756a90e8a4c72664d",
+    "content-hash": "3151c4b8932105bdc150eb69b5b8049c",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -261,20 +261,20 @@
         },
         {
             "name": "motion/yii2-language-provider",
-            "version": "1.0.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/motion-web-production/yii2-language-provider.git",
-                "reference": "44bdaa3e188d11f571b654c571bcc7e61ece8901"
+                "reference": "d462df92c0752cec8b74636286aba73cc76a5207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/motion-web-production/yii2-language-provider/zipball/44bdaa3e188d11f571b654c571bcc7e61ece8901",
-                "reference": "44bdaa3e188d11f571b654c571bcc7e61ece8901",
+                "url": "https://api.github.com/repos/motion-web-production/yii2-language-provider/zipball/d462df92c0752cec8b74636286aba73cc76a5207",
+                "reference": "d462df92c0752cec8b74636286aba73cc76a5207",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0"
+                "yiisoft/yii2": "~2.0.13"
             },
             "require-dev": {
                 "codeception/codeception": "~2.3",
@@ -284,7 +284,7 @@
             "type": "yii2-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -310,7 +310,7 @@
                 "provider",
                 "yii2"
             ],
-            "time": "2017-11-02 09:40:23"
+            "time": "2017-12-25 13:46:05"
         },
         {
             "name": "vova07/yii2-imperavi-widget",

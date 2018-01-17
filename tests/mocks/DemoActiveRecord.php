@@ -7,8 +7,7 @@ use yii\db\ActiveRecord;
 /**
  * This is demo ActiveRecord model.
  *
- * @property int $id
- *
+ * @property int    $id
  * @property string $letterSubject
  * @property string $letterBody
  * @property string $emailTemplateHint

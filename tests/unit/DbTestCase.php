@@ -48,6 +48,5 @@ class DbTestCase extends TestCase
      */
     public function fixtures()
     {
-
     }
 }

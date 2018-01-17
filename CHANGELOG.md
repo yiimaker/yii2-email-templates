@@ -1,8 +1,9 @@
 Email Templates Module Change Log
 ---------------------------------
 
-3.1.0 Under development
+4.0.0 Under development
 -----------------------
+* Chg: Removed unused dev packages `codeception/verify` and `codeception/specify`
 * Fix: Some fixes in files for unit tests
 
 3.0.0 December 22, 2017

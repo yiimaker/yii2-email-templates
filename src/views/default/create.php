@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
-use ymaker\email\templates\helpers\LanguageHelper;
+use motion\i18n\helpers\LanguageHelper;
 use vova07\imperavi\Widget as ImperaviRedactor;
 
 /**

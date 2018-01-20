@@ -9,9 +9,11 @@ Upgrade from 3.x to 4.x
 
 * Changed minimum Yii version from `^2.0.0` to `^2.0.13`
 
-* Changed minimum `motion/yii2-language-provider` version from `~1.0.0` to `~2.0.0`
+* Changed minimum `motion/yii2-language-provider` version from `~1.0.` to `~2.1`
 
 * Removed unused dev packages `codeception/verify` and `codeception/specify`
+
+* Removed `ymaker\email\templates\helpers\LanguageHelper` class. Use `motion\i18n\helpers\LanguageHelper` instead
 
 Upgrade from 2.x to 3.x
 -----------------------

@@ -28,10 +28,11 @@ $ composer require yiimaker/yii2-email-templates
 
 'controllerMap' => [
     'migrate' => [
-         'migrationNamespaces' => [
-            // ...
-             'ymaker\email\templates\migrations',
-         ],
+        'class' => yii\console\controllers\MigrateController::class,
+        'migrationNamespaces' => [
+           // ...
+           'ymaker\email\templates\migrations',
+        ],
     ],
 ],
 ```

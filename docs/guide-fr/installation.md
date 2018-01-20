@@ -28,10 +28,11 @@ pour la section `require` de votre `composer.json`.
 
 'controllerMap' => [
     'migrate' => [
-         'migrationNamespaces' => [
-            // ...
-             'ymaker\email\templates\migrations',
-         ],
+        'class' => yii\console\controllers\MigrateController::class,
+        'migrationNamespaces' => [
+           // ...
+           'ymaker\email\templates\migrations',
+        ],
     ],
 ],
 ```

@@ -5,6 +5,9 @@ Vous pouvez générer le modèle d’email avec Gii!
 
 Pour ça vous devez configurer le générateur dans votre app config comme le suivant:
 
+> Si vous utilisez le modèle avancé d’application, mettez ce code dans le fichier `backend/config/main-local.php`
+> ou `frontend/config/main-local.php`
+
 ```php
 'modules' => [
     'gii' => [

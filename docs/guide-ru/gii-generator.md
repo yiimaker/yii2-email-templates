@@ -6,6 +6,9 @@ Gii генератор
 Для этого вам необходимо настроить генератор модуля Gii в вашем конфиге приложения
 как показанно ниже:
 
+> Если вы используете advance template - поместите этот код в конфигурационный файл `backend/config/main-local.php`
+> или `frontend/config/main-local.php`
+
 ```php
 'modules' => [
     'gii' => [

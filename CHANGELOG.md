@@ -8,6 +8,7 @@ Email Templates Module Change Log
 * Chg: Removed `ymaker\email\templates\helpers\LanguageHelper` helper (greeflas)
 * Fix: Removed unused dev packages `codeception/verify` and `codeception/specify` (greeflas)
 * Fix: Some fixes in files for unit tests (greeflas)
+* Fix: Fixed bugs in migration (greeflas)
 
 3.0.0 December 22, 2017
 -----------------------

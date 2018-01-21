@@ -22,10 +22,17 @@ use ymaker\email\templates\Module as TemplatesModule;
  * @since 1.0
  */
 
+$session = Yii::$app->getSession();
+
 \yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">
+    <?php if ($session->hasFlash('yii2-email-templates')): ?>
+        <div class="col-md-12">
+            <div class="alert alert-success"><?= $session->getFlash('yii2-email-templates') ?></div>
+        </div>
+    <?php endif; ?>
         <div class="col-md-12">
             <h1>
                 <?= TemplatesModule::t('Email templates') ?>

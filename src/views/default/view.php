@@ -14,7 +14,7 @@ use ymaker\email\templates\Module as TemplatesModule;
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
- * @var \ymaker\email\templates\models\entities\EmailTemplate $model
+ * @var \ymaker\email\templates\entities\EmailTemplate $model
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

@@ -9,7 +9,8 @@ namespace ymaker\email\templates\controllers;
 
 use Yii;
 use yii\web\Controller;
-use ymaker\email\templates\services\ServiceInterface;
+use ymaker\email\templates\Module as TemplatesModule;
+use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 
 /**
  * CRUD controller for backend.
@@ -20,47 +21,46 @@ use ymaker\email\templates\services\ServiceInterface;
 class DefaultController extends Controller
 {
     /**
-     * Email templates service instance.
+     * Email templates repository instance.
      * Instance will be gotten from DI container.
      *
-     * @var ServiceInterface
+     * @var EmailTemplatesRepositoryInterface
      */
-    protected $service;
+    protected $repository;
 
 
     /**
      * @inheritdoc
      */
-    public function __construct($id, $module, ServiceInterface $service, $config = [])
+    public function __construct($id, $module, EmailTemplatesRepositoryInterface $repository, $config = [])
     {
-        $this->service = $service;
+        $this->repository = $repository;
+
         parent::__construct($id, $module, $config);
     }
 
     /**
-     * Renders models list.
+     * Renders entities list.
      *
      * @return string
      */
     public function actionIndex()
     {
-        return $this->render('index', [
-            'dataProvider' => $this->service->getDataProvider(),
-        ]);
+        return $this->render('index', ['dataProvider' => $this->repository->getDataProvider()]);
     }
 
     /**
-     * Creates new model.
+     * Creates new entity.
      *
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        return $this->commonAction($this->service->getModel(), ['index'], 'create');
+        return $this->commonAction($this->repository->create(), ['index'], 'create');
     }
 
     /**
-     * Updates model.
+     * Updates entity.
      *
      * @param int $id
      *
@@ -68,17 +68,43 @@ class DefaultController extends Controller
      */
     public function actionUpdate($id)
     {
-        return $this->commonAction(
-            $this->service->getModel($id),
-            ['view', 'id' => $id],
-            'update'
-        );
+        return $this->commonAction($this->repository->getById($id), ['view', 'id' => $id], 'update');
+    }
+
+    /**
+     * Renders entity details.
+     *
+     * @param int $id
+     *
+     * @return string
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', ['model' => $this->repository->getById($id)]);
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param int $id
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDelete($id)
+    {
+        $message = $this->repository->delete($id)
+            ? TemplatesModule::t('Removed successfully')
+            : TemplatesModule::t('Error: banner not removed');
+
+        Yii::$app->getSession()->setFlash('yii2-email-templates', $message);
+
+        return $this->redirect(['index']);
     }
 
     /**
      * Common code for create and update actions.
      *
-     * @param \yii\db\ActiveRecord $model
+     * @param mixed $model
      * @param array $redirectUrl
      * @param string $view
      *
@@ -87,40 +113,11 @@ class DefaultController extends Controller
     protected function commonAction($model, $redirectUrl, $view)
     {
         $request = Yii::$app->getRequest();
-        if ($request->getIsPost() && $this->service->save($request->post())) {
+
+        if ($request->getIsPost() && $this->repository->save($model, $request->post())) {
             return $this->redirect($redirectUrl);
         }
+
         return $this->render($view, compact('model'));
-    }
-
-    /**
-     * Renders details about model.
-     *
-     * @param int $id Model ID.
-     *
-     * @return string
-     */
-    public function actionView($id)
-    {
-        $model = $this->service->getModel($id);
-        return $this->render('view', compact('model'));
-    }
-
-    /**
-     * Delete model.
-     *
-     * @param int $id
-     *
-     * @return \yii\web\Response
-     */
-    public function actionDelete($id)
-    {
-        $message = 'Error: banner not removed';
-        if ($this->service->delete($id)) {
-            $message = 'Removed successfully';
-        }
-        Yii::$app->getSession()->setFlash('yii2-email-templates', $message);
-
-        return $this->redirect(['index']);
     }
 }

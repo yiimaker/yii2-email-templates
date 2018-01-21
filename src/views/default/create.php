@@ -15,7 +15,7 @@ use vova07\imperavi\Widget as ImperaviRedactor;
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
- * @var \ymaker\email\templates\models\entities\EmailTemplate $model
+ * @var \ymaker\email\templates\entities\EmailTemplate $model
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
                 ],
             ]) ?>
             <?= $form->field($model, 'key')->textInput(['autofocus' => true]) ?>
-            <?php foreach (LanguageHelper::getLocales() as $language): ?>
+            <?php foreach (LanguageHelper::getInstance()->getLocales() as $language): ?>
                 <?php $translation = $model->getTranslation($language) ?>
                 <?= $form->field($translation, 'subject') ?>
                 <?= $form->field($translation, 'body')

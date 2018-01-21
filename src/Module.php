@@ -9,14 +9,14 @@ namespace ymaker\email\templates;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use ymaker\email\templates\services\EmailTemplateService;
-use ymaker\email\templates\services\ServiceInterface;
+use ymaker\email\templates\repositories\EmailTemplatesRepository;
+use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 use motion\i18n\LanguageProviderInterface;
 
 /**
  * Module for CRUD operations under email templates in backend.
  *
- * @property array $service
+ * @property array $repository
  * @property array $languageProvider
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -32,11 +32,13 @@ class Module extends \yii\base\Module
     /**
      * Service for controller.
      *
-     * @see \ymaker\email\templates\services\ServiceInterface
+     * @see \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface
      *
      * @var array
+     *
+     * @since 4.0
      */
-    protected $service;
+    protected $repository;
     /**
      * Language provider for internationalization.
      *
@@ -48,13 +50,13 @@ class Module extends \yii\base\Module
 
 
     /**
-     * @param array $service
+     * @param array $repository
      *
-     * @since 2.0
+     * @since 4.0
      */
-    public function setService(array $service)
+    public function setRepository(array $repository)
     {
-        $this->service = $service;
+        $this->repository = $repository;
     }
 
     /**
@@ -74,11 +76,11 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->service === null) {
-            $this->service = ['class' => EmailTemplateService::class];
+        if ($this->repository === null) {
+            $this->repository = ['class' => EmailTemplatesRepository::class];
         }
         if ($this->languageProvider === null) {
-            throw new InvalidConfigException('You should to configure the language provider');
+            throw new InvalidConfigException('You should configure the language provider');
         }
 
         $this->registerDependencies();
@@ -90,8 +92,8 @@ class Module extends \yii\base\Module
     protected function registerDependencies()
     {
         Yii::$container->setDefinitions([
-            ServiceInterface::class => $this->service,
-            LanguageProviderInterface::class => $this->languageProvider
+            EmailTemplatesRepositoryInterface::class => $this->repository,
+            LanguageProviderInterface::class => $this->languageProvider,
         ]);
     }
 

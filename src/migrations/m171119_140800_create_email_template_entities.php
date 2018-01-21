@@ -69,7 +69,7 @@ class m171119_140800_create_email_template_entities extends Migration
         );
         $this->createIndex(
             'idx-email_template_translation-templateId',
-            $this->primaryTableName,
+            $this->translationTableName,
             'templateId'
         );
         $this->createIndex(
@@ -82,9 +82,9 @@ class m171119_140800_create_email_template_entities extends Migration
         $this->addForeignKey(
             'fk-email_template_translation-email_template',
             $this->primaryTableName,
-            'templateId',
-            $this->translationTableName,
             'id',
+            $this->translationTableName,
+            'templateId',
             'CASCADE',
             'CASCADE'
         );

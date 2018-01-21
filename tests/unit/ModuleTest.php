@@ -5,10 +5,9 @@
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\email\templates\tests\unit\modules;
+namespace ymaker\email\templates\tests\unit;
 
 use Yii;
-use ymaker\email\templates\tests\unit\TestCase;
 use ymaker\email\templates\Module;
 use ymaker\email\templates\services\EmailTemplateService;
 use ymaker\email\templates\services\ServiceInterface;

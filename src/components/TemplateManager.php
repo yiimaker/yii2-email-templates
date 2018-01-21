@@ -10,8 +10,8 @@ namespace ymaker\email\templates\components;
 use Yii;
 use yii\base\BaseObject;
 use ymaker\email\templates\models\EmailTemplate as EmailTemplateModel;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
 
 /**
  * Email templates manager for client code.

@@ -7,6 +7,8 @@ application when you upgrade the package from one version to another.
 Upgrade from 3.x to 4.x
 -----------------------
 
+* Moved entities from `ymaker\email\tempaltes\models\entities` namespace to `ymaker\email\tempaltes\entities`
+
 * Changed minimum Yii version from `^2.0.0` to `^2.0.13`
 
 * Changed minimum `motion/yii2-language-provider` version from `~1.0.` to `~2.1`

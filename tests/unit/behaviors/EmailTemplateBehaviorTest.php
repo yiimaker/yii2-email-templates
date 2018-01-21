@@ -9,8 +9,8 @@ namespace ymaker\email\templates\tests\unit\behaviors;
 
 use yii\helpers\Json;
 use ymaker\email\templates\behaviors\EmailTemplateBehavior;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
 use ymaker\email\templates\tests\mocks\DemoActiveRecord;
 use ymaker\email\templates\tests\unit\TestCase;
 

@@ -5,7 +5,7 @@
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\email\templates\models\entities;
+namespace ymaker\email\templates\entities;
 
 use Yii;
 use yii\db\ActiveRecord;

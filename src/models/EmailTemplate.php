@@ -80,7 +80,7 @@ class EmailTemplate extends BaseObject
     /**
      * Build email template from entity.
      *
-     * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation $entity
+     * @param \ymaker\email\templates\entities\EmailTemplateTranslation $entity
      *
      * @return EmailTemplate
      */
@@ -92,7 +92,7 @@ class EmailTemplate extends BaseObject
     /**
      * Build email templates array from entities.
      *
-     * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation[] $entities
+     * @param \ymaker\email\templates\entities\EmailTemplateTranslation[] $entities
      *
      * @return EmailTemplate[]
      */

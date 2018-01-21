@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\tests\unit\models;
 
 use ymaker\email\templates\tests\unit\DbTestCase;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation as Entity;
+use ymaker\email\templates\entities\EmailTemplateTranslation as Entity;
 use ymaker\email\templates\models\EmailTemplate;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 

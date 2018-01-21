@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\tests\fixtures;
 
 use yii\test\ActiveFixture;
-use ymaker\email\templates\models\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplate;
 
 /**
  * Fixure for [[EmailTemplate]] model.

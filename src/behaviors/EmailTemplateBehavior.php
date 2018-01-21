@@ -11,8 +11,8 @@ use Yii;
 use yii\base\Behavior;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Json;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
 
 /**
  * Behavior for appending of email templates to ActiveRecord models.

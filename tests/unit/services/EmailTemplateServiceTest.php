@@ -8,8 +8,8 @@
 namespace ymaker\banner\tests\unit\backend\services;
 
 use yii\data\ActiveDataProvider;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
 use ymaker\email\templates\services\EmailTemplateService;
 use ymaker\email\templates\services\ServiceInterface;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;

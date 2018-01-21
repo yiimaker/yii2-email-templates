@@ -13,8 +13,8 @@ use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
 use yii\web\NotFoundHttpException;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
 
 /**
  * Email template service.

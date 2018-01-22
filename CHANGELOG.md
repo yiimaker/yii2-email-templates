@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+3.0.1 January 22, 2018
+----------------------
+Fix: Fixes bugs in migration (greeflas, philippfrenzel)
+
 3.0.0 December 22, 2017
 -----------------------
 * Enh: Improved error handling (greeflas)

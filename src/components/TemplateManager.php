@@ -9,13 +9,11 @@ namespace ymaker\email\templates\components;
 
 use Yii;
 use yii\base\BaseObject;
-use ymaker\email\templates\models\EmailTemplate as EmailTemplateModel;
-use ymaker\email\templates\entities\EmailTemplate;
-use ymaker\email\templates\entities\EmailTemplateTranslation;
+use ymaker\email\templates\models\EmailTemplate;
+use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 
 /**
- * Email templates manager for client code.
- * This class contains methods for work with email template in your code.
+ * This class provides methods for making work with email template easily in your code.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -23,78 +21,62 @@ use ymaker\email\templates\entities\EmailTemplateTranslation;
 class TemplateManager extends BaseObject
 {
     /**
+     * @var EmailTemplatesRepositoryInterface
+     */
+    protected $repository;
+
+    /**
+     * @inheritdoc
+     * @param EmailTemplatesRepositoryInterface $repository
+     */
+    public function __construct(EmailTemplatesRepositoryInterface $repository, $config = [])
+    {
+        $this->repository = $repository;
+        parent::__construct($config);
+    }
+
+    /**
      * Returns template model by key and language.
      *
      * @see EmailTemplateModel
      *
-     * @param string        $key        Template key.
+     * @param string        $key
      * @param null|string   $language   Template language.
+     * @param mixed         $default    Default value.
      *
-     * @return null|EmailTemplateModel
+     * @return null|EmailTemplate
      */
-    public function getTemplate($key, $language = null)
+    public function getTemplate($key, $language = null, $default = null)
     {
-        $language = ($language === null) ? Yii::$app->language : $language;
+        $translation = $this->repository->getByKeyWithTranslation($key, $language ?: Yii::$app->language);
 
-        /* @var EmailTemplate $model */
-        $model = EmailTemplate::find()
-            ->byKey($key)
-            ->withTranslation($language)
-            ->one();
-
-        if (isset($model->translations[0])) {
-            return EmailTemplateModel::buildFromEntity($model->translations[0]);
-        }
-        return null;
+        return null === $translation ? $default : EmailTemplate::buildFromEntity($translation);
     }
 
     /**
      * Returns email template on all languages.
      *
-     * @param string $key Template key.
+     * @param string    $key
+     * @param mixed     $default Default value.
      *
-     * @return null|EmailTemplateModel[]
+     * @return null|EmailTemplate[]
      */
-    public function getAllTemplates($key)
+    public function getAllTemplates($key, $default = null)
     {
-        if ($id = EmailTemplate::findId($key)) {
-            /* @var EmailTemplateTranslation[] $templates */
-            $templates = EmailTemplateTranslation::findAll(['templateId' => $id]);
-            return EmailTemplateModel::buildMultiply($templates);
-        }
-        return null;
+        $templates = $this->repository->getAll($key);
+
+        return null === $templates ? $default : EmailTemplate::buildMultiply($templates);
     }
 
     /**
-     * Returns first template translation or default value.
+     * Check whether template with current key exists.
      *
-     * @param string $key       Template key.
-     * @param mixed $default    Default value.
-     *
-     * @return mixed
-     */
-    public function getFirstOrDefault($key, $default = null)
-    {
-        /* @var EmailTemplate $model */
-        $model = EmailTemplate::find()
-            ->byKey($key)
-            ->with('translations')
-            ->one();
-
-        return isset($model->translations[0])
-            ? $model->translations[0]
-            : $default;
-    }
-
-    /**
-     * Check is template with current key exists.
-     *
-     * @param string $key Template key to check.
+     * @param string $key
      *
      * @return bool
      */
     public function hasTemplate($key)
     {
-        return EmailTemplate::find()->byKey($key)->exists();
+        return $this->repository->has($key);
     }
 }

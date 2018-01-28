@@ -3,6 +3,7 @@ Email Templates Module Change Log
 
 4.0.0 Under development
 -----------------------
+* Enh: Inject repository object to template manager
 * Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
 * Chg: Changed minimum `motion/yii2-language-provider` version from `~1.0` to `~2.1` (greeflas)
 * Chg: Removed `ymaker\email\templates\helpers\LanguageHelper` helper (greeflas)

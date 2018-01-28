@@ -56,12 +56,47 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     /**
      * @inheritdoc
      */
+    public function getByKeyWithTranslation($key, $language)
+    {
+        /* @var EmailTemplate $model */
+        $model = EmailTemplate::find()
+            ->byKey($key)
+            ->withTranslation($language)
+            ->one();
+
+        return isset($model->translations[0]) ? $model->translations[0] : null;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getAll($key)
+    {
+        $template = EmailTemplate::find()
+            ->byKey($key)
+            ->with('translations')
+            ->one();
+
+        return empty($template->translations) ? null : $template->translations;
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getDataProvider()
     {
         return new ActiveDataProvider([
             'db' => $this->_db,
             'query' => EmailTemplate::find()->with('translations'),
         ]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function has($key)
+    {
+        return EmailTemplate::find()->byKey($key)->exists();
     }
 
     /**

@@ -20,11 +20,39 @@ interface EmailTemplatesRepositoryInterface
     public function getById($id);
 
     /**
+     * Find template by key with translation.
+     *
+     * @param string $key
+     * @param string $language
+     *
+     * @return mixed
+     */
+    public function getByKeyWithTranslation($key, $language);
+
+    /**
+     * Find all language versions of template by key.
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function getAll($key);
+
+    /**
      * Returns data provider for email template entity.
      *
      * @return \yii\data\DataProviderInterface
      */
     public function getDataProvider();
+
+    /**
+     * Check whether template with current key exists.
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function has($key);
 
     /**
      * Creates new email template.

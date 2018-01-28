@@ -24,11 +24,11 @@ class TemplateManagerTest extends DbTestCase
     /**
      * @var \ymaker\email\templates\components\TemplateManager
      */
-    private $_manager;
+    private $manager;
     /**
      * @var string
      */
-    private $_key = 'test-template';
+    private $key = 'test-template';
 
 
     /**
@@ -47,7 +47,7 @@ class TemplateManagerTest extends DbTestCase
     protected function _before()
     {
         parent::_before();
-        $this->_manager = Yii::$app->get('templateManager');
+        $this->manager = Yii::$app->get('templateManager');
     }
 
     public function testGetTemplate()
@@ -55,14 +55,21 @@ class TemplateManagerTest extends DbTestCase
         $expected = EmailTemplateModel::buildFromEntity(
             EmailTemplateTranslation::findOne(['language' => 'en'])
         );
-        $actual = $this->_manager->getTemplate($this->_key);
+        $actual = $this->manager->getTemplate($this->key);
+
         $this->assertEquals($expected, $actual);
 
         $expected = EmailTemplateModel::buildFromEntity(
             EmailTemplateTranslation::findOne(['language' => 'ru'])
         );
-        $actual = $this->_manager->getTemplate($this->_key, 'ru');
+        $actual = $this->manager->getTemplate($this->key, 'ru');
+
         $this->assertEquals($expected, $actual);
+
+        $expected = new EmailTemplateModel('subject', 'body');
+        $actual = $this->manager->getTemplate($this->key, 'fr', $expected);
+
+        $this->assertSame($expected, $actual);
     }
 
     public function testGetAllTemplates()
@@ -70,26 +77,25 @@ class TemplateManagerTest extends DbTestCase
         $expected = EmailTemplateModel::buildMultiply(
             EmailTemplateTranslation::findAll(['templateId' => 1])
         );
-        $actual = $this->_manager->getAllTemplates($this->_key);
+        $actual = $this->manager->getAllTemplates($this->key);
 
         $this->assertEquals($expected, $actual);
-    }
 
-    public function testGetFirstOrDefault()
-    {
-        $actual = $this->_manager->getFirstOrDefault($this->_key);
-        $this->assertNotNull($actual);
+        $expected = [
+            new EmailTemplateModel('subject-1', 'body-1'),
+            new EmailTemplateModel('subject-2', 'body-2'),
+        ];
+        $actual = $this->manager->getAllTemplates('not-exists', $expected);
 
-        $actual = $this->_manager->getFirstOrDefault('not exists key');
-        $this->assertNull($actual);
+        $this->assertSame($expected, $actual);
     }
 
     public function testHasTemplate()
     {
-        $actual = $this->_manager->hasTemplate($this->_key);
+        $actual = $this->manager->hasTemplate($this->key);
         $this->assertTrue($actual);
 
-        $actual = $this->_manager->hasTemplate('not-exists');
+        $actual = $this->manager->hasTemplate('not-exists');
         $this->assertFalse($actual);
     }
 }

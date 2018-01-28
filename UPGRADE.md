@@ -19,6 +19,8 @@ Upgrade from 3.x to 4.x
 
 * Removed `ymaker\email\templates\Module::$service` property. Use `ymaker\email\templates\Module::$repository` instead
 
+* Removed `ymaker\email\templates\components\TemplateManager::getFirstOrDefault()` method
+
 * Created `ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface` and `ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface`
 instead of `ymaker\email\templates\services\ServiceInterface` and `ymaker\email\templates\services\EmailtemplateService`
 

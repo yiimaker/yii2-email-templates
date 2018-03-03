@@ -50,7 +50,7 @@ interface EmailTemplatesRepositoryInterface
      *
      * @param string $key
      *
-     * @return mixed
+     * @return bool
      */
     public function has($key);
 
@@ -69,7 +69,7 @@ interface EmailTemplatesRepositoryInterface
      *
      * @return mixed
      */
-    public function save($entity, array $data);
+    public function save($entity, array $data = []);
 
     /**
      * Removes email template entity by ID.
@@ -79,4 +79,13 @@ interface EmailTemplatesRepositoryInterface
      * @return bool
      */
     public function delete($id);
+
+    /**
+     * Removes email template object.
+     *
+     * @param mixed $entity
+     *
+     * @return bool
+     */
+    public function deleteObject($entity);
 }

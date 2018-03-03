@@ -48,9 +48,15 @@ class TemplateManager extends BaseObject
      */
     public function getTemplate($key, $language = null, $default = null)
     {
-        $translation = $this->repository->getByKeyWithTranslation($key, $language ?: Yii::$app->language);
+        /* @var EmailTemplate $template */
+        $template = $this->repository->getByKeyWithTranslation(
+            $key,
+            $language ?: Yii::$app->language
+        );
 
-        return null === $translation ? $default : EmailTemplate::buildFromEntity($translation);
+        return empty($template->translations[0])
+            ? $default
+            : EmailTemplate::buildFromEntity($template->translations[0]);
     }
 
     /**

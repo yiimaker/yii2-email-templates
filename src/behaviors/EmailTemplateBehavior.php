@@ -7,12 +7,11 @@
 
 namespace ymaker\email\templates\behaviors;
 
-use Yii;
 use yii\base\Behavior;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Json;
-use ymaker\email\templates\entities\EmailTemplate;
 use ymaker\email\templates\entities\EmailTemplateTranslation;
+use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 
 /**
  * Behavior for appending of email templates to ActiveRecord models.
@@ -32,6 +31,10 @@ class EmailTemplateBehavior extends Behavior
     public $owner;
 
     /**
+     * @var EmailTemplatesRepositoryInterface
+     */
+    private $_repository;
+    /**
      * @var string
      */
     private $_key = 'default';
@@ -40,10 +43,43 @@ class EmailTemplateBehavior extends Behavior
      */
     private $_languageAttribute = 'language';
     /**
-     * @var EmailTemplate
+     * @var \ymaker\email\templates\entities\EmailTemplate
      */
     private $_template;
 
+
+    /**
+     * @inheritdoc
+     */
+    public function __construct(
+        EmailTemplatesRepositoryInterface $repository,
+        $config = []
+    ) {
+        $this->_repository = $repository;
+
+        parent::__construct($config);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        $this->fetchEmailTemplate();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function events()
+    {
+        return [
+            BaseActiveRecord::EVENT_AFTER_FIND      => 'fetchEmailTemplate',
+            BaseActiveRecord::EVENT_AFTER_INSERT    => 'saveEmailTemplate',
+            BaseActiveRecord::EVENT_AFTER_UPDATE    => 'saveEmailTemplate',
+            BaseActiveRecord::EVENT_AFTER_DELETE    => 'deleteEmailTemplate',
+        ];
+    }
 
     /**
      * @param string $key
@@ -110,47 +146,17 @@ class EmailTemplateBehavior extends Behavior
     }
 
     /**
-     * @return EmailTemplateTranslation
+     * Fetch email template from database.
      */
-    private function getTranslation()
+    public function fetchEmailTemplate()
     {
-        $language = $this->owner->{$this->_languageAttribute};
-        return $this->_template->getTranslation($language);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        $this->getEmailTemplate();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function events()
-    {
-        return [
-            BaseActiveRecord::EVENT_AFTER_FIND      => 'getEmailTemplate',
-            BaseActiveRecord::EVENT_AFTER_INSERT    => 'saveEmailTemplate',
-            BaseActiveRecord::EVENT_AFTER_UPDATE    => 'saveEmailTemplate',
-            BaseActiveRecord::EVENT_AFTER_DELETE    => 'deleteEmailTemplate',
-        ];
-    }
-
-    /**
-     * Get email template from database.
-     */
-    public function getEmailTemplate()
-    {
-        if ($this->owner !== null) {
-            $this->_template = EmailTemplate::find()
-                ->byKey($this->generateKey())
-                ->withTranslation($this->owner->{$this->_languageAttribute})
-                ->one();
+        if (null !== $this->owner) {
+            $this->_template = $this->_repository->getByKeyWithTranslation(
+                $this->generateKey(),
+                $this->owner->{$this->_languageAttribute}
+            );
         } else {
-            $this->_template = new EmailTemplate();
+            $this->_template = $this->_repository->create();
         }
     }
 
@@ -159,15 +165,11 @@ class EmailTemplateBehavior extends Behavior
      */
     public function saveEmailTemplate()
     {
-        if ($this->_template->key === null) {
+        if (null === $this->_template->key) {
             $this->_template->key = $this->generateKey();
         }
 
-        try {
-            $this->_template->save();
-        } catch (\Exception $ex) {
-            Yii::$app->getErrorHandler()->logException($ex);
-        }
+        $this->_repository->save($this->_template);
     }
 
     /**
@@ -175,11 +177,7 @@ class EmailTemplateBehavior extends Behavior
      */
     public function deleteEmailTemplate()
     {
-        try {
-            $this->_template->delete();
-        } catch (\Exception $ex) {
-            Yii::$app->getErrorHandler()->logException($ex);
-        }
+        $this->_repository->deleteObject($this->_template);
     }
 
     /**
@@ -194,5 +192,15 @@ class EmailTemplateBehavior extends Behavior
             'id'    => $this->owner->getPrimaryKey(),
             'key'   => $this->_key,
         ]);
+    }
+
+    /**
+     * @return EmailTemplateTranslation
+     */
+    private function getTranslation()
+    {
+        $language = $this->owner->{$this->_languageAttribute};
+
+        return $this->_template->getTranslation($language);
     }
 }

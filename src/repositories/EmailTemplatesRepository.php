@@ -43,7 +43,11 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * Find email template entity by ID.
+     *
+     * @param int $id
+     *
+     * @return EmailTemplate|null
      */
     public function getById($id)
     {
@@ -54,21 +58,27 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * Find template by key with translation.
+     *
+     * @param string $key
+     * @param string $language
+     *
+     * @return EmailTemplate|null
      */
     public function getByKeyWithTranslation($key, $language)
     {
-        /* @var EmailTemplate $model */
-        $model = EmailTemplate::find()
+        return EmailTemplate::find()
             ->byKey($key)
             ->withTranslation($language)
             ->one();
-
-        return isset($model->translations[0]) ? $model->translations[0] : null;
     }
 
     /**
-     * @inheritdoc
+     * Find all language versions of template by key.
+     *
+     * @param string $key
+     *
+     * @return EmailTemplateTranslation[]|null
      */
     public function getAll($key)
     {
@@ -81,7 +91,9 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * Returns data provider for email template entity.
+     *
+     * @return ActiveDataProvider
      */
     public function getDataProvider()
     {
@@ -100,7 +112,9 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * Creates new email template model.
+     *
+     * @return EmailTemplate
      */
     public function create()
     {
@@ -108,11 +122,20 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * Save entity.
+     *
+     * @param EmailTemplate $entity
+     * @param array         $data
+     *
+     * @return bool
      */
-    public function save($entity, array $data)
+    public function save($entity, array $data = [])
     {
         try {
+            if (empty($data)) {
+                return $entity->save();
+            }
+
             $this->saveInternal($entity, $data);
 
             return true;
@@ -128,11 +151,33 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
      */
     public function delete($id)
     {
-        if ($model = $this->getById($id)) {
-            return (bool) $model->delete();
+        try {
+            if ($model = $this->getById($id)) {
+                return (bool) $model->delete();
+            }
+        } catch (\Exception $ex) {
+            Yii::$app->getErrorHandler()->logException($ex);
         }
 
         return false;
+    }
+
+    /**
+     * Removes email template object.
+     *
+     * @param EmailTemplate $entity
+     *
+     * @return bool
+     */
+    public function deleteObject($entity)
+    {
+        try {
+            return (bool) $entity->delete();
+        } catch (\Exception $ex) {
+            Yii::$app->getErrorHandler()->logException($ex);
+
+            return false;
+        }
     }
 
     /**

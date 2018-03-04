@@ -20,4 +20,3 @@ Additional topics
 -----------------
 
 * [Using Gii generator](gii-generator.md)
-

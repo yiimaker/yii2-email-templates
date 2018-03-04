@@ -45,4 +45,4 @@ instead of `ymaker\email\templates\services\DbService`.
 
 * Renamed `_service` property to `service` in default controller.
 
-* Changed minimum `vova07/yii2-imperavi-widget` package version from `~1.3.1` to `~2.0`. 
+* Changed minimum `vova07/yii2-imperavi-widget` package version from `~1.3.1` to `~2.0`.

@@ -10,7 +10,6 @@ namespace ymaker\email\templates\behaviors;
 use yii\base\Behavior;
 use yii\db\BaseActiveRecord;
 use yii\helpers\Json;
-use ymaker\email\templates\entities\EmailTemplateTranslation;
 use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 
 /**
@@ -195,7 +194,7 @@ class EmailTemplateBehavior extends Behavior
     }
 
     /**
-     * @return EmailTemplateTranslation
+     * @return \ymaker\email\templates\entities\EmailTemplateTranslation
      */
     private function getTranslation()
     {

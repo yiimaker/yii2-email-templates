@@ -63,7 +63,7 @@ class EmailTemplateBehaviorTest extends TestCase
 
     public function testFindModel()
     {
-        DemoActiveRecord::$behaviors = ['templates' => EmailTemplateBehavior::class];
+        DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
 
         $model = new DemoActiveRecord();
         $model->letterSubject = 'this is subject';

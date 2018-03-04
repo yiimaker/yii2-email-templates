@@ -23,7 +23,7 @@ class ModuleTest extends TestCase
 {
     public function testInitService()
     {
-        $module = new Module('test', null, ['languageProvider' => []]);
+        new Module('test', null, ['languageProvider' => []]);
 
         $this->assertInstanceOf(
             EmailTemplatesRepository::class,
@@ -34,12 +34,12 @@ class ModuleTest extends TestCase
     public function testInitLanguageProvider()
     {
         $this->expectException('yii\base\InvalidConfigException');
-        $module = new Module('test');
+        new Module('test');
     }
 
     public function testInit()
     {
-        $module = new Module('test', null, ['languageProvider' => []]);
+        new Module('test', null, ['languageProvider' => []]);
 
         $this->assertTrue(Yii::$container->has(EmailTemplatesRepositoryInterface::class));
         $this->assertTrue(Yii::$container->has(LanguageProviderInterface::class));

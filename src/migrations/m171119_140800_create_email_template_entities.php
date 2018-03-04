@@ -28,7 +28,7 @@ class m171119_140800_create_email_template_entities extends Migration
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeUp()
     {
@@ -91,7 +91,7 @@ class m171119_140800_create_email_template_entities extends Migration
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeDown()
     {

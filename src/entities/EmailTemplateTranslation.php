@@ -28,7 +28,7 @@ use motion\i18n\LanguageProviderInterface;
 class EmailTemplateTranslation extends ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -47,7 +47,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function formName()
     {
@@ -55,7 +55,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -64,7 +64,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -83,7 +83,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -113,7 +113,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function transactions()
     {

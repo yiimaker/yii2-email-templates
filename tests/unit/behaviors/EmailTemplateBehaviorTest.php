@@ -27,7 +27,7 @@ use ymaker\email\templates\tests\unit\TestCase;
 class EmailTemplateBehaviorTest extends TestCase
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _inject()
     {

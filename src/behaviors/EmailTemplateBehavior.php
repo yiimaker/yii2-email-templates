@@ -49,7 +49,7 @@ class EmailTemplateBehavior extends Behavior
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function __construct(
         EmailTemplatesRepositoryInterface $repository,
@@ -61,7 +61,7 @@ class EmailTemplateBehavior extends Behavior
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -69,7 +69,7 @@ class EmailTemplateBehavior extends Behavior
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function events()
     {

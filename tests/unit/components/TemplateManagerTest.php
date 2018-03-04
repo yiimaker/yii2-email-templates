@@ -32,7 +32,7 @@ class TemplateManagerTest extends DbTestCase
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fixtures()
     {
@@ -42,7 +42,7 @@ class TemplateManagerTest extends DbTestCase
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _before()
     {

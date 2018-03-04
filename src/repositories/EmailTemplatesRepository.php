@@ -109,7 +109,7 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function has($key)
     {
@@ -152,7 +152,7 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function delete($id)
     {

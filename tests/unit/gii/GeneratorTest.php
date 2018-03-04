@@ -20,7 +20,7 @@ use ymaker\email\templates\tests\unit\TestCase;
 class GeneratorTest extends TestCase
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _before()
     {

@@ -26,7 +26,7 @@ class DbTestCase extends TestCase
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _before()
     {
@@ -35,7 +35,7 @@ class DbTestCase extends TestCase
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _after()
     {
@@ -44,7 +44,7 @@ class DbTestCase extends TestCase
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fixtures()
     {

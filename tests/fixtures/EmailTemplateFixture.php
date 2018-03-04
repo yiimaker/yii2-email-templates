@@ -19,11 +19,11 @@ use ymaker\email\templates\entities\EmailTemplate;
 class EmailTemplateFixture extends ActiveFixture
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $modelClass = EmailTemplate::class;
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $dataFile = '@data/email-templates.php';
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Renders form for Gii generator.
  *

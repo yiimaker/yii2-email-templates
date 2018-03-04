@@ -19,15 +19,15 @@ use ymaker\email\templates\entities\EmailTemplateTranslation;
 class EmailTemplateTranslationFixture extends ActiveFixture
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $modelClass = EmailTemplateTranslation::class;
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $dataFile = '@data/email-template-translations.php';
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $depends = [
         EmailTemplateFixture::class,

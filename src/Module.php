@@ -25,7 +25,7 @@ use motion\i18n\LanguageProviderInterface;
 class Module extends \yii\base\Module
 {
     /**
-     * @inheritdoc
+     * {{@inheritdoc}}
      */
     public $controllerNamespace = 'ymaker\email\templates\controllers';
 
@@ -70,7 +70,7 @@ class Module extends \yii\base\Module
     }
 
     /**
-     * @inheritdoc
+     * {{@inheritdoc}}
      */
     public function init()
     {

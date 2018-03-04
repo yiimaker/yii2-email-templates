@@ -1,4 +1,5 @@
 <?php
+
 /**
  * View file for gii generator.
  *
@@ -39,7 +40,7 @@ class <?= $className ?> extends Migration
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeUp()
     {
@@ -62,7 +63,7 @@ class <?= $className ?> extends Migration
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeDown()
     {

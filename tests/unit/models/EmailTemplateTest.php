@@ -21,7 +21,7 @@ use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 class EmailTemplateTest extends DbTestCase
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fixtures()
     {

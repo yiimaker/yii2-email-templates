@@ -27,7 +27,7 @@ use creocoder\translateable\TranslateableBehavior;
 class EmailTemplate extends ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -35,7 +35,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
      */
@@ -60,7 +60,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {
@@ -88,7 +88,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -100,7 +100,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -111,7 +111,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function transactions()
     {

@@ -26,7 +26,7 @@ class TemplateManager extends BaseObject
     protected $repository;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @param EmailTemplatesRepositoryInterface $repository
      */
     public function __construct(EmailTemplatesRepositoryInterface $repository, $config = [])

@@ -8,6 +8,24 @@ Vous pouvez utiliser le comportement du modèle d’email pour l’adjonction du
 ### La configuration
 
 ```php
+// bootstrap.php
+
+\Yii::$container->set(
+    \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
+    \ymaker\email\templates\repositories\EmailTemplatesRepository::class
+);
+
+// or config/main.php
+`container` => [
+    'singletons' => [
+        // ...
+        \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>
+            \ymaker\email\templates\repositories\EmailTemplatesRepository::class,
+    ],
+],
+```
+
+```php
 // ActiveRecord modèle
 
 public function behaviours()

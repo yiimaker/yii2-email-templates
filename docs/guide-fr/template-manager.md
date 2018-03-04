@@ -1,6 +1,26 @@
 Le manager du modèle d’email
 ============================
 
+## Configuration
+
+```php
+// bootstrap.php
+
+\Yii::$container->set(
+    \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
+    \ymaker\email\templates\repositories\EmailTemplatesRepository::class
+);
+
+// or config/main.php
+`container` => [
+    'singletons' => [
+        // ...
+        \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>
+            \ymaker\email\templates\repositories\EmailTemplatesRepository::class,
+    ],
+],
+```
+
 ## L’utilisation
 
 Vous pouvez recevoir les données pour remplacer les substituants dans le formulaire

@@ -46,9 +46,9 @@ Database language provider example:
 
 [Read more](https://github.com/motion/yii2-language-provider) about language provider.
 
-### Service
+### Repository
 
-It is not obligatory property that is used in controller to work with data.
+It is not obligatory property that is used in controller to work with email template model.
 
-You can use default email template service `\ymaker\email\templates\services\EmailTemplateService`
-or implement another service, for this you should implement a basic interface `\ymaker\email\templates\services\ServiceInterface`.
+You can use default email template repository `\ymaker\email\templates\repositories\EmailTemplatesRepository`
+or implement another repository, for this you should implement a basic interface `\ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface`.

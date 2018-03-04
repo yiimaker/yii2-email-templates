@@ -46,10 +46,10 @@ Backend модуль
 
 [Читайте больше](https://github.com/motion/yii2-language-provider) о языковом провайдере.
 
-### Service
+### Repository
 
 Это не обязательная опция, которыя используется в контроллере для работы с данными.
 
-Вы можете использовать стандартный сервис для хранения данных в БД `\ymaker\email\templates\services\EmailTemplateService`
-или реализовать свой сервис со своей моделью хранения данных,
-для этого вы должны реализовать базовый интерфейс - `\ymaker\email\templates\services\ServiceInterface`.
+Вы можете использовать стандартный репозиторий для работы с моделью `\ymaker\email\templates\repositories\EmailTemplatesRepository`
+или реализовать свой репозиторий со своей моделью хранения данных,
+для этого вы должны реализовать базовый интерфейс - `\ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface`.

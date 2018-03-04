@@ -1,6 +1,28 @@
 Менеджер шаблонов
 =================
 
+## Настройка
+
+Настройте репозиторий в DI контейнере
+
+```php
+// bootstrap.php
+
+\Yii::$container->set(
+    \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
+    \ymaker\email\templates\repositories\EmailTemplatesRepository::class
+);
+
+// или config/main.php
+`container` => [
+    'singletons' => [
+        // ...
+        \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>
+            \ymaker\email\templates\repositories\EmailTemplatesRepository::class,
+    ],
+],
+```
+
 ## Использование
 
 Вы можете брать данные для замены ключей в шаблоне из методов классов,

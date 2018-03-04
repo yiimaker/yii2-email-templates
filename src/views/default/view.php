@@ -1,9 +1,4 @@
 <?php
-/**
- * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
- * @license BSD 3-Clause License
- */
 
 use yii\helpers\Html;
 use yii\helpers\Url;

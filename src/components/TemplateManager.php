@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\components;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use ymaker\email\templates\models\EmailTemplate as EmailTemplateModel;
 use ymaker\email\templates\models\entities\EmailTemplate;
 use ymaker\email\templates\models\entities\EmailTemplateTranslation;
@@ -20,7 +20,7 @@ use ymaker\email\templates\models\entities\EmailTemplateTranslation;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class TemplateManager extends Object
+class TemplateManager extends BaseObject
 {
     /**
      * Returns template model by key and language.

@@ -8,7 +8,7 @@
 namespace ymaker\email\templates\services;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
@@ -22,7 +22,7 @@ use ymaker\email\templates\models\entities\EmailTemplateTranslation;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
-class EmailTemplateService extends Object implements ServiceInterface
+class EmailTemplateService extends BaseObject implements ServiceInterface
 {
     /**
      * @var string|array|Connection

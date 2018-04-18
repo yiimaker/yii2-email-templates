@@ -7,7 +7,7 @@
 
 namespace ymaker\email\templates\models;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * Model class for template manager.
@@ -19,7 +19,7 @@ use yii\base\Object;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class EmailTemplate extends Object
+class EmailTemplate extends BaseObject
 {
     /**
      * Email letter subject.

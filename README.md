@@ -31,7 +31,7 @@ $ composer require yiimaker/yii2-email-templates
 or add
 
 ```
-"yiimaker/yii2-email-templates": "~3.0"
+"yiimaker/yii2-email-templates": "~4.0"
 ```
 
 to the `require` section of your `composer.json`.

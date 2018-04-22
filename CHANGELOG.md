@@ -1,8 +1,8 @@
 Email Templates Module Change Log
 ---------------------------------
 
-4.0.0 Under development
------------------------
+4.0.0 April 22, 2018
+--------------------
 * Enh: Inject repository object to template manager (greeflas)
 * Enh: Inject repository object to email template behavior (greeflas)
 * Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)

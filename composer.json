@@ -26,7 +26,7 @@
     "yiisoft/yii2": "^2.0.13",
     "yiisoft/yii2-bootstrap": "~2.0.0",
     "motion/yii2-language-provider": "~2.1",
-    "creocoder/yii2-translateable": "~1.0",
+    "yiimaker/yii2-translatable": "~1.0",
     "vova07/yii2-imperavi-widget": "~2.0"
   },
   "require-dev": {

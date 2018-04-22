@@ -24,6 +24,8 @@ Upgrade from 3.x to 4.x
 * Created `ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface` and `ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface`
 instead of `ymaker\email\templates\services\ServiceInterface` and `ymaker\email\templates\services\EmailtemplateService`
 
+* Using `yiimaker/yii2-translatable` instead of `creocoder/yii2-translateable`
+
 Upgrade from 2.x to 3.x
 -----------------------
 

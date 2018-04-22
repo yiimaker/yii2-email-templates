@@ -9,6 +9,8 @@ Upgrade from 3.x to 4.x
 
 * Moved entities from `ymaker\email\tempaltes\models\entities` namespace to `ymaker\email\tempaltes\entities`
 
+* Moved `yiisoft/yii2-bootstrap`, `vova07/yii2-imperavi-widget` packages to suggesting
+
 * Changed minimum Yii version from `^2.0.0` to `^2.0.13`
 
 * Changed minimum `motion/yii2-language-provider` version from `~1.0.` to `~2.1`

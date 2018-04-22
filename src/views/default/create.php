@@ -21,8 +21,6 @@ $this->params['breadcrumbs'][] = [
     'url' => ['/email-templates/default/index'],
 ];
 $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
-
-\yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">
@@ -44,8 +42,12 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
             <?php foreach (LanguageHelper::getInstance()->getLocales() as $language): ?>
                 <?php $translation = $model->getTranslation($language) ?>
                 <?= $form->field($translation, 'subject') ?>
+            <?php if (class_exists(ImperaviRedactor::class)): ?>
                 <?= $form->field($translation, 'body')
                     ->widget(ImperaviRedactor::class) ?>
+            <?php else: ?>
+                <?= $form->field($translation, 'body')->textarea() ?>
+            <?php endif; ?>
                 <?= $form->field($translation, 'hint') ?>
             <?php endforeach ?>
             <?= Html::submitButton(

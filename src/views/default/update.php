@@ -23,8 +23,6 @@ $this->params['breadcrumbs'][] = [
 $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {key}', [
     'key' => $model->key,
 ]);
-
-\yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">
@@ -44,8 +42,12 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {ke
                 <?php $translation = $model->getTranslation($language) ?>
                 <?= $form->field($translation, 'subject')
                     ->textInput() ?>
-                <?= $form->field($translation, 'body')
-                    ->widget(ImperaviRedactor::class) ?>
+                <?php if (class_exists(ImperaviRedactor::class)): ?>
+                    <?= $form->field($translation, 'body')
+                        ->widget(ImperaviRedactor::class) ?>
+                <?php else: ?>
+                    <?= $form->field($translation, 'body')->textarea() ?>
+                <?php endif; ?>
                 <?= $form->field($translation, 'hint')
                     ->textInput(['disabled' => true]) ?>
             <?php endforeach ?>

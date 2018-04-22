@@ -22,8 +22,6 @@ $this->params['breadcrumbs'][] = [
 $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
     'key' => $model->key,
 ]);
-
-\yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">

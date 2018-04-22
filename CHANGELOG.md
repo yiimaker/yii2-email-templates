@@ -8,6 +8,7 @@ Email Templates Module Change Log
 * Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
 * Chg: Changed minimum `motion/yii2-language-provider` version from `~1.0` to `~2.1` (greeflas)
 * Chg: Using `yiimaker/yii2-translatable` instead of `creocoder/yii2-translateable` (greeflas)
+* Chg: Moved `yiisoft/yii2-bootstrap`, `vova07/yii2-imperavi-widget` packages to suggesting (greeflas)
 * Chg: Removed `ymaker\email\templates\helpers\LanguageHelper` helper (greeflas)
 * Chg: Created repository class for email template entity
 * Fix: Removed unused dev packages `codeception/verify` and `codeception/specify` (greeflas)

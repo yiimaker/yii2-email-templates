@@ -24,14 +24,16 @@
   "require": {
     "php": ">=5.6.0",
     "yiisoft/yii2": "^2.0.13",
-    "yiisoft/yii2-bootstrap": "~2.0.0",
     "motion/yii2-language-provider": "~2.1",
-    "yiimaker/yii2-translatable": "~1.0",
-    "vova07/yii2-imperavi-widget": "~2.0"
+    "yiimaker/yii2-translatable": "~1.0"
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.0.0",
     "codeception/codeception": "~2.0"
+  },
+  "suggest": {
+    "yiisoft/yii2-bootstrap": "If you want use default view files in backend you should install this package",
+    "vova07/yii2-imperavi-widget": "If you want use Imperavi editor you should install this package"
   },
   "autoload": {
     "psr-4": {

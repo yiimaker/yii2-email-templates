@@ -18,8 +18,6 @@ use ymaker\email\templates\Module as TemplatesModule;
  */
 
 $session = Yii::$app->getSession();
-
-\yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">

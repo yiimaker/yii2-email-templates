@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -21,6 +21,7 @@ class EmailTemplateQuery extends ActiveQuery
      * Add by key condition.
      *
      * @param string $key Email template key.
+     *
      * @return EmailTemplateQuery
      */
     public function byKey($key)
@@ -32,6 +33,7 @@ class EmailTemplateQuery extends ActiveQuery
      * Get with translation by language.
      *
      * @param string $language
+     *
      * @return EmailTemplateQuery
      */
     public function withTranslation($language)

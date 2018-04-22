@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -26,7 +26,7 @@ class DbTestCase extends TestCase
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _before()
     {
@@ -35,7 +35,7 @@ class DbTestCase extends TestCase
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function _after()
     {
@@ -44,10 +44,9 @@ class DbTestCase extends TestCase
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fixtures()
     {
-
     }
 }

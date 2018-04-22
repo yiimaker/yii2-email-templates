@@ -1,16 +1,17 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
 namespace ymaker\email\templates\models;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * Model class for template manager.
+ *
  * @see \ymaker\email\templates\components\TemplateManager
  *
  * @property string $subject
@@ -19,7 +20,7 @@ use yii\base\Object;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class EmailTemplate extends Object
+class EmailTemplate extends BaseObject
 {
     /**
      * Email letter subject.
@@ -39,6 +40,7 @@ class EmailTemplate extends Object
      * Getter for subject.
      *
      * @return string
+     *
      * @since 2.0
      */
     public function getSubject()
@@ -50,6 +52,7 @@ class EmailTemplate extends Object
      * Getter for body.
      *
      * @return string
+     *
      * @since 2.0
      */
     public function getBody()
@@ -60,9 +63,10 @@ class EmailTemplate extends Object
     /**
      * EmailTemplate constructor.
      *
-     * @param string $subject
-     * @param string $body
-     * @param array $config
+     * @param string    $subject
+     * @param string    $body
+     * @param array     $config
+     *
      * @since 2.0
      */
     public function __construct($subject, $body, $config = [])
@@ -76,7 +80,8 @@ class EmailTemplate extends Object
     /**
      * Build email template from entity.
      *
-     * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation $entity
+     * @param \ymaker\email\templates\entities\EmailTemplateTranslation $entity
+     *
      * @return EmailTemplate
      */
     public static function buildFromEntity($entity)
@@ -87,7 +92,8 @@ class EmailTemplate extends Object
     /**
      * Build email templates array from entities.
      *
-     * @param \ymaker\email\templates\models\entities\EmailTemplateTranslation[] $entities
+     * @param \ymaker\email\templates\entities\EmailTemplateTranslation[] $entities
+     *
      * @return EmailTemplate[]
      */
     public static function buildMultiply($entities)
@@ -101,8 +107,8 @@ class EmailTemplate extends Object
     }
 
     /**
-     * @param array $data
-     * @param string $attribute
+     * @param array     $data
+     * @param string    $attribute
      */
     protected function replaceKeys($data, $attribute)
     {

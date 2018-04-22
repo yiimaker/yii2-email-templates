@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -9,8 +9,10 @@ namespace ymaker\email\templates\tests\unit\behaviors;
 
 use yii\helpers\Json;
 use ymaker\email\templates\behaviors\EmailTemplateBehavior;
-use ymaker\email\templates\models\entities\EmailTemplate;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation;
+use ymaker\email\templates\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplateTranslation;
+use ymaker\email\templates\repositories\EmailTemplatesRepository;
+use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 use ymaker\email\templates\tests\mocks\DemoActiveRecord;
 use ymaker\email\templates\tests\unit\TestCase;
 
@@ -24,14 +26,25 @@ use ymaker\email\templates\tests\unit\TestCase;
  */
 class EmailTemplateBehaviorTest extends TestCase
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected function _inject()
+    {
+        \Yii::$container->set(
+            EmailTemplatesRepositoryInterface::class,
+            EmailTemplatesRepository::class
+        );
+    }
+
     public function testNewModel()
     {
         DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
-        $model = new DemoActiveRecord([
-            'letterSubject' => 'this is subject',
-            'letterBody' => 'this is body',
-            'emailTemplateHint' => 'this is hint',
-        ]);
+
+        $model = new DemoActiveRecord();
+        $model->letterSubject = 'this is subject';
+        $model->letterBody = 'this is body';
+        $model->emailTemplateHint = 'this is hint';
         $model->save(false);
 
         $this->tester->seeRecord(EmailTemplate::class, [
@@ -50,12 +63,12 @@ class EmailTemplateBehaviorTest extends TestCase
 
     public function testFindModel()
     {
-        DemoActiveRecord::$behaviors = ['templates' => EmailTemplateBehavior::class];
-        $model = new DemoActiveRecord([
-            'letterSubject' => 'this is subject',
-            'letterBody' => 'this is body',
-            'emailTemplateHint' => 'this is hint',
-        ]);
+        DemoActiveRecord::$behaviors = [EmailTemplateBehavior::class];
+
+        $model = new DemoActiveRecord();
+        $model->letterSubject = 'this is subject';
+        $model->letterBody = 'this is body';
+        $model->emailTemplateHint = 'this is hint';
         $model->save(false);
 
         $foundedModel = DemoActiveRecord::findOne($model->id);

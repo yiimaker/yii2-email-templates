@@ -1,6 +1,28 @@
 Template manager
 ================
 
+## Configuration
+
+Configure repository in DI container
+
+```php
+// bootstrap.php
+
+\Yii::$container->set(
+    \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
+    \ymaker\email\templates\repositories\EmailTemplatesRepository::class
+);
+
+// or config/main.php
+`container` => [
+    'singletons' => [
+        // ...
+        \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>
+            \ymaker\email\templates\repositories\EmailTemplatesRepository::class,
+    ],
+],
+```
+
 ## Using
 
 You can get data to replace placeholders from some classes methods, application components, databases, widgets, etc.

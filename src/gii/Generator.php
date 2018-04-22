@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -19,19 +19,27 @@ use yii\gii\CodeFile;
 class Generator extends \yii\gii\Generator
 {
     /**
-     * @var string Email template key.
+     * Email template key.
+     *
+     * @var string
      */
     public $key;
     /**
-     * @var string Subject of email letter.
+     * Subject of email letter.
+     *
+     * @var string
      */
     public $subject;
     /**
-     * @var string Body of email letter.
+     * Body of email letter.
+     *
+     * @var string
      */
     public $body;
     /**
-     * @var string Hints for user.
+     * Hints for user.
+     *
+     * @var string
      */
     public $hint;
     /**
@@ -41,7 +49,7 @@ class Generator extends \yii\gii\Generator
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -53,7 +61,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getName()
     {
@@ -61,7 +69,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -69,7 +77,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -81,7 +89,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -94,7 +102,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function requiredTemplates()
     {
@@ -102,7 +110,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function generate()
     {

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/yiimaker/yii2-email-templates
+ * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @license BSD 3-Clause License
+ */
 
 namespace ymaker\email\templates\tests\mocks;
 
@@ -7,8 +12,7 @@ use yii\db\ActiveRecord;
 /**
  * This is demo ActiveRecord model.
  *
- * @property int $id
- *
+ * @property int    $id
  * @property string $letterSubject
  * @property string $letterBody
  * @property string $emailTemplateHint
@@ -29,7 +33,7 @@ class DemoActiveRecord extends ActiveRecord
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -37,7 +41,7 @@ class DemoActiveRecord extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {

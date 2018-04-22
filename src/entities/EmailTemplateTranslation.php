@@ -1,11 +1,11 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\email\templates\models\entities;
+namespace ymaker\email\templates\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -14,14 +14,13 @@ use motion\i18n\LanguageProviderInterface;
 /**
  * This is the model class for table "{{%email_template_translation}}".
  *
- * @property int $id
- * @property int $templateId
- * @property string $language
- * @property string $subject
- * @property string $body
- * @property string $hint
- *
- * @property EmailTemplate $template
+ * @property int            $id
+ * @property int            $templateId
+ * @property string         $language
+ * @property string         $subject
+ * @property string         $body
+ * @property string         $hint
+ * @property EmailTemplate  $template
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -29,7 +28,7 @@ use motion\i18n\LanguageProviderInterface;
 class EmailTemplateTranslation extends ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -48,7 +47,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function formName()
     {
@@ -56,7 +55,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -65,7 +64,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -84,7 +83,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -105,6 +104,7 @@ class EmailTemplateTranslation extends ActiveRecord
      * Adds prefix to label.
      *
      * @param string $label
+     *
      * @return string
      */
     protected function addLabelPostfix($label)
@@ -113,7 +113,7 @@ class EmailTemplateTranslation extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function transactions()
     {

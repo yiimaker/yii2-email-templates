@@ -1,9 +1,4 @@
 <?php
-/**
- * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
- * @license BSD 3-Clause License
- */
 
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
@@ -22,10 +17,15 @@ use ymaker\email\templates\Module as TemplatesModule;
  * @since 1.0
  */
 
-\yii\bootstrap\BootstrapAsset::register($this);
+$session = Yii::$app->getSession();
 ?>
 <div class="container">
     <div class="row">
+    <?php if ($session->hasFlash('yii2-email-templates')): ?>
+        <div class="col-md-12">
+            <div class="alert alert-success"><?= $session->getFlash('yii2-email-templates') ?></div>
+        </div>
+    <?php endif; ?>
         <div class="col-md-12">
             <h1>
                 <?= TemplatesModule::t('Email templates') ?>

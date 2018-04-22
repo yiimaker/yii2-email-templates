@@ -1,7 +1,8 @@
 <?php
+
 return [
     'id' => 'test-app',
-    'class' => 'yii\console\Application',
+    'class' => yii\console\Application::class,
     'language' => 'en',
 
     'basePath' => Yii::getAlias('@tests'),
@@ -9,6 +10,6 @@ return [
     'runtimePath' => Yii::getAlias('@tests/_output'),
 
     'bootstrap' => [],
-    'components' => require(__DIR__ . '/components.php'),
-    'params' => require(__DIR__ . '/params.php'),
+    'components' => require __DIR__ . '/components.php',
+    'params' => [],
 ];

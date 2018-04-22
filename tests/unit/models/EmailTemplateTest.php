@@ -1,14 +1,14 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
 namespace ymaker\email\templates\tests\unit\models;
 
 use ymaker\email\templates\tests\unit\DbTestCase;
-use ymaker\email\templates\models\entities\EmailTemplateTranslation as Entity;
+use ymaker\email\templates\entities\EmailTemplateTranslation as Entity;
 use ymaker\email\templates\models\EmailTemplate;
 use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 
@@ -21,7 +21,7 @@ use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 class EmailTemplateTest extends DbTestCase
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fixtures()
     {

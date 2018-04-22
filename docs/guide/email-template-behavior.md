@@ -9,6 +9,24 @@ your ActiveRecord model.
 ### Configuration
 
 ```php
+// bootstrap.php
+
+\Yii::$container->set(
+    \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
+    \ymaker\email\templates\repositories\EmailTemplatesRepository::class
+);
+
+// or config/main.php
+`container` => [
+    'singletons' => [
+        // ...
+        \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>
+            \ymaker\email\templates\repositories\EmailTemplatesRepository::class,
+    ],
+],
+```
+
+```php
 // ActiveRecord model
 
 public function behaviours()

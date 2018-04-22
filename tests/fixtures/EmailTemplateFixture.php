@@ -1,14 +1,14 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
 namespace ymaker\email\templates\tests\fixtures;
 
 use yii\test\ActiveFixture;
-use ymaker\email\templates\models\entities\EmailTemplate;
+use ymaker\email\templates\entities\EmailTemplate;
 
 /**
  * Fixure for [[EmailTemplate]] model.
@@ -19,11 +19,11 @@ use ymaker\email\templates\models\entities\EmailTemplate;
 class EmailTemplateFixture extends ActiveFixture
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $modelClass = EmailTemplate::class;
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $dataFile = '@data/email-templates.php';
 }

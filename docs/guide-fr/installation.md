@@ -14,7 +14,7 @@ $ composer require yiimaker/yii2-email-templates
 ou ajoutez
 
 ```
-"yiimaker/yii2-email-templates": "~3.0"
+"yiimaker/yii2-email-templates": "~4.0"
 ````
 
 pour la section `require` de votre `composer.json`.
@@ -28,10 +28,11 @@ pour la section `require` de votre `composer.json`.
 
 'controllerMap' => [
     'migrate' => [
-         'migrationNamespaces' => [
-            // ...
-             'ymaker\email\templates\migrations',
-         ],
+        'class' => yii\console\controllers\MigrateController::class,
+        'migrationNamespaces' => [
+           // ...
+           'ymaker\email\templates\migrations',
+        ],
     ],
 ],
 ```

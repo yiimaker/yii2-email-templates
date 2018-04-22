@@ -4,15 +4,40 @@ filter:
 checks:
     php:
         code_rating: true
+        duplication: false
+        unused_methods: true
+        unused_parameters: true
+        argument_type_checks: true
+        verify_property_names: true
+        method_calls_on_non_object: false
+        fix_doc_comments: true
+        instanceof_class_exists: true
+        catch_class_exists: true
+        assignment_of_null_return: false
+        use_statement_alias_conflict: false
+        simplify_boolean_return: true
+        return_doc_comments: true
+        return_doc_comment_if_not_inferrable: true
         remove_extra_empty_lines: true
         remove_php_closing_tag: true
-        remove_trailing_whitespace: true
+        parameters_in_camelcaps: true
+        parameter_doc_comments: true
+        param_doc_comment_if_not_inferrable: true
+        properties_in_camelcaps: true
+        no_long_variable_names:
+            maximum: '20'
+        no_goto: true
+        more_specific_types_in_doc_comments: true
         fix_use_statements:
             remove_unused: true
             preserve_multiple: false
             preserve_blanklines: true
-            order_alphabetically: true
-        fix_php_opening_tag: true
-        fix_linefeed: true
+            order_alphabetically: false
         fix_line_ending: true
-        fix_doc_comments: true
+        fix_php_opening_tag: true
+
+coding_style:
+    php:
+        spaces:
+            around_operators:
+                concatenation: true

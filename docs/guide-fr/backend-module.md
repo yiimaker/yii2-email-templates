@@ -46,8 +46,8 @@ L’exemple d’utilisation du fournisseur pour la base des données:
 
 [Lisez plus](https://github.com/motion/yii2-language-provider) du fournisseur langagier.
 
-### Le service
+### Le dépôt
 
 Ce n’est pas une option exigée. Elle est utilisée pour travailler avec la couche de données dans le contrôleur.
-Vous pouvez utiliser le défaut service du modèle d’email `\ymaker\email\templates\services\EmailTemplateService`
-ou appliquez un autre service. Pour ça il faut appliquer l’interface de base `\ymaker\email\templates\services\ServiceInterface`.
+Vous pouvez utiliser le défaut dépôt du modèle d’email `\ymaker\email\templates\repositories\EmailTemplatesRepository`
+ou appliquez un autre dépôt. Pour ça il faut appliquer l’interface de base `\ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface`.

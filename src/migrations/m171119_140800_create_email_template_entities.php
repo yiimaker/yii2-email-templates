@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -28,7 +28,7 @@ class m171119_140800_create_email_template_entities extends Migration
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeUp()
     {
@@ -91,7 +91,7 @@ class m171119_140800_create_email_template_entities extends Migration
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function safeDown()
     {

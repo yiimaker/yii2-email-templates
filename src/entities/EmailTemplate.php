@@ -1,23 +1,22 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
+ * @copyright Copyright (c) 2017-2018 Yii Maker
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\email\templates\models\entities;
+namespace ymaker\email\templates\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
 use ymaker\email\templates\queries\EmailTemplateQuery;
-use creocoder\translateable\TranslateableBehavior;
+use ymaker\translatable\TranslatableBehavior;
 
 /**
  * This is the model class for table "{{%email_template}}".
  *
- * @property int $id
- * @property string $key
- *
+ * @property int                        $id
+ * @property string                     $key
  * @property EmailTemplateTranslation[] $translations
  *
  * @method EmailTemplateTranslation getTranslation($language = null)
@@ -28,7 +27,7 @@ use creocoder\translateable\TranslateableBehavior;
 class EmailTemplate extends ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -36,7 +35,8 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     *
      * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
      */
     public static function find()
@@ -48,6 +48,7 @@ class EmailTemplate extends ActiveRecord
      * Find model ID by key.
      *
      * @param string $key Model key.
+     *
      * @return false|null|string
      */
     public static function findId($key)
@@ -59,14 +60,14 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {
         return [
             'translateable' => [
-                'class' => TranslateableBehavior::class,
-                'translationAttributes' => $this->getTranslationAttributes(),
+                'class' => TranslatableBehavior::class,
+                'translationAttributeList' => $this->getTranslationAttributes(),
             ],
         ];
     }
@@ -87,7 +88,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -99,7 +100,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -110,7 +111,7 @@ class EmailTemplate extends ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function transactions()
     {

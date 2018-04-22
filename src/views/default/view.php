@@ -1,9 +1,4 @@
 <?php
-/**
- * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017 Yii Maker
- * @license BSD 3-Clause License
- */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -14,7 +9,7 @@ use ymaker\email\templates\Module as TemplatesModule;
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
- * @var \ymaker\email\templates\models\entities\EmailTemplate $model
+ * @var \ymaker\email\templates\entities\EmailTemplate $model
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -27,8 +22,6 @@ $this->params['breadcrumbs'][] = [
 $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
     'key' => $model->key,
 ]);
-
-\yii\bootstrap\BootstrapAsset::register($this);
 ?>
 <div class="container">
     <div class="row">

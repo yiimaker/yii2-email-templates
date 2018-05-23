@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+4.0.1 May 23, 2018
+------------------
+* Chg: Changed minimum `yiimaker/yii2-translatable` from `~1.0` to `~1.0.1` (greeflas)
+
 4.0.0 April 22, 2018
 --------------------
 * Enh: Inject repository object to template manager (greeflas)

@@ -53,6 +53,17 @@ class <?= $className ?> extends Migration
             ->where(['key' => '<?= $generator->key ?>'])
             ->scalar();
 
+<?php if (Yii::$app->getModule('email-templates')): ?>
+    <?php foreach(\motion\i18n\helpers\LanguageHelper::getInstance()->getLocales() as $language): ?>
+        $this->insert($this->translationTableName, [
+            'templateId'    => $templateId,
+            'language'      => '<?= $language ?>',
+            'subject'       => '<?= $generator->subject ?>',
+            'body'          => '<?= $generator->body ?>',
+            'hint'          => '<?= $generator->hint ?>',
+        ]);
+    <?php endforeach; ?>
+<?php else: ?>
         $this->insert($this->translationTableName, [
             'templateId'    => $templateId,
             'language'      => Yii::$app->language,
@@ -60,6 +71,7 @@ class <?= $className ?> extends Migration
             'body'          => '<?= $generator->body ?>',
             'hint'          => '<?= $generator->hint ?>',
         ]);
+<?php endif; ?>
     }
 
     /**

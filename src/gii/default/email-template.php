@@ -52,16 +52,32 @@ class <?= $className ?> extends Migration
             ->select('id')
             ->where(['key' => '<?= $generator->key ?>'])
             ->scalar();
-
-        $this->insert($this->translationTableName, [
+        
+        <?php 
+           $module = Yii::$app->getModule('email-templates');
+           ?>
+            <?php if ($module): ?>
+            <?php if ($module->languageProvider): ?>
+            <?php foreach($module->languageProvider['languages'] as $language): ?>
+            $this->insert($this->translationTableName, [
+            'templateId'    => $templateId,
+            'language'      => '<?= $language['locale'] ?>',
+            'subject'       => '<?= $generator->subject ?>',
+            'body'          => '<?= $generator->body ?>',
+            'hint'          => '<?= $generator->hint ?>',
+        ]);
+            <?php endforeach; ?>
+            <?php endif; ?>
+            <?php else: ?>
+            $this->insert($this->translationTableName, [
             'templateId'    => $templateId,
             'language'      => Yii::$app->language,
             'subject'       => '<?= $generator->subject ?>',
             'body'          => '<?= $generator->body ?>',
             'hint'          => '<?= $generator->hint ?>',
         ]);
-    }
-
+            <?php endif; ?>
+}
     /**
      * {@inheritdoc}
      */

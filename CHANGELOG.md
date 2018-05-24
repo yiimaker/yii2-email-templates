@@ -1,6 +1,10 @@
 Email Templates Module Change Log
 ---------------------------------
 
+4.1.0 Under development
+-----------------------
+* Enh #24: Gii generator: adds default value to the hint field (Geoffry304)
+
 4.0.1 May 23, 2018
 ------------------
 * Chg: Changed minimum `yiimaker/yii2-translatable` from `~1.0` to `~1.0.1` (greeflas)

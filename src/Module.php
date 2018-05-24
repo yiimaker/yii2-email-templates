@@ -68,6 +68,11 @@ class Module extends \yii\base\Module
     {
         $this->languageProvider = $provider;
     }
+    
+    public function getLanguageProvider()
+    {
+        return $this->languageProvider;
+    }
 
     /**
      * {{@inheritdoc}}

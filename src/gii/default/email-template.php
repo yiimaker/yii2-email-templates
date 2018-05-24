@@ -57,17 +57,15 @@ class <?= $className ?> extends Migration
            $module = Yii::$app->getModule('email-templates');
            ?>
             <?php if ($module): ?>
-            <?php if ($module->languageProvider): ?>
-            <?php foreach($module->languageProvider['languages'] as $language): ?>
+            <?php foreach(\motion\i18n\helpers\LanguageHelper::getInstance()->getLocales() as $language): ?>
             $this->insert($this->translationTableName, [
             'templateId'    => $templateId,
-            'language'      => '<?= $language['locale'] ?>',
+            'language'      => '<?= $language ?>',
             'subject'       => '<?= $generator->subject ?>',
             'body'          => '<?= $generator->body ?>',
             'hint'          => '<?= $generator->hint ?>',
         ]);
             <?php endforeach; ?>
-            <?php endif; ?>
             <?php else: ?>
             $this->insert($this->translationTableName, [
             'templateId'    => $templateId,

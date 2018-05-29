@@ -10,7 +10,7 @@ namespace ymaker\email\templates\components;
 use Yii;
 use yii\base\BaseObject;
 use ymaker\email\templates\models\EmailTemplate;
-use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
+use ymaker\email\templates\repositories\EmailTemplatesRepository;
 
 /**
  * This class provides methods for making work with email template easily in your code.
@@ -27,9 +27,9 @@ class TemplateManager extends BaseObject
 
     /**
      * {@inheritdoc}
-     * @param EmailTemplatesRepositoryInterface $repository
+     * @param EmailTemplatesRepository $repository
      */
-    public function __construct(EmailTemplatesRepositoryInterface $repository, $config = [])
+    public function __construct(EmailTemplatesRepository $repository, $config = [])
     {
         $this->repository = $repository;
         parent::__construct($config);

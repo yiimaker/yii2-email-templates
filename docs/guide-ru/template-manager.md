@@ -7,14 +7,13 @@
 
 ```php
 // bootstrap.php
-
 \Yii::$container->set(
     \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
     \ymaker\email\templates\repositories\EmailTemplatesRepository::class
 );
 
 // или config/main.php
-`container` => [
+'container' => [
     'singletons' => [
         // ...
         \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>

@@ -5,14 +5,13 @@ Le manager du modèle d’email
 
 ```php
 // bootstrap.php
-
 \Yii::$container->set(
     \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class,
     \ymaker\email\templates\repositories\EmailTemplatesRepository::class
 );
 
 // or config/main.php
-`container` => [
+'container' => [
     'singletons' => [
         // ...
         \ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface::class =>

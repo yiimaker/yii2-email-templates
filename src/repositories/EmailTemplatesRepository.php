@@ -144,8 +144,8 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
             $this->saveInternal($entity, $data);
 
             return true;
-        } catch (\Exception $ex) {
-            Yii::$app->getErrorHandler()->logException($ex);
+        } catch (\Exception $e) {
+            Yii::$app->getErrorHandler()->logException($e);
         }
 
         return false;
@@ -160,8 +160,8 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
             if ($model = $this->getById($id)) {
                 return (bool) $model->delete();
             }
-        } catch (\Exception $ex) {
-            Yii::$app->getErrorHandler()->logException($ex);
+        } catch (\Exception $e) {
+            Yii::$app->getErrorHandler()->logException($e);
         }
 
         return false;
@@ -178,8 +178,8 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
     {
         try {
             return (bool) $entity->delete();
-        } catch (\Exception $ex) {
-            Yii::$app->getErrorHandler()->logException($ex);
+        } catch (\Exception $e) {
+            Yii::$app->getErrorHandler()->logException($e);
 
             return false;
         }
@@ -202,6 +202,7 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
 
         foreach ($data[EmailTemplateTranslation::internalFormName()] as $language => $dataSet) {
             $translationEntity = $entity->getTranslation($language);
+
             foreach ($dataSet as $attribute => $translation) {
                 $translationEntity->$attribute = $translation;
             }

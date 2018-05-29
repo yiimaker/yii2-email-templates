@@ -33,7 +33,8 @@ class m171119_140800_create_email_template_entities extends Migration
     public function safeUp()
     {
         $tableOptions = null;
-        if ($this->db->driverName === 'mysql') {
+
+        if ('mysql' === $this->db->driverName) {
             /* @link http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci */
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }

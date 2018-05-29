@@ -43,6 +43,7 @@ class EmailTemplateTranslation extends ActiveRecord
     public static function internalFormName()
     {
         $reflector = new \ReflectionClass(self::class);
+
         return $reflector->getShortName();
     }
 
@@ -60,6 +61,7 @@ class EmailTemplateTranslation extends ActiveRecord
     public function init()
     {
         $this->hint = 'All tokens wrapped in {} will be replaced by real data';
+
         parent::init();
     }
 
@@ -109,7 +111,7 @@ class EmailTemplateTranslation extends ActiveRecord
      */
     protected function addLabelPostfix($label)
     {
-        return $label . ' [' . $this->language . ']';
+        return \sprint('%s [%s]', $label, $this->language);
     }
 
     /**

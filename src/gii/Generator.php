@@ -55,8 +55,8 @@ class Generator extends \yii\gii\Generator
     {
         parent::init();
 
-        if ($this->migrationName === null) {
-            $this->migrationName = 'm' . gmdate('ymd_His') . '_add_email_template';
+        if (null === $this->migrationName) {
+            $this->migrationName = \sprintf('m%s_add_email_template', \gmdate('ymd_His'));
         }
     }
 
@@ -81,7 +81,7 @@ class Generator extends \yii\gii\Generator
      */
     public function rules()
     {
-        return array_merge(parent::rules(), [
+        return \array_merge(parent::rules(), [
             [['migrationName'], 'safe'],
             [['key', 'subject', 'body'], 'required'],
             [['hint'], 'string', 'max' => 500],
@@ -93,7 +93,7 @@ class Generator extends \yii\gii\Generator
      */
     public function attributeLabels()
     {
-        return array_merge(parent::attributeLabels(), [
+        return \array_merge(parent::attributeLabels(), [
             'key'       => 'Template key',
             'subject'   => 'Letter subject',
             'body'      => 'Letter body',

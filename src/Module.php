@@ -76,10 +76,11 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->repository === null) {
+        if (null === $this->repository) {
             $this->repository = ['class' => EmailTemplatesRepository::class];
         }
-        if ($this->languageProvider === null) {
+
+        if (null === $this->languageProvider) {
             throw new InvalidConfigException('You should configure the language provider');
         }
 

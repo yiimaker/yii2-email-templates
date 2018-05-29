@@ -32,6 +32,7 @@ class TemplateManager extends BaseObject
     public function __construct(EmailTemplatesRepositoryInterface $repository, $config = [])
     {
         $this->repository = $repository;
+
         parent::__construct($config);
     }
 
@@ -48,7 +49,6 @@ class TemplateManager extends BaseObject
      */
     public function getTemplate($key, $language = null, $default = null)
     {
-        /* @var EmailTemplate $template */
         $template = $this->repository->getByKeyWithTranslation(
             $key,
             $language ?: Yii::$app->language

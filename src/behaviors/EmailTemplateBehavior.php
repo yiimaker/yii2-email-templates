@@ -50,10 +50,8 @@ class EmailTemplateBehavior extends Behavior
     /**
      * {@inheritdoc}
      */
-    public function __construct(
-        EmailTemplatesRepositoryInterface $repository,
-        $config = []
-    ) {
+    public function __construct(EmailTemplatesRepositoryInterface $repository, $config = [])
+    {
         $this->_repository = $repository;
 
         parent::__construct($config);
@@ -187,7 +185,7 @@ class EmailTemplateBehavior extends Behavior
     protected function generateKey()
     {
         return Json::encode([
-            'model' => get_class($this->owner),
+            'model' => \get_class($this->owner),
             'id'    => $this->owner->getPrimaryKey(),
             'key'   => $this->_key,
         ]);

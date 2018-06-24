@@ -202,6 +202,7 @@ class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepos
 
         foreach ($data[EmailTemplateTranslation::internalFormName()] as $language => $dataSet) {
             $translationEntity = $entity->getTranslation($language);
+
             foreach ($dataSet as $attribute => $translation) {
                 $translationEntity->$attribute = $translation;
             }

@@ -5,6 +5,7 @@ Email Templates Module Change Log
 -----------------------
 * Enh #24: Gii generator: adds default value to the hint field (Geoffry304, greeflas)
 * Enh #25: Gii generator: adds insert command for each language in migration file (Geoffry304, greelfas)
+* Fix: Code style
 
 4.0.1 May 23, 2018
 ------------------

@@ -41,7 +41,7 @@ class EmailTemplate extends ActiveRecord
      */
     public static function find()
     {
-        return Yii::createObject(EmailTemplateQuery::class, [get_called_class()]);
+        return Yii::createObject(EmailTemplateQuery::class, [\get_called_class()]);
     }
 
     /**

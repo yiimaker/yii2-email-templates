@@ -109,7 +109,7 @@ class EmailTemplateTranslation extends ActiveRecord
      */
     protected function addLabelPostfix($label)
     {
-        return $label . ' [' . $this->language . ']';
+        return \sprintf('%s [%s]', $label, $this->language);
     }
 
     /**

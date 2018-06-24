@@ -99,6 +99,7 @@ class EmailTemplate extends BaseObject
     public static function buildMultiply($entities)
     {
         $templates = [];
+
         foreach ($entities as $entity) {
             $templates[$entity->language] = static::buildFromEntity($entity);
         }
@@ -113,8 +114,8 @@ class EmailTemplate extends BaseObject
     protected function replaceKeys($data, $attribute)
     {
         foreach ($data as $key => $value) {
-            $this->$attribute = strtr($this->$attribute, [
-                '{' . $key . '}' => $value,
+            $this->$attribute = \strtr($this->$attribute, [
+                \sprintf('{%s}', $key) => $value,
             ]);
         }
     }
@@ -129,6 +130,7 @@ class EmailTemplate extends BaseObject
         if (isset($data['subject'])) {
             $this->replaceKeys($data['subject'], '_subject');
         }
+
         if (isset($data['body'])) {
             $this->replaceKeys($data['body'], '_body');
         }

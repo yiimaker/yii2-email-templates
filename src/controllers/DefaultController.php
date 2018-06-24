@@ -118,6 +118,6 @@ class DefaultController extends Controller
             return $this->redirect($redirectUrl);
         }
 
-        return $this->render($view, compact('model'));
+        return $this->render($view, \compact('model'));
     }
 }

@@ -58,6 +58,8 @@ class Generator extends \yii\gii\Generator
         if ($this->migrationName === null) {
             $this->migrationName = 'm' . gmdate('ymd_His') . '_add_email_template';
         }
+
+        $this->hint = 'All tokens wrapped in {} will be replaced by real data';
     }
 
     /**

@@ -28,7 +28,7 @@
     "yiimaker/yii2-translatable": "~1.0.1"
   },
   "require-dev": {
-    "yiisoft/yii2-gii": "~2.0.0",
+    "yiisoft/yii2-gii": "~2.1.0",
     "codeception/codeception": "~3.0"
   },
   "suggest": {

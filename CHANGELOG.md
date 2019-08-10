@@ -1,8 +1,14 @@
 Email Templates Module Change Log
 ---------------------------------
 
+4.1.1 August 10, 2019
+---------------------
+* Chg: Change `yiisoft/yii2-gii` version from `~2.0.0` to `~2.1.0` (greeflas)
+* Chg: Change `codeception/codeception` version from `~2.0` to `~3.0` (greeflas)
+* Chg: Update dependencies in composer.lock (greeflas)
+
 4.1.0 June 24, 2018
------------------------
+-------------------
 * Enh #24: Gii generator: adds default value to the hint field (Geoffry304, greeflas)
 * Enh #25: Gii generator: adds insert command for each language in migration file (Geoffry304, greelfas)
 * Fix: Code style fixes and updates (greeflas)

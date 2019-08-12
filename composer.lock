@@ -125,9 +125,9 @@
             "authors": [
                 {
                     "name": "Carsten Brandt",
+                    "role": "Creator",
                     "email": "mail@cebe.cc",
-                    "homepage": "http://cebe.cc/",
-                    "role": "Creator"
+                    "homepage": "http://cebe.cc/"
                 }
             ],
             "description": "A super fast, highly extensible markdown parser for PHP",
@@ -241,23 +241,23 @@
         },
         {
             "name": "yiimaker/yii2-translatable",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiimaker/yii2-translatable.git",
-                "reference": "3c40cd3fa5821abc471a971fd21bfa591ecd25b5"
+                "reference": "57dabab486347bbb9413ec885225a0545503e791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiimaker/yii2-translatable/zipball/3c40cd3fa5821abc471a971fd21bfa591ecd25b5",
-                "reference": "3c40cd3fa5821abc471a971fd21bfa591ecd25b5",
+                "url": "https://api.github.com/repos/yiimaker/yii2-translatable/zipball/57dabab486347bbb9413ec885225a0545503e791",
+                "reference": "57dabab486347bbb9413ec885225a0545503e791",
                 "shasum": ""
             },
             "require": {
                 "yiisoft/yii2": "^2.0.0"
             },
             "require-dev": {
-                "codeception/codeception": "~2.3"
+                "codeception/codeception": "~3.0"
             },
             "type": "yii2-extension",
             "extra": {
@@ -277,8 +277,8 @@
             "authors": [
                 {
                     "name": "Vladimir Kuprienko",
-                    "email": "vldmr.kuprienko@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "vldmr.kuprienko@gmail.com"
                 }
             ],
             "description": "Translatable behavior aggregates logic of linking translations to the primary model",
@@ -290,7 +290,7 @@
                 "translations",
                 "yii2"
             ],
-            "time": "2018-05-23T17:46:09+00:00"
+            "time": "2019-08-11T12:39:53+00:00"
         },
         {
             "name": "yiisoft/yii2",

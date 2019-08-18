@@ -49,17 +49,17 @@ class GeneratorTest extends TestCase
         $migrationCode = $files[0]->content;
 
         // insert template
-        $this->assertContains("'key' => 'test-template'", $migrationCode);
+        $this->assertStringContainsString("'key' => 'test-template'", $migrationCode);
 
         // get template ID
-        $this->assertContains("->where(['key' => 'test-template'])", $migrationCode);
+        $this->assertStringContainsString("->where(['key' => 'test-template'])", $migrationCode);
 
         // insert template data
-        $this->assertContains("'subject'       => 'test subject',", $migrationCode);
-        $this->assertContains("'body'          => 'test body',", $migrationCode);
-        $this->assertContains("'hint'          => 'test hint',", $migrationCode);
+        $this->assertStringContainsString("'subject'       => 'test subject',", $migrationCode);
+        $this->assertStringContainsString("'body'          => 'test body',", $migrationCode);
+        $this->assertStringContainsString("'hint'          => 'test hint',", $migrationCode);
 
         // delete template
-        $this->assertContains("':key' => 'test-template',", $migrationCode);
+        $this->assertStringContainsString("':key' => 'test-template',", $migrationCode);
     }
 }

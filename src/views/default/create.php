@@ -6,7 +6,7 @@ use ymaker\email\templates\Module as TemplatesModule;
 use motion\i18n\helpers\LanguageHelper;
 use vova07\imperavi\Widget as ImperaviRedactor;
 
-/**
+/*
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
             <?php foreach (LanguageHelper::getInstance()->getLocales() as $language): ?>
                 <?php $translation = $model->getTranslation($language) ?>
                 <?= $form->field($translation, 'subject') ?>
-            <?php if (class_exists(ImperaviRedactor::class)): ?>
+            <?php if (\class_exists(ImperaviRedactor::class)): ?>
                 <?= $form->field($translation, 'body')
                     ->widget(ImperaviRedactor::class) ?>
             <?php else: ?>
@@ -51,9 +51,9 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Create email template');
                 <?= $form->field($translation, 'hint') ?>
             <?php endforeach ?>
             <?= Html::submitButton(
-                TemplatesModule::t('Create'),
-                ['class' => 'btn btn-success']
-            ) ?>
+                        TemplatesModule::t('Create'),
+                        ['class' => 'btn btn-success']
+                    ) ?>
             <?php $form->end() ?>
         </div>
         <?= $this->render('_issue-message') ?>

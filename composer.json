@@ -29,7 +29,8 @@
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.1.0",
-    "codeception/codeception": "~3.0"
+    "codeception/codeception": "~3.0",
+    "friendsofphp/php-cs-fixer": "^2.15"
   },
   "suggest": {
     "yiisoft/yii2-bootstrap": "If you want use default view files in backend you should install this package",
@@ -54,6 +55,8 @@
     "test": [
       "codecept build",
       "codecept run"
-    ]
+    ],
+    "cs-check": "php-cs-fixer fix --allow-risky=yes --diff --ansi --dry-run",
+    "cs-fix": "php-cs-fixer fix --allow-risky=yes --diff --ansi"
   }
 }

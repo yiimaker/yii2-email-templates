@@ -10,13 +10,12 @@ use ymaker\email\templates\Module as TemplatesModule;
 /**
  * View file for CRUD backend controller.
  *
- * @var \yii\web\View $this
+ * @var \yii\web\View
  * @var \yii\data\ActiveDataProvider $dataProvider
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-
 $session = Yii::$app->getSession();
 ?>
 <div class="container">
@@ -31,10 +30,10 @@ $session = Yii::$app->getSession();
                 <?= TemplatesModule::t('Email templates') ?>
                 <small><?= TemplatesModule::t('list of templates') ?></small>
                 <?= Html::a(
-                    TemplatesModule::t('Create template'),
-                    Url::toRoute(['create']),
-                    ['class' => 'btn btn-success pull-right']
-                ) ?>
+    TemplatesModule::t('Create template'),
+    Url::toRoute(['create']),
+    ['class' => 'btn btn-success pull-right']
+) ?>
             </h1>
         </div>
         <div class="clearfix"></div>
@@ -45,7 +44,7 @@ $session = Yii::$app->getSession();
                 'columns' => [
                     ['class' => SerialColumn::class],
                     'key',
-                    ['class' => ActionColumn::class]
+                    ['class' => ActionColumn::class],
                 ],
             ]) ?>
         </div>

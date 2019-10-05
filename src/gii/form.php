@@ -1,13 +1,8 @@
 <?php
-
 /**
- * Renders form for Gii generator.
- *
- * @var \yii\widgets\ActiveForm $form
- * @var \ymaker\email\templates\gii\Generator $generator
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.1
+ * @link https://github.com/yiimaker/yii2-email-templates
+ * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @license BSD 3-Clause License
  */
 
 echo $form->field($generator, 'key')->textInput(['autofocus' => true]);

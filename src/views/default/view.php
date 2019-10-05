@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\widgets\DetailView;
 use ymaker\email\templates\Module as TemplatesModule;
 
-/**
+/*
  * View file for CRUD backend controller.
  *
  * @var \yii\web\View $this
@@ -36,10 +36,10 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
         <div class="col-md-12">
             <div class="pull-right">
                 <?= Html::a(
-                    TemplatesModule::t('Update'),
-                    Url::toRoute(['update', 'id' => $model->id]),
-                    ['class' => 'btn btn-warning']
-                ) ?>
+    TemplatesModule::t('Update'),
+    Url::toRoute(['update', 'id' => $model->id]),
+    ['class' => 'btn btn-warning']
+) ?>
                 <?= Html::a(
                     TemplatesModule::t('Delete'),
                     Url::toRoute(['delete', 'id' => $model->id]),

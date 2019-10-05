@@ -2,7 +2,7 @@
 
 use ymaker\email\templates\Module as TemplatesModule;
 
-/**
+/*
  * Partial view file with message for developers.
  *
  * @var \yii\web\View $this

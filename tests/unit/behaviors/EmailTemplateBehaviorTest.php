@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -52,7 +52,7 @@ class EmailTemplateBehaviorTest extends TestCase
                 'model' => DemoActiveRecord::class,
                 'id'    => $model->id,
                 'key'   => 'default',
-            ])
+            ]),
         ]);
         $this->tester->seeRecord(EmailTemplateTranslation::class, [
             'subject' => 'this is subject',
@@ -118,7 +118,7 @@ class EmailTemplateBehaviorTest extends TestCase
                 'model' => DemoActiveRecord::class,
                 'id'    => $id,
                 'key'   => 'default',
-            ])
+            ]),
         ]);
     }
 
@@ -154,14 +154,14 @@ class EmailTemplateBehaviorTest extends TestCase
                 'model' => DemoActiveRecord::class,
                 'id'    => $model->id,
                 'key'   => 'first',
-            ])
+            ]),
         ]);
         $this->tester->seeRecord(EmailTemplate::class, [
             'key' => Json::encode([
                 'model' => DemoActiveRecord::class,
                 'id'    => $model->id,
                 'key'   => 'second',
-            ])
+            ]),
         ]);
     }
 }

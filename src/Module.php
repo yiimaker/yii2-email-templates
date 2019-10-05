@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -76,10 +76,11 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->repository === null) {
+        if (null === $this->repository) {
             $this->repository = ['class' => EmailTemplatesRepository::class];
         }
-        if ($this->languageProvider === null) {
+
+        if (null === $this->languageProvider) {
             throw new InvalidConfigException('You should configure the language provider');
         }
 

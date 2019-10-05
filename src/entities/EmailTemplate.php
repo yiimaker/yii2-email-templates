@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -49,7 +49,7 @@ class EmailTemplate extends ActiveRecord
      *
      * @param string $key Model key.
      *
-     * @return false|null|string
+     * @return null|false|string
      */
     public static function findId($key)
     {

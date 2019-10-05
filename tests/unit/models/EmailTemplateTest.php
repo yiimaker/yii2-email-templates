@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -47,6 +47,7 @@ class EmailTemplateTest extends DbTestCase
         $entities = Entity::find()->all();
 
         $expected = [];
+
         foreach ($entities as $entity) {
             $expected[$entity->language] = new EmailTemplate($entity->subject, $entity->body);
         }

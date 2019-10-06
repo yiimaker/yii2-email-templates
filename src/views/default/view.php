@@ -54,9 +54,19 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
                 'model' => $model,
                 'attributes' => [
                     'key',
-                    'subject',
-                    'body:html',
-                    'hint',
+                    [
+                        'label' => Yii::t('main', 'Subject'),
+                        'value' => $model->subject,
+                    ],
+                    [
+                        'label' => Yii::t('main', 'Body'),
+                        'value' => $model->body,
+                        'format' => 'html',
+                    ],
+                    [
+                        'label' => Yii::t('main', 'Hint'),
+                        'value' => $model->hint,
+                    ],
                 ],
             ]) ?>
         </div>

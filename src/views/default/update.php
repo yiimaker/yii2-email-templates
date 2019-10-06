@@ -1,20 +1,12 @@
 <?php
+/* @var \yii\web\View $this */
+/* @var \ymaker\email\templates\entities\EmailTemplate $model */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
 use motion\i18n\helpers\LanguageHelper;
 use vova07\imperavi\Widget as ImperaviRedactor;
-
-/*
- * View file for CRUD backend controller.
- *
- * @var \yii\web\View $this
- * @var \ymaker\email\templates\entities\EmailTemplate $model
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
- */
 
 $this->params['breadcrumbs'][] = [
     'label' => TemplatesModule::t('Email templates list'),

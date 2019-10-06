@@ -1,13 +1,6 @@
 <?php
+/* @var \ymaker\email\templates\gii\Generator $generator */
 
-/**
- * View file for gii generator.
- *
- * @var \ymaker\email\templates\gii\Generator
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.1
- */
 $className = $generator->migrationName;
 echo "<?php\n";
 ?>

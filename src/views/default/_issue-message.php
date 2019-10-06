@@ -1,15 +1,8 @@
 <?php
+/* @var \yii\web\View $this */
 
 use ymaker\email\templates\Module as TemplatesModule;
 
-/*
- * Partial view file with message for developers.
- *
- * @var \yii\web\View $this
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 3.0
- */
 ?>
 <?php if (YII_ENV_DEV): ?>
     <div class="clearfix"></div>

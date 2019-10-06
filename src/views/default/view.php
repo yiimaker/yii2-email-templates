@@ -1,19 +1,11 @@
 <?php
+/* @var \yii\web\View $this */
+/* @var \ymaker\email\templates\entities\EmailTemplate $model */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 use ymaker\email\templates\Module as TemplatesModule;
-
-/*
- * View file for CRUD backend controller.
- *
- * @var \yii\web\View $this
- * @var \ymaker\email\templates\entities\EmailTemplate $model
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
- */
 
 $this->params['breadcrumbs'][] = [
     'label' => TemplatesModule::t('Email templates list'),
@@ -35,16 +27,12 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
         <hr>
         <div class="col-md-12">
             <div class="pull-right">
-                <?= Html::a(
-    TemplatesModule::t('Update'),
-    Url::toRoute(['update', 'id' => $model->id]),
-    ['class' => 'btn btn-warning']
-) ?>
-                <?= Html::a(
-                    TemplatesModule::t('Delete'),
-                    Url::toRoute(['delete', 'id' => $model->id]),
-                    ['class' => 'btn btn-danger']
-                ) ?>
+                <?= Html::a(TemplatesModule::t('Update'), Url::toRoute(['update', 'id' => $model->id]), [
+                    'class' => 'btn btn-warning',
+                ]) ?>
+                <?= Html::a(TemplatesModule::t('Delete'), Url::toRoute(['delete', 'id' => $model->id]), [
+                    'class' => 'btn btn-danger',
+                ]) ?>
             </div>
         </div>
         <div class="clearfix"></div>

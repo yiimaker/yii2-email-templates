@@ -94,7 +94,7 @@ class DefaultController extends Controller
     {
         $message = $this->repository->delete($id)
             ? TemplatesModule::t('Removed successfully')
-            : TemplatesModule::t('Error: banner not removed');
+            : TemplatesModule::t('Error: template was not removed');
 
         Yii::$app->getSession()->setFlash('yii2-email-templates', $message);
 

@@ -14,13 +14,13 @@ use motion\i18n\LanguageProviderInterface;
 /**
  * This is the model class for table "{{%email_template_translation}}".
  *
- * @property int            $id
- * @property int            $templateId
- * @property string         $language
- * @property string         $subject
- * @property string         $body
- * @property string         $hint
- * @property EmailTemplate  $template
+ * @property int $id
+ * @property int $templateId
+ * @property string $language
+ * @property string $subject
+ * @property string $body
+ * @property string $hint
+ * @property EmailTemplate $template
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -39,10 +39,12 @@ class EmailTemplateTranslation extends ActiveRecord
      * Returns internal form name.
      *
      * @return string
+     * @throws \ReflectionException
      */
     public static function internalFormName()
     {
         $reflector = new \ReflectionClass(self::class);
+
         return $reflector->getShortName();
     }
 
@@ -88,15 +90,15 @@ class EmailTemplateTranslation extends ActiveRecord
     public function attributeLabels()
     {
         $labels = [
-            'subject'       => Yii::t('email-templates/entity', 'Subject'),
-            'body'          => Yii::t('email-templates/entity', 'Body'),
-            'hint'          => Yii::t('email-templates/entity', 'Hint'),
+            'subject' => Yii::t('main', 'Subject'),
+            'body' => Yii::t('main', 'Body'),
+            'hint' => Yii::t('main', 'Hint'),
         ];
 
         foreach ($labels as $key => $label) {
             $labels[$key] = $this->addLabelPostfix($label);
         }
-        
+
         return $labels;
     }
 

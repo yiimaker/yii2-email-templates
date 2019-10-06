@@ -15,8 +15,8 @@ use ymaker\translatable\TranslatableBehavior;
 /**
  * This is the model class for table "{{%email_template}}".
  *
- * @property int                        $id
- * @property string                     $key
+ * @property int $id
+ * @property string $key
  * @property EmailTemplateTranslation[] $translations
  *
  * @method EmailTemplateTranslation getTranslation($language = null)
@@ -38,6 +38,7 @@ class EmailTemplate extends ActiveRecord
      * {@inheritdoc}
      *
      * @return EmailTemplateQuery the newly created [[EmailTemplateQuery]] instance.
+     * @throws \yii\base\InvalidConfigException
      */
     public static function find()
     {
@@ -50,6 +51,7 @@ class EmailTemplate extends ActiveRecord
      * @param string $key Model key.
      *
      * @return false|null|string
+     * @throws \yii\base\InvalidConfigException
      */
     public static function findId($key)
     {
@@ -105,8 +107,8 @@ class EmailTemplate extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'    => Yii::t('email-templates/entity', 'ID'),
-            'key'   => Yii::t('email-templates/entity', 'Key'),
+            'id' => Yii::t('main', 'ID'),
+            'key' => Yii::t('main', 'Key'),
         ];
     }
 

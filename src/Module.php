@@ -84,6 +84,7 @@ class Module extends \yii\base\Module
         }
 
         $this->registerDependencies();
+        $this->registerTranslations();
     }
 
     /**
@@ -97,18 +98,30 @@ class Module extends \yii\base\Module
         ]);
     }
 
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'en-US',
+            'basePath' => dirname(__FILE__) . '/messages',
+            'fileMap' => [
+                'main' => 'main.php',
+            ],
+        ];
+    }
+
     /**
      * Module wrapper for `Yii::t()` method.
      *
-     * @param string        $message
-     * @param array         $params
-     * @param null|string   $language
+     * @param string $message
+     * @param array $params
+     * @param null|string $language
      *
      * @return string
      */
     public static function t($message, $params = [], $language = null)
     {
-        return Yii::t('back/email-templates', $message, $params, $language);
+        return Yii::t('main', $message, $params, $language);
     }
 
     /**

@@ -1,12 +1,12 @@
 {
-  "name": "maxodrom/yii2-email-templates",
+  "name": "yiimaker/yii2-email-templates",
   "description": "Extension for creating of email templates and manage using your site dashboard",
   "keywords": ["yii2", "module", "gii", "email", "templates", "placeholders"],
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "support": {
-    "source": "https://github.com/maxodrom/yii2-email-templates",
-    "issues": "https://github.com/maxodrom/yii2-email-templates/issues"
+    "source": "https://github.com/yiimaker/yii2-email-templates",
+    "issues": "https://github.com/yiimaker/yii2-email-templates/issues"
   },
   "authors": [
     {

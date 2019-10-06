@@ -1,4 +1,6 @@
 <?php
+/* @var \yii\web\View $this */
+/* @var \yii\data\ActiveDataProvider $dataProvider */
 
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
@@ -7,15 +9,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use ymaker\email\templates\Module as TemplatesModule;
 
-/**
- * View file for CRUD backend controller.
- *
- * @var \yii\web\View
- * @var \yii\data\ActiveDataProvider $dataProvider
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
- */
 $session = Yii::$app->getSession();
 ?>
 <div class="container">

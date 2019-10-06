@@ -18,7 +18,7 @@ use vova07\imperavi\Widget as ImperaviRedactor;
 
 $this->params['breadcrumbs'][] = [
     'label' => TemplatesModule::t('Email templates list'),
-    'url' => ['/email-templates/default/index'],
+    'url' => ['/' . TemplatesModule::getInstance()->getUniqueId() . '/default/index'],
 ];
 $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {key}', [
     'key' => $model->key,

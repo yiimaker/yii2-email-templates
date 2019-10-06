@@ -17,7 +17,7 @@ use ymaker\email\templates\Module as TemplatesModule;
 
 $this->params['breadcrumbs'][] = [
     'label' => TemplatesModule::t('Email templates list'),
-    'url' => ['/email-templates/default/index'],
+    'url' => ['/' . TemplatesModule::getInstance()->getUniqueId() . '/default/index'],
 ];
 $this->params['breadcrumbs'][] = TemplatesModule::t('email template - {key}', [
     'key' => $model->key,

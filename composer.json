@@ -29,7 +29,7 @@
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.1.0",
-    "codeception/codeception": "~3.0",
+    "codeception/codeception": "~4.1",
     "friendsofphp/php-cs-fixer": "^2.15"
   },
   "suggest": {

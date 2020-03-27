@@ -28,7 +28,7 @@
     "yiimaker/yii2-translatable": "~1.0.1"
   },
   "require-dev": {
-    "yiisoft/yii2-gii": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0",
     "codeception/codeception": "~3.0",
     "friendsofphp/php-cs-fixer": "^2.15"
   },

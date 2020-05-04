@@ -4343,16 +4343,16 @@
         },
         {
             "name": "yiisoft/yii2-gii",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "7736b837da5cc0503cf15f482170e07eca9dd933"
+                "reference": "f3bb400b578b0a0ee737d267ebaffdaad7b32dee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/7736b837da5cc0503cf15f482170e07eca9dd933",
-                "reference": "7736b837da5cc0503cf15f482170e07eca9dd933",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/f3bb400b578b0a0ee737d267ebaffdaad7b32dee",
+                "reference": "f3bb400b578b0a0ee737d267ebaffdaad7b32dee",
                 "shasum": ""
             },
             "require": {
@@ -4390,7 +4390,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2020-03-24T22:12:09+00:00"
+            "time": "2020-05-02T11:59:43+00:00"
         }
     ],
     "aliases": [],

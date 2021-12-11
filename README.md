@@ -11,8 +11,6 @@ You can create email templates with CRUD module in your backend or Gii generator
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
-[![SymfonyInsight](https://insight.symfony.com/projects/01cd8c6b-428c-4fc1-927b-0cd28ec6d565/big.svg)](https://insight.symfony.com/projects/01cd8c6b-428c-4fc1-927b-0cd28ec6d565)
-
 [![Build Status](https://travis-ci.org/yiimaker/yii2-email-templates.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-email-templates)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-email-templates/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-email-templates/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiimaker/yii2-email-templates.svg)](https://packagist.org/packages/yiimaker/yii2-email-templates)
@@ -123,6 +121,11 @@ $ codecept build && codecept run
 Contributing
 ------------
 For information about contributing please read [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Sponsoring
+----------
+
+<a href="https://www.buymeacoffee.com/OCmHjEY" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 License
 -------

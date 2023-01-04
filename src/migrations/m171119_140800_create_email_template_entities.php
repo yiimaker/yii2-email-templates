@@ -95,7 +95,7 @@ class m171119_140800_create_email_template_entities extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('fk-email_template_translation-email_template', $this->primaryTableName);
+        $this->dropForeignKey('fk-email_template_translation-email_template', $this->translationTableName);
 
         $this->dropIndex('idx-email_template_translation-language', $this->translationTableName);
         $this->dropIndex('idx-email_template_translation-templateId', $this->translationTableName);

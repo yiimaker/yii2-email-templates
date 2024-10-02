@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -9,7 +9,6 @@ namespace ymaker\email\templates\entities;
 
 use Yii;
 use yii\db\ActiveRecord;
-use motion\i18n\LanguageProviderInterface;
 
 /**
  * This is the model class for table "{{%email_template_translation}}".
@@ -22,7 +21,7 @@ use motion\i18n\LanguageProviderInterface;
  * @property string         $hint
  * @property EmailTemplate  $template
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplateTranslation extends ActiveRecord
@@ -43,6 +42,7 @@ class EmailTemplateTranslation extends ActiveRecord
     public static function internalFormName()
     {
         $reflector = new \ReflectionClass(self::class);
+
         return $reflector->getShortName();
     }
 

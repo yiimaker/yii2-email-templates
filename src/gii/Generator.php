@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -13,7 +13,7 @@ use yii\gii\CodeFile;
 /**
  * This generator will be generate a email template.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.1
  */
 class Generator extends \yii\gii\Generator
@@ -45,7 +45,7 @@ class Generator extends \yii\gii\Generator
     /**
      * @var string
      */
-    public $migrationName = null;
+    public $migrationName;
 
 
     /**
@@ -55,7 +55,7 @@ class Generator extends \yii\gii\Generator
     {
         parent::init();
 
-        if ($this->migrationName === null) {
+        if (null === $this->migrationName) {
             $this->migrationName = 'm' . \gmdate('ymd_His') . '_add_email_template';
         }
 

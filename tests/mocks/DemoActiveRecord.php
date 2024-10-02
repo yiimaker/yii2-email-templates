@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -17,7 +17,7 @@ use yii\db\ActiveRecord;
  * @property string $letterBody
  * @property string $emailTemplateHint
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
 class DemoActiveRecord extends ActiveRecord

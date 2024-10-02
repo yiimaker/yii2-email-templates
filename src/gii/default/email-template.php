@@ -1,13 +1,5 @@
 <?php
-
-/**
- * View file for gii generator.
- *
- * @var \ymaker\email\templates\gii\Generator $generator
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.1
- */
+/* @var \ymaker\email\templates\gii\Generator $generator */
 
 $className = $generator->migrationName;
 echo "<?php\n";
@@ -64,7 +56,7 @@ class <?= $className ?> extends Migration
                 'hint',
             ],
             [
-            <?php foreach(\motion\i18n\helpers\LanguageHelper::getInstance()->getLocales() as $language): ?>    [
+            <?php foreach (\motion\i18n\helpers\LanguageHelper::getInstance()->getLocales() as $language): ?>    [
                     'templateId'    => $templateId,
                     'language'      => '<?= $language ?>',
                     'subject'       => '<?= $generator->subject ?>',

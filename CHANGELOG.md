@@ -1,6 +1,11 @@
 Email Templates Module Change Log
 ---------------------------------
 
+4.1.2 October 2, 2024
+-----------------------
+* Fix: Deprecation warnings in unit tests for Gii generator (greeflas)
+* Fix: Down part of migration (edzima)
+
 4.1.1 August 10, 2019
 ---------------------
 * Chg: Change `yiisoft/yii2-gii` version from `~2.0.0` to `~2.1.0` (greeflas)

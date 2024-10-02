@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -14,7 +14,7 @@ use ymaker\email\templates\tests\unit\TestCase;
 /**
  * Test case for Gii generator.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 2.0
  */
 class GeneratorTest extends TestCase
@@ -49,17 +49,17 @@ class GeneratorTest extends TestCase
         $migrationCode = $files[0]->content;
 
         // insert template
-        $this->assertContains("'key' => 'test-template'", $migrationCode);
+        $this->assertStringContainsString("'key' => 'test-template'", $migrationCode);
 
         // get template ID
-        $this->assertContains("->where(['key' => 'test-template'])", $migrationCode);
+        $this->assertStringContainsString("->where(['key' => 'test-template'])", $migrationCode);
 
         // insert template data
-        $this->assertContains("'subject'       => 'test subject',", $migrationCode);
-        $this->assertContains("'body'          => 'test body',", $migrationCode);
-        $this->assertContains("'hint'          => 'test hint',", $migrationCode);
+        $this->assertStringContainsString("'subject'       => 'test subject',", $migrationCode);
+        $this->assertStringContainsString("'body'          => 'test body',", $migrationCode);
+        $this->assertStringContainsString("'hint'          => 'test hint',", $migrationCode);
 
         // delete template
-        $this->assertContains("':key' => 'test-template',", $migrationCode);
+        $this->assertStringContainsString("':key' => 'test-template',", $migrationCode);
     }
 }

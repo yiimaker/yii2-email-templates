@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/yiimaker/yii2-email-templates
- * @copyright Copyright (c) 2017-2018 Yii Maker
+ * @copyright Copyright (c) 2017-2019 Yii Maker
  * @license BSD 3-Clause License
  */
 
@@ -12,7 +12,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of tables `email_template` and `email_template_translation`.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
 class m171119_140800_create_email_template_entities extends Migration
@@ -33,7 +33,8 @@ class m171119_140800_create_email_template_entities extends Migration
     public function safeUp()
     {
         $tableOptions = null;
-        if ($this->db->driverName === 'mysql') {
+
+        if ('mysql' === $this->db->driverName) {
             /* @link http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci */
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
@@ -95,7 +96,7 @@ class m171119_140800_create_email_template_entities extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('fk-email_template_translation-email_template', $this->primaryTableName);
+        $this->dropForeignKey('fk-email_template_translation-email_template', $this->translationTableName);
 
         $this->dropIndex('idx-email_template_translation-language', $this->translationTableName);
         $this->dropIndex('idx-email_template_translation-templateId', $this->translationTableName);

@@ -1,20 +1,12 @@
 <?php
+/* @var \yii\web\View $this */
+/* @var \ymaker\email\templates\entities\EmailTemplate $model */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use ymaker\email\templates\Module as TemplatesModule;
 use motion\i18n\helpers\LanguageHelper;
 use vova07\imperavi\Widget as ImperaviRedactor;
-
-/**
- * View file for CRUD backend controller.
- *
- * @var \yii\web\View $this
- * @var \ymaker\email\templates\entities\EmailTemplate $model
- *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
- */
 
 $this->params['breadcrumbs'][] = [
     'label' => TemplatesModule::t('Email templates list'),
@@ -42,7 +34,7 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {ke
                 <?php $translation = $model->getTranslation($language) ?>
                 <?= $form->field($translation, 'subject')
                     ->textInput() ?>
-                <?php if (class_exists(ImperaviRedactor::class)): ?>
+                <?php if (\class_exists(ImperaviRedactor::class)): ?>
                     <?= $form->field($translation, 'body')
                         ->widget(ImperaviRedactor::class) ?>
                 <?php else: ?>
@@ -52,9 +44,9 @@ $this->params['breadcrumbs'][] = TemplatesModule::t('Update email template - {ke
                     ->textInput(['disabled' => true]) ?>
             <?php endforeach ?>
             <?= Html::submitButton(
-                TemplatesModule::t('Save'),
-                ['class' => 'btn btn-success']
-            ) ?>
+                        TemplatesModule::t('Save'),
+                        ['class' => 'btn btn-success']
+                    ) ?>
             <?php $form->end() ?>
         </div>
         <?= $this->render('_issue-message') ?>

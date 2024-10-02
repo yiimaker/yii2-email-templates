@@ -13,7 +13,7 @@ use yii\gii\CodeFile;
 /**
  * This generator will be generate a email template.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.1
  */
 class Generator extends \yii\gii\Generator

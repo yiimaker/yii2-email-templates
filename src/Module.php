@@ -19,7 +19,7 @@ use motion\i18n\LanguageProviderInterface;
  * @property array $repository
  * @property array $languageProvider
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class Module extends \yii\base\Module

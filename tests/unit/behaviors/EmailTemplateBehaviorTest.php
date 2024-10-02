@@ -21,7 +21,7 @@ use ymaker\email\templates\tests\unit\TestCase;
  *
  * @property \UnitTester $tester
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
 class EmailTemplateBehaviorTest extends TestCase

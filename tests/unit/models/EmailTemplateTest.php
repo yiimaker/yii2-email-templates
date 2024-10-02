@@ -15,7 +15,7 @@ use ymaker\email\templates\tests\fixtures\EmailTemplateTranslationFixture;
 /**
  * Test case for email template model.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplateTest extends DbTestCase

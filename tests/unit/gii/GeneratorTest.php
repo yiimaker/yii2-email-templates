@@ -14,7 +14,7 @@ use ymaker\email\templates\tests\unit\TestCase;
 /**
  * Test case for Gii generator.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 2.0
  */
 class GeneratorTest extends TestCase

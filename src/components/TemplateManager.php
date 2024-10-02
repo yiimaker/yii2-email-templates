@@ -15,7 +15,7 @@ use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 /**
  * This class provides methods for making work with email template easily in your code.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class TemplateManager extends BaseObject

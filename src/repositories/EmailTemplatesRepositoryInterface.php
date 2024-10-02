@@ -10,7 +10,7 @@ namespace ymaker\email\templates\repositories;
 /**
  * Interface of email templates repository.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 4.0
  */
 interface EmailTemplatesRepositoryInterface

@@ -12,7 +12,7 @@ use yii\db\ActiveQuery;
 /**
  * Query class for [[\ymaker\email\templates\models\entities\EmailTemplate]] model.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplateQuery extends ActiveQuery

@@ -21,7 +21,7 @@ use yii\db\ActiveRecord;
  * @property string         $hint
  * @property EmailTemplate  $template
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplateTranslation extends ActiveRecord

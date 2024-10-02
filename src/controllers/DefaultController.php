@@ -15,7 +15,7 @@ use ymaker\email\templates\repositories\EmailTemplatesRepositoryInterface;
 /**
  * CRUD controller for backend.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class DefaultController extends Controller

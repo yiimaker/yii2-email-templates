@@ -10,7 +10,7 @@ namespace ymaker\email\templates\tests\unit;
 /**
  * Base test case class.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class TestCase extends \Codeception\Test\Unit

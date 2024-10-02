@@ -13,7 +13,7 @@ use ymaker\email\templates\entities\EmailTemplate;
 /**
  * Fixure for [[EmailTemplate]] model.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplateFixture extends ActiveFixture

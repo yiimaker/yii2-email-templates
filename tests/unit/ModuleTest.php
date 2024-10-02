@@ -16,7 +16,7 @@ use motion\i18n\LanguageProviderInterface;
 /**
  * Test case for module.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class ModuleTest extends TestCase

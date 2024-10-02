@@ -18,7 +18,7 @@ use ymaker\email\templates\entities\EmailTemplateTranslation;
 /**
  * Repository for email templates.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 4.0
  */
 class EmailTemplatesRepository extends BaseObject implements EmailTemplatesRepositoryInterface

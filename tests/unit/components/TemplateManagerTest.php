@@ -16,7 +16,7 @@ use ymaker\email\templates\tests\unit\DbTestCase;
 /**
  * Test case for template manager.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class TemplateManagerTest extends DbTestCase

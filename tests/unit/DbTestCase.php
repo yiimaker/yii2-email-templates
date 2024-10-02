@@ -12,7 +12,7 @@ use yii\test\FixtureTrait;
 /**
  * Base test case class with fixtures support.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class DbTestCase extends TestCase

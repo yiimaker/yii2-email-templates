@@ -17,7 +17,7 @@ use yii\base\BaseObject;
  * @property string $subject
  * @property string $body
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
 class EmailTemplate extends BaseObject

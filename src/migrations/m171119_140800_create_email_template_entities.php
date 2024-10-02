@@ -12,7 +12,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of tables `email_template` and `email_template_translation`.
  *
- * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @author Volodymyr Kupriienko <vldmr.kuprienko@gmail.com>
  * @since 3.0
  */
 class m171119_140800_create_email_template_entities extends Migration
@@ -96,7 +96,7 @@ class m171119_140800_create_email_template_entities extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('fk-email_template_translation-email_template', $this->primaryTableName);
+        $this->dropForeignKey('fk-email_template_translation-email_template', $this->translationTableName);
 
         $this->dropIndex('idx-email_template_translation-language', $this->translationTableName);
         $this->dropIndex('idx-email_template_translation-templateId', $this->translationTableName);
